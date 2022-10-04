@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/cinza_claro_tecnomotor"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/logo_tecnomotor"
+        android:layout_width="133dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="70dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_tecnomotor_2" />
+
+    <Button
+        android:id="@+id/btn_marca_bombas_bosch"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="70dp"
+        android:text="@string/bosch"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/blue_tecnomotor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_tecnomotor" />
+
+    <Button
+        android:id="@+id/btn_marca_bombas_denso"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="@string/denso"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/blue_tecnomotor"
+        app:layout_constraintEnd_toStartOf="@+id/btn_marca_bombas_delphi"
+        app:layout_constraintStart_toEndOf="@+id/btn_marca_bombas_bosch"
+        app:layout_constraintTop_toTopOf="@+id/btn_marca_bombas_bosch"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_marca_bombas_delphi"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="120dp"
+        android:text="@string/delphi"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/blue_tecnomotor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_marca_bombas_bosch"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_marca_bombas_siemens"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="70dp"
+        android:text="@string/siemens"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/blue_tecnomotor"
+        app:layout_constraintStart_toStartOf="@+id/btn_marca_bombas_bosch"
+        app:layout_constraintTop_toBottomOf="@+id/btn_marca_bombas_bosch" />
+
+    <Button
+        android:id="@+id/btn_marca_bombas_cartepillar"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="@string/cartepillar"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/blue_tecnomotor"
+        app:layout_constraintStart_toStartOf="@+id/btn_marca_bombas_denso"
+        app:layout_constraintTop_toTopOf="@+id/btn_marca_bombas_siemens" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

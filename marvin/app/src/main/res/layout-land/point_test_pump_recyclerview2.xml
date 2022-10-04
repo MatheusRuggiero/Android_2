@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cinza_claro_tecnomotor"
+    app:cardCornerRadius="20dp" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cinza_claro_tecnomotor">
+
+<!--        Nome do ponto de teste -->
+        <TextView
+            android:id="@+id/name_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/blue_tecnomotor"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Name point" />
+
+<!--        Status de execução do ponto de teste -->
+        <TextView
+            android:id="@+id/value_status_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="36sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@id/name_point_test_pump"
+            app:layout_constraintTop_toBottomOf="@id/name_point_test_pump"
+            tools:text="Executando" />
+
+        <!--        Guideline para indicar início dos textViews dos erros -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineErrors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.45" />
+
+        <!--        Erro da placa de controle-->
+        <TextView
+            android:id="@+id/value_error_control_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/vermelho_tecnomotor"
+            android:textSize="24sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/guidelineErrors"
+            app:layout_constraintTop_toTopOf="@id/name_point_test_pump"
+            tools:text="Erro placa controle" />
+
+        <!--        Erro da placa de medição-->
+        <TextView
+            android:id="@+id/value_error_measure_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/vermelho_tecnomotor"
+            android:textSize="24sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/value_error_control_point_test_pump"
+            app:layout_constraintTop_toBottomOf="@id/value_error_control_point_test_pump"
+            tools:text="Erro placa medição" />
+
+        <!--        Gráfico de pressão de teste -->
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/point_test_pump_pie_chart"
+            android:layout_width="317dp"
+            android:layout_height="298dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/chart_flow_point_test_pump"
+            app:layout_constraintStart_toStartOf="@id/name_point_test_pump"
+            app:layout_constraintTop_toBottomOf="@+id/value_status_point_test_pump"
+            app:layout_constraintVertical_bias="0.20" />
+
+        <TextView
+            android:id="@+id/value_pressure_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/dark_gray"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@+id/point_test_pump_pie_chart"
+            app:layout_constraintStart_toStartOf="@+id/point_test_pump_pie_chart"
+            app:layout_constraintTop_toBottomOf="@+id/point_test_pump_pie_chart"
+            tools:text="Pressure Rail" />
+
+<!--        Guideline que separa gráficos à esquerda e valores em texto à direita-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineGraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.55" />
+
+        <!--        Gráfico de vazão de retorno-->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_return_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="return_point_test_pump, value_return_min_or_max_point_test_pump, value_return_point_test_pump, chart_return_point_test_pump, legend_chart_return_point_test_pump" />
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/chart_return_point_test_pump"
+            android:layout_width="160dp"
+            android:layout_height="400dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineGraph"
+            app:layout_constraintTop_toTopOf="@+id/value_status_point_test_pump" />
+
+        <TextView
+            android:id="@+id/legend_chart_return_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/dark_gray"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/chart_return_point_test_pump"
+            app:layout_constraintStart_toStartOf="@+id/chart_return_point_test_pump"
+            app:layout_constraintTop_toBottomOf="@+id/chart_return_point_test_pump"
+            android:text="@string/txt_return" />
+
+<!--        Gráfico de vazão principal-->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_flow_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="flow_point_test_pump, value_flow_min_or_max_point_test_pump, value_flow_point_test_pump, chart_flow_point_test_pump, legend_chart_flow_point_test_pump" />
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/chart_flow_point_test_pump"
+            android:layout_width="160dp"
+            android:layout_height="400dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            app:layout_constraintEnd_toStartOf="@+id/chart_return_point_test_pump"
+            app:layout_constraintTop_toTopOf="@+id/chart_return_point_test_pump" />
+
+        <TextView
+            android:id="@+id/legend_chart_flow_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/dark_gray"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/chart_flow_point_test_pump"
+            app:layout_constraintStart_toStartOf="@+id/chart_flow_point_test_pump"
+            app:layout_constraintTop_toBottomOf="@+id/chart_flow_point_test_pump"
+            android:text="@string/txt_flow" />
+
+        <!--        Guideline que separa gráficos à esquerda e valores em texto à direita-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineGraph2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6" />
+
+
+        <!--        Tempo do ponto de teste-->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_time_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="time_point_test_pump,value_time_point_test_pump" />
+
+        <TextView
+            android:id="@+id/time_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_time"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_pequeno"
+            app:layout_constraintStart_toEndOf="@+id/guidelineGraph2"
+            app:layout_constraintTop_toBottomOf="@id/name_point_test_pump" />
+
+        <TextView
+            android:id="@+id/value_time_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:text="@string/_00_s"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_ponto_teste_valor_pequeno"
+            app:layout_constraintStart_toStartOf="@+id/time_point_test_pump"
+            app:layout_constraintTop_toBottomOf="@+id/time_point_test_pump" />
+
+        <!--            Corrente Ext 1-->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_current_ext_1_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="pump_test_current_ext_1, value_pump_test_current_ext_1" />
+
+        <TextView
+            android:id="@+id/pump_test_current_ext_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/txt_pump_test_current_ext_1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_pequeno"
+            app:layout_constraintStart_toStartOf="@+id/time_point_test_pump"
+            app:layout_constraintTop_toBottomOf="@id/value_time_point_test_pump" />
+
+        <TextView
+            android:id="@+id/value_pump_test_current_ext_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_ponto_teste_valor_pequeno"
+            app:layout_constraintStart_toStartOf="@+id/pump_test_current_ext_1"
+            app:layout_constraintTop_toBottomOf="@+id/pump_test_current_ext_1"
+            tools:text="0.1 A" />
+
+        <!--        Guideline para separar as duas colunas de dados-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <!--            Corrente Ext 2-->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_current_ext_2_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="pump_test_current_ext_2, value_pump_test_current_ext_2" />
+
+        <TextView
+            android:id="@+id/pump_test_current_ext_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_pump_test_current_ext_2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_pequeno"
+            app:layout_constraintStart_toEndOf="@+id/guidelineData"
+            app:layout_constraintTop_toTopOf="@+id/pump_test_current_ext_1" />
+
+        <TextView
+            android:id="@+id/value_pump_test_current_ext_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_ponto_teste_valor_pequeno"
+            app:layout_constraintStart_toStartOf="@+id/pump_test_current_ext_2"
+            app:layout_constraintTop_toBottomOf="@+id/pump_test_current_ext_2"
+            tools:text="1 A" />
+
+        <!--            Rotação-->
+        <TextView
+            android:id="@+id/pump_test_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/txt_pump_test_rotation"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_pequeno"
+            app:layout_constraintStart_toStartOf="@+id/pump_test_current_ext_1"
+            app:layout_constraintTop_toBottomOf="@+id/value_pump_test_current_ext_1" />
+
+        <TextView
+            android:id="@+id/value_pump_test_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_ponto_teste_valor_pequeno"
+            app:layout_constraintStart_toStartOf="@+id/pump_test_rotation"
+            app:layout_constraintTop_toBottomOf="@+id/pump_test_rotation"
+            tools:text="2000 rpm" />
+
+        <!--            Cálculo Rotação e Vazão (mL/100Rot)-->
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_calc_rot_flow_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="pump_test_calc_rot_vaz, value_pump_test_calc_rot_vaz" />
+
+        <TextView
+            android:id="@+id/pump_test_calc_rot_vaz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ml_100rot"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_medio"
+            app:layout_constraintStart_toStartOf="@+id/pump_test_current_ext_2"
+            app:layout_constraintTop_toTopOf="@+id/pump_test_rotation"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/value_pump_test_calc_rot_vaz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_ponto_teste_valor_pequeno"
+            android:layout_marginTop="-10dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineData"
+            app:layout_constraintTop_toBottomOf="@+id/pump_test_calc_rot_vaz"
+            tools:text="2000 mL 100Rot" />
+
+        <!--            Pressão alimentação-->
+
+        <TextView
+            android:id="@+id/pump_test_pressure_feed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/txt_pump_test_pressure_feed"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_medio"
+            app:layout_constraintStart_toStartOf="@+id/value_pump_test_rotation"
+            app:layout_constraintTop_toBottomOf="@+id/value_pump_test_rotation" />
+
+        <TextView
+            android:id="@+id/value_pump_test_pressure_feed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_ponto_teste_valor_medio"
+
+            app:layout_constraintStart_toStartOf="@+id/pump_test_pressure_feed"
+            app:layout_constraintTop_toBottomOf="@+id/pump_test_pressure_feed"
+            tools:text="1850 bar" />
+
+        <!--        Temperatura-->
+        <TextView
+            android:id="@+id/pump_test_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_pump_test_temperature"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_medio"
+            app:layout_constraintStart_toStartOf="@+id/pump_test_current_ext_2"
+            app:layout_constraintTop_toTopOf="@+id/pump_test_pressure_feed" />
+
+        <TextView
+            android:id="@+id/value_temperature_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_ponto_teste_valor_medio"
+            app:layout_constraintStart_toStartOf="@+id/pump_test_temperature"
+            app:layout_constraintTop_toBottomOf="@+id/pump_test_temperature"
+            tools:text="55º" />
+
+        <!--        Vazão-->
+        <TextView
+            android:id="@+id/flow_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/txt_flow"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_pequeno"
+            app:layout_constraintStart_toStartOf="@+id/value_pump_test_pressure_feed"
+            app:layout_constraintTop_toBottomOf="@+id/value_pump_test_pressure_feed" />
+
+        <TextView
+            android:id="@+id/value_flow_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_ponto_teste_valor_medio"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/flow_point_test_pump"
+            app:layout_constraintTop_toBottomOf="@+id/flow_point_test_pump"
+            tools:text="45.6 L/H" />
+
+        <TextView
+            android:id="@+id/value_flow_min_or_max_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_pequeno"
+            app:layout_constraintStart_toStartOf="@+id/value_flow_point_test_pump"
+            app:layout_constraintTop_toBottomOf="@+id/value_flow_point_test_pump"
+            tools:text="30.0 L/H / 50.5 L/H" />
+
+        <!--        Retorno-->
+        <TextView
+            android:id="@+id/return_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_return"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_pequeno"
+            app:layout_constraintStart_toStartOf="@+id/pump_test_current_ext_2"
+            app:layout_constraintTop_toTopOf="@+id/flow_point_test_pump" />
+
+        <TextView
+            android:id="@+id/value_return_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_ponto_teste_valor_medio"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/return_point_test_pump"
+            app:layout_constraintTop_toBottomOf="@+id/return_point_test_pump"
+            tools:text="23.1 L/H" />
+
+        <TextView
+            android:id="@+id/value_return_min_or_max_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_pequeno"
+            app:layout_constraintStart_toStartOf="@+id/value_return_point_test_pump"
+            app:layout_constraintTop_toBottomOf="@+id/value_return_point_test_pump"
+            tools:text="10.0 L/H / 30.0 L/H" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

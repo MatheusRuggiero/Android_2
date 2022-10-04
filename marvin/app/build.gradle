@@ -1,0 +1,225 @@
+apply plugin: "com.android.application"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-kapt"
+apply plugin: "kotlin-parcelize"
+
+android {
+    def _versionCode = 0
+    def _major = 0
+    def _minor = 0
+    def _patch = 0
+
+    def _applicationId = "br.com.tecnomotor.marvin"
+
+    def versionPropsFile = file("version.properties")
+
+    if (versionPropsFile.canRead()) {
+        Properties versionProps = new Properties()
+
+        versionProps.load(new FileInputStream(versionPropsFile))
+
+        _patch = versionProps["PATCH"].toInteger() + 1
+        _major = versionProps["MAJOR"].toInteger()
+        _minor = versionProps["MINOR"].toInteger()
+        _versionCode = versionProps["VERSION_CODE"].toInteger() + 1
+        if (_patch == 99) {
+            _patch = 0
+            _minor = _minor + 1
+        }
+        if (_major == 99) {
+            _major = 0
+            _major = _major + 1
+        }
+
+        versionProps["MAJOR"] = _major.toString()
+        versionProps["MINOR"] = _minor.toString()
+        versionProps["PATCH"] = _patch.toString()
+        versionProps["VERSION_CODE"] = _versionCode.toString()
+        versionProps.store(versionPropsFile.newWriter(), null)
+    } else {
+        throw new RuntimeException("Could not read version.properties!")
+    }
+    def _versionName = "${_major}.${_minor}.${_patch}"
+
+    kotlinOptions {
+        freeCompilerArgs = ['-Xjvm-default=enable'] // estava dando erro no PointTestPumpViewModelFactory
+    }
+
+    compileSdkVersion 31
+
+    defaultConfig {
+        applicationId _applicationId
+        minSdkVersion 21
+        targetSdkVersion 31
+        versionCode _versionCode
+        versionName _versionName
+        multiDexEnabled = true
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/DEPENDENCIES', 'META-INF/LICENSE', 'META-INF/LICENSE.txt', 'META-INF/license.txt', 'META-INF/NOTICE', 'META-INF/NOTICE.txt', 'META-INF/notice.txt', 'META-INF/ASL2.0', 'META-INF/*.kotlin_module']
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+
+    buildFeatures {
+        viewBinding true
+    }
+
+
+    sourceSets { main { assets.srcDirs = ["src/main/assets", "src/main/assets/"] } }
+    productFlavors {}
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+    namespace 'br.com.tecnomotor.marvin'
+}
+
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    def lifecycle_version = '2.4.0'
+    def nav_version = "2.4.2"
+    def retrofit_version = "2.9.0"
+    def room_version = "2.4.2"
+    def version_jackson = '2.13.0'
+
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation project(":commonrail")
+    implementation project(":Device")
+
+    //Libraries to use the resources os the API MPAndroidChart
+    implementation "com.github.PhilJay:MPAndroidChart:v3.1.0"
+
+    //Libraries to use the resources of the Android room
+    implementation "androidx.annotation:annotation-experimental:1.2.0"
+    implementation "androidx.annotation:annotation:1.3.0"
+    runtimeOnly "androidx.arch.core:core-runtime:2.1.0"
+    runtimeOnly "androidx.room:room-common:2.4.2"
+    runtimeOnly "androidx.sqlite:sqlite-framework:2.2.0"
+    runtimeOnly "androidx.sqlite:sqlite-ktx:2.2.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    testImplementation "androidx.room:room-testing:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    //Libraries to use the resources of the lifecycle
+    //noinspection GradleDependency
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.core:core-ktx:1.7.0"
+
+    //Libraries to use the resources of the Coroutines
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.3.8"
+    implementation "org.jetbrains:annotations:22.0.0"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+
+    //Libraries to use the resources of the Recyclerview
+    implementation "androidx.annotation:annotation:1.3.0"
+    implementation "androidx.core:core-ktx:1.7.0"
+    runtimeOnly "androidx.customview:customview:1.1.0"
+    runtimeOnly "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"
+    runtimeOnly "androidx.recyclerview:recyclerview:1.2.1"
+    runtimeOnly "androidx.versionedparcelable:versionedparcelable:1.1.1"
+
+    //Libraries to use the resources of the Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:5.0.0-alpha.2"
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2"
+    implementation "com.squareup.retrofit2:converter-jackson:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofit_version"
+    implementation "io.reactivex:rxjava:1.3.8"
+
+    //Libraries to use the resources of the Gson/Json
+    implementation 'com.google.code.gson:gson:2.9.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    runtimeOnly "org.jetbrains.kotlin:kotlin-android-extensions-runtime:$kotlin_version"
+    runtimeOnly "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+    runtimeOnly "androidx.multidex:multidex:2.0.1"
+
+    //Libraries to use the resources of the Jackson
+    implementation "com.fasterxml.jackson.core:jackson-core:$version_jackson"
+    implementation "com.fasterxml.jackson.core:jackson-databind:$version_jackson"
+    implementation "com.fasterxml.jackson.core:jackson-annotations:$version_jackson"
+    implementation "org.codehaus.jackson:jackson-mapper-asl:1.9.13"
+    implementation "com.itextpdf.tool:xmlworker:5.5.13.1"
+
+    //Others libraries
+    implementation "com.google.code.findbugs:jsr305:3.0.2"
+    implementation "com.google.errorprone:error_prone_annotations:2.9.0"
+    implementation "com.google.guava:failureaccess:1.0.1"
+    implementation 'com.google.guava:guava:31.0.1-jre'
+    implementation "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava"
+    implementation "com.google.j2objc:j2objc-annotations:1.3"
+    implementation "com.itextpdf:itextg:5.5.10"
+    implementation "com.squareup.okhttp:okhttp-urlconnection:2.7.5"
+    implementation "org.apache.httpcomponents:httpclient-android:4.3.5.1"
+    implementation "org.checkerframework:checker-compat-qual:2.5.5"
+
+    //Library for javax
+    implementation "javax.validation:validation-api:2.0.1.Final"
+    implementation "javax.el:javax.el-api:3.0.0"
+    implementation "javax.xml.bind:jaxb-api:2.4.0-b180830.0359"
+
+    //Library for jakewharton
+    implementation "com.jakewharton:butterknife:10.2.3"
+    annotationProcessor "com.jakewharton:butterknife-compiler:10.2.3"
+    implementation "com.jakewharton:butterknife-annotations:10.2.3"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:1.7.0"
+    implementation "androidx.appcompat:appcompat:1.4.1"
+    implementation "com.google.android.material:material:1.6.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.3"
+    testImplementation "junit:junit:4.13.2"
+    androidTestImplementation "androidx.test.ext:junit:1.1.3"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.4.0"
+
+    /**
+     * Navigation
+     */
+    // Java language implementation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    // Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    // Feature module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+    // Testing Navigation
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+    // Jetpack Compose Integration
+    implementation "androidx.navigation:navigation-compose:2.5.0-rc01"
+
+    implementation 'com.github.anastr:speedviewlib:1.5.52'
+
+}
+

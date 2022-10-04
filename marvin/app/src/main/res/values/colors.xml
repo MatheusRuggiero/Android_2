@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- RECOMENDADO -->
+    <color name="blue_tecnomotor">#00678D</color>
+    <color name="cinza_claro_tecnomotor">#DAE0E3</color>
+    <color name="cinza_claro_tecnomotor_transp">#99DAE0E3</color>
+    <color name="cinza_escuro_tecnomotor">#8A959C</color>
+    <color name="background_color_test_tecnomotor">#FCFDFD</color>
+    <color name="vermelho_tecnomotor">#C8191B</color>
+    <color name="red">#FF0000</color>
+    <color name="yellow">#FAFF00</color>
+    <color name="light_green">#00FF19</color>
+    <color name="light_blue">#2091EC</color>
+    <color name="cinza_medio">#B9BFC4</color>
+    <color name="dark_gray">#525C63</color>
+    <color name="dark_orange">#FF8C00</color>
+
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+<!--    <color name="black">#FF000000</color>-->
+    <color name="black">@color/pantone_black</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="whisper">#E5E5E5</color>
+
+        <!-- PALETA CORES TECNOMOTOR - LOGOMARCA -->
+
+    <!-- Principal -->
+    <color name="pantone_red_186">#C8102E</color> <!-- Pantone 186 C -->
+    <color name="pantone_red_187">#A6192E</color> <!-- Pantone 187 C -->
+    <color name="pantone_red_485">#DA291C</color> <!-- Pantone 485 C -->
+    <color name="pantone_black">#2B2926</color> <!-- Pantone Process Black C -->
+    <color name="pantone_silver_3c">#C8C9C7</color> <!-- Pantone Cool Gray 3 C -->
+    <color name="pantone_silver_11c">#53565A</color> <!-- Pantone Cool Gray 11 C -->
+
+    <!-- Complementares -->
+    <color name="pantone_blue_5425">#7A99AC</color> <!-- Pantone 5425 C -->
+    <color name="pantone_blue_5435">#ABB8C2</color> <!-- Pantone 5435 C -->
+    <color name="pantone_blue_5415">#5C788F</color> <!-- Pantone 5415 C  -->
+    <color name="pantone_yellow_109">#FFD100</color> <!-- Pantone 109 C -->
+    <color name="green">#008D58</color> <!-- Pantone 376 C -->
+
+</resources>

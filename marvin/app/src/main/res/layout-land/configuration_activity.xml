@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cinza_claro_tecnomotor"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/logo_tecnomotor"
+        android:layout_width="133dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="70dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_tecnomotor_2" />
+
+    <Button
+        android:id="@+id/btn_test_parametros"
+        android:layout_width="220dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/parameters"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/blue_tecnomotor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_tecnomotor"
+        app:layout_constraintEnd_toStartOf="@id/btn_test_manFluido" />
+
+    <Button
+        android:id="@+id/btn_test_manFluido"
+        android:layout_width="220dp"
+        android:layout_height="120dp"
+        android:text="@string/manutencao_fluido"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/blue_tecnomotor"
+        app:layout_constraintTop_toTopOf="@id/btn_test_parametros"
+        app:layout_constraintStart_toEndOf="@id/btn_test_parametros"
+        app:layout_constraintEnd_toStartOf="@id/btn_test_estanqueidade"/>
+
+    <Button
+        android:id="@+id/btn_test_estanqueidade"
+        android:layout_width="220dp"
+        android:layout_height="120dp"
+        android:text="@string/estanqueidade"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/blue_tecnomotor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_test_manFluido"
+        app:layout_constraintStart_toEndOf="@id/btn_test_manFluido" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

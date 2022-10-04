@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_container">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_electrical_test_injector"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="true" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cinza_claro_tecnomotor">
+
+        <ImageView
+            android:id="@+id/logo_tecnomotor"
+            android:layout_width="133dp"
+            android:layout_height="98dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_tecnomotor_2" />
+
+        <TextView
+            android:id="@+id/txt_executando_teste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:text="@string/txt_exe_electrical_test_injector"
+            android:textColor="@color/black"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/logo_tecnomotor"
+            app:layout_constraintTop_toTopOf="@+id/logo_tecnomotor" />
+
+        <TextView
+            android:id="@+id/txt_condition_tightness_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="@string/txt_injector_test_condição"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/logo_tecnomotor"
+            app:layout_constraintTop_toBottomOf="@+id/logo_tecnomotor" />
+
+        <TextView
+            android:id="@+id/txt_condicao_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/green"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_condition_tightness_injector"
+            app:layout_constraintTop_toBottomOf="@+id/txt_condition_tightness_injector"
+            tools:text="@string/txt_injector_test_condição" />
+
+        <TextView
+            android:id="@+id/txt_resistencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/txt_injector_test_resistencia"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_condicao_value"
+            app:layout_constraintTop_toBottomOf="@+id/txt_condicao_value" />
+
+        <TextView
+            android:id="@+id/txt_resistencia_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/green"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_resistencia"
+            app:layout_constraintTop_toBottomOf="@+id/txt_resistencia"
+            tools:text="@string/txt_injector_test_resistencia" />
+
+        <TextView
+            android:id="@+id/txt_condicao_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/txt_injector_test_condição_b"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/txt_resistencia_value"
+            app:layout_constraintTop_toBottomOf="@+id/txt_resistencia_value" />
+
+        <TextView
+            android:id="@+id/txt_condicao_b_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/dark_gray"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/txt_condicao_b"
+            app:layout_constraintTop_toBottomOf="@+id/txt_condicao_b"
+            tools:text="@string/txt_injector_test_condição_b" />
+
+        <TextView
+            android:id="@+id/txt_resistencia_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/txt_injector_test_resistencia_b"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/txt_condicao_b_value"
+            app:layout_constraintTop_toBottomOf="@+id/txt_condicao_b_value" />
+
+        <TextView
+            android:id="@+id/txt_resistencia_b_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/dark_gray"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/txt_resistencia_b"
+            app:layout_constraintTop_toBottomOf="@+id/txt_resistencia_b"
+            tools:text="@string/txt_injector_test_resistencia_b" />
+
+        <ImageView
+            android:id="@+id/img_electrical_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.70"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_condition_tightness_injector"
+            app:srcCompat="@drawable/svg_injector" />
+
+        <ImageView
+            android:id="@+id/status_test_electrical_fail"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/todo"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/img_electrical_test_injector"
+            app:layout_constraintEnd_toEndOf="@+id/img_electrical_test_injector"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/img_electrical_test_injector"
+            app:layout_constraintTop_toTopOf="@+id/img_electrical_test_injector"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/svg_verificado" />
+
+        <ImageView
+            android:id="@+id/status_test_electrical_ok"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/todo"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/img_electrical_test_injector"
+            app:layout_constraintEnd_toEndOf="@+id/img_electrical_test_injector"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/img_electrical_test_injector"
+            app:layout_constraintTop_toTopOf="@+id/img_electrical_test_injector"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/svg_nao_verificado" />
+
+        <ImageButton
+            android:id="@+id/btn_electric_test_repeat"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            app:layout_constraintStart_toStartOf="@+id/btn_electric_test_next"
+            app:layout_constraintTop_toBottomOf="@+id/btn_electric_test_next"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_repeat_electric_test"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_electric_test_repeat"
+            app:layout_constraintStart_toStartOf="@+id/btn_electric_test_repeat"
+            app:layout_constraintTop_toTopOf="@+id/btn_electric_test_repeat"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_repeat" />
+
+        <TextView
+            android:id="@+id/text_repeat_electric_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_repeat"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/img_repeat_electric_test"
+            app:layout_constraintEnd_toEndOf="@+id/btn_electric_test_repeat"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@+id/img_repeat_electric_test"
+            app:layout_constraintTop_toTopOf="@+id/img_repeat_electric_test" />
+
+        <ImageButton
+            android:id="@+id/btn_electric_test_next"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="-50dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            app:layout_constraintStart_toStartOf="@+id/img_electrical_test_injector"
+            app:layout_constraintTop_toBottomOf="@+id/txt_status_eletric_inj_value"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_electric_test_next"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_electric_test_next"
+            app:layout_constraintStart_toStartOf="@+id/btn_electric_test_next"
+            app:layout_constraintTop_toTopOf="@+id/btn_electric_test_next"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_proximo02" />
+
+        <TextView
+            android:id="@+id/text_electric_test_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_next"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/img_electric_test_next"
+            app:layout_constraintEnd_toEndOf="@+id/btn_electric_test_next"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@+id/img_electric_test_next"
+            app:layout_constraintTop_toTopOf="@+id/img_electric_test_next" />
+
+        <ImageButton
+            android:id="@+id/btn_electric_test_cancel"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            app:layout_constraintStart_toStartOf="@+id/btn_electric_test_repeat"
+            app:layout_constraintTop_toBottomOf="@+id/btn_electric_test_repeat"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_electric_test_cancel"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_electric_test_cancel"
+            app:layout_constraintStart_toStartOf="@+id/btn_electric_test_cancel"
+            app:layout_constraintTop_toTopOf="@+id/btn_electric_test_cancel"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_cancelar" />
+
+        <TextView
+            android:id="@+id/text_electric_test_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_cancel"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/img_electric_test_cancel"
+            app:layout_constraintEnd_toEndOf="@+id/btn_electric_test_cancel"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@+id/img_electric_test_cancel"
+            app:layout_constraintTop_toTopOf="@+id/img_electric_test_cancel" />
+
+        <TextView
+            android:id="@+id/txt_status_eletric_inj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/txt_injector_test_status"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/img_electrical_test_injector"
+            app:layout_constraintTop_toBottomOf="@+id/img_electrical_test_injector" />
+
+        <TextView
+            android:id="@+id/txt_status_eletric_inj_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/dark_gray"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_status_eletric_inj"
+            app:layout_constraintTop_toBottomOf="@+id/txt_status_eletric_inj" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupButtonElectricalRepeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_electric_test_repeat, img_repeat_electric_test, text_repeat_electric_test" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupButtonElectricalNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_electric_test_next, img_electric_test_next, text_electric_test_next" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupButtonElectricalCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_electric_test_cancel, img_electric_test_cancel, text_electric_test_cancel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/cinza_claro_tecnomotor"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_test_ponto_bomba"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/cinza_escuro_tecnomotor"
+        android:text="@string/executar_testes_bomba"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:drawableLeftCompat="@drawable/svg_tests" />
+
+    <TextView
+        android:id="@+id/txtRotationPointTestPump"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="600dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/rotacao"
+        android:textColor="@color/blue_tecnomotor"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_pontos_bombas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:padding="8dp"
+        tools:listitem="@layout/pump_recyclerview_points" />
+
+
+</LinearLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_PRIVILEGED"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_disther"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icon_disther_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Marvin"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".view.unit_test.pump.UnitTestActivity"
+            android:exported="false"
+            android:label="@string/title_activity_testes_funcionais"
+            android:theme="@style/Theme.Marvin.NoActionBar" />
+        <activity
+            android:name=".view.test.pump.TestPointTestViewModelActivity"            
+            android:exported="false" />
+        <activity
+            android:name=".view.test.pump.TestPointTestControllerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.test.pump.TestControllerActivity"
+            android:exported="false" />
+        <activity android:name=".view.test.pump.TestRotationViewModelActivity" />
+        <activity android:name=".view.test.pump.TestRotationControllerActivity" />
+        <activity
+            android:name=".view.synchronization.SynchronizationDatabase"
+            android:label="@string/title_activity_synchronization_database"
+            android:theme="@style/Theme.Marvin.NoActionBar" />
+        <activity
+            android:name=".view.splash.SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="true" /> <!-- Relatórios -->
+        <activity android:name=".view.relatorios.RelatorioTestDispositivoActivity" />
+        <activity android:name=".view.relatorios.ListRelatoriosActivity" /> <!-- Bombas (Pump) -->
+        <activity android:name=".view.pump.PumpActivity" />
+        <activity android:name=".view.pump.PlanPumpActivity" />
+        <activity android:name=".view.pump.PointPumpActivity" />
+        <activity android:name=".view.pump.tests.TestPumpActivity" /> <!-- Injetores (Injector) -->
+        <activity android:name=".view.injector.InjectorActivity" />
+        <activity android:name=".view.injector.PlanInjectorActivity" />
+        <activity android:name=".view.injector.PointInjectorActivity" />
+        <activity android:name=".view.injector.tests.TestInjectorActivity" /> <!-- Testes Produção -->
+        <activity android:name=".view.test_producao.ConfigurationActivity" />
+        <activity android:name=".view.test_producao.EstanqueidadeTestActivity" />
+        <activity android:name=".view.test_producao.ParametersTestActivity" />
+    </application>
+
+</manifest>

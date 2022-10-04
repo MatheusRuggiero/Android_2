@@ -1,0 +1,5059 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "8d8095c776471f7f8caf0b9978f9ddd9",
+    "entities": [
+      {
+        "tableName": "bom_bombas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`bom_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `bom_codigo` TEXT NOT NULL, `bom_padrao` INTEGER NOT NULL, `bom_marca_id` INTEGER NOT NULL, `bom_aplicacao` TEXT, `bom_token` TEXT NOT NULL, `bom_revisao` INTEGER NOT NULL, `bom_deleted` INTEGER NOT NULL, `bom_descricao` TEXT NOT NULL, `bom_tipo` INTEGER NOT NULL, `bom_nome_atuador` TEXT NOT NULL, `bom_referencia_atuador` INTEGER NOT NULL, `bom_tensao_atuador` INTEGER NOT NULL, `bom_sentido_giro` INTEGER NOT NULL, `bom_adaptador_eletrico` TEXT NOT NULL, `bom_adaptador_hidraulico_pressao` TEXT NOT NULL, `bom_adaptador_hidraulico_alimentacao` TEXT NOT NULL, `bom_adaptador_hidraulico_retorno` TEXT NOT NULL, `bom_adaptador_mecanico` TEXT NOT NULL, FOREIGN KEY(`bom_marca_id`) REFERENCES `mar_marcas`(`mar_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`bom_revisao`) REFERENCES `rev_revisoes`(`rev_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "bom_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "codigo",
+            "columnName": "bom_codigo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "padrao",
+            "columnName": "bom_padrao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "marcaId",
+            "columnName": "bom_marca_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aplicacao",
+            "columnName": "bom_aplicacao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "token",
+            "columnName": "bom_token",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revisao",
+            "columnName": "bom_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deleted",
+            "columnName": "bom_deleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descricao",
+            "columnName": "bom_descricao",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipo",
+            "columnName": "bom_tipo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nomeAtuador",
+            "columnName": "bom_nome_atuador",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "referenciaAtuador",
+            "columnName": "bom_referencia_atuador",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tensaoAtuador",
+            "columnName": "bom_tensao_atuador",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sentidoGiro",
+            "columnName": "bom_sentido_giro",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adaptadorEletrico",
+            "columnName": "bom_adaptador_eletrico",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adaptadorHidraulicoPressao",
+            "columnName": "bom_adaptador_hidraulico_pressao",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adaptadorHidraulicoAlimentacao",
+            "columnName": "bom_adaptador_hidraulico_alimentacao",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adaptadorHidraulicooRetorno",
+            "columnName": "bom_adaptador_hidraulico_retorno",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adaptadorMecanico",
+            "columnName": "bom_adaptador_mecanico",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "bom_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_bom_bombas_bom_codigo_bom_padrao",
+            "unique": true,
+            "columnNames": [
+              "bom_codigo",
+              "bom_padrao"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_bom_bombas_bom_codigo_bom_padrao` ON `${TABLE_NAME}` (`bom_codigo`, `bom_padrao`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "mar_marcas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "bom_marca_id"
+            ],
+            "referencedColumns": [
+              "mar_id"
+            ]
+          },
+          {
+            "table": "rev_revisoes",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "bom_revisao"
+            ],
+            "referencedColumns": [
+              "rev_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "bpl_bombas_plataformas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`bpl_plat_id` INTEGER NOT NULL, `bpl_bom_id` INTEGER NOT NULL, `bpl_adaptador_eletrico` TEXT NOT NULL, `bpl_adaptador_hidraulico_pressao` TEXT NOT NULL, `bpl_adaptador_hidraulico_alimentacao` TEXT NOT NULL, `bpl_adaptador_hidraulico_retorno` TEXT NOT NULL, `bpl_adaptador_mecanico` TEXT NOT NULL, PRIMARY KEY(`bpl_plat_id`, `bpl_bom_id`), FOREIGN KEY(`bpl_plat_id`) REFERENCES `plat_plataformas`(`plat_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`bpl_bom_id`) REFERENCES `bom_bombas`(`bom_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "platId",
+            "columnName": "bpl_plat_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bomId",
+            "columnName": "bpl_bom_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adaptadorEletrico",
+            "columnName": "bpl_adaptador_eletrico",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adaptadorHidraulicoPressao",
+            "columnName": "bpl_adaptador_hidraulico_pressao",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adaptadorHidraulicoAlimentacao",
+            "columnName": "bpl_adaptador_hidraulico_alimentacao",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adaptadorHidraulicoRetorno",
+            "columnName": "bpl_adaptador_hidraulico_retorno",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adaptadorMecanico",
+            "columnName": "bpl_adaptador_mecanico",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "bpl_plat_id",
+            "bpl_bom_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_bpl_bombas_plataformas_bpl_plat_id",
+            "unique": false,
+            "columnNames": [
+              "bpl_plat_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_bpl_bombas_plataformas_bpl_plat_id` ON `${TABLE_NAME}` (`bpl_plat_id`)"
+          },
+          {
+            "name": "index_bpl_bombas_plataformas_bpl_bom_id",
+            "unique": false,
+            "columnNames": [
+              "bpl_bom_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_bpl_bombas_plataformas_bpl_bom_id` ON `${TABLE_NAME}` (`bpl_bom_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "plat_plataformas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "bpl_plat_id"
+            ],
+            "referencedColumns": [
+              "plat_id"
+            ]
+          },
+          {
+            "table": "bom_bombas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "bpl_bom_id"
+            ],
+            "referencedColumns": [
+              "bom_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "bpp_bombas_plataformas_planos_testes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`bpp_plb_id` INTEGER NOT NULL, `bpp_bpl_plat_id` INTEGER NOT NULL, `bpp_bpl_bom_id` INTEGER NOT NULL, `bpp_ver_id` INTEGER, PRIMARY KEY(`bpp_plb_id`, `bpp_bpl_plat_id`, `bpp_bpl_bom_id`), FOREIGN KEY(`bpp_plb_id`) REFERENCES `plb_planos_testes_bombas`(`plb_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`bpp_bpl_plat_id`, `bpp_bpl_bom_id`) REFERENCES `bpl_bombas_plataformas`(`bpl_plat_id`, `bpl_bom_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`bpp_ver_id`) REFERENCES `ver_versoes`(`ver_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "plbId",
+            "columnName": "bpp_plb_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bplPlatId",
+            "columnName": "bpp_bpl_plat_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bplBomId",
+            "columnName": "bpp_bpl_bom_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "verId",
+            "columnName": "bpp_ver_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "bpp_plb_id",
+            "bpp_bpl_plat_id",
+            "bpp_bpl_bom_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_bpp_bombas_plataformas_planos_testes_bpp_plb_id",
+            "unique": false,
+            "columnNames": [
+              "bpp_plb_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_bpp_bombas_plataformas_planos_testes_bpp_plb_id` ON `${TABLE_NAME}` (`bpp_plb_id`)"
+          },
+          {
+            "name": "index_bpp_bombas_plataformas_planos_testes_bpp_bpl_plat_id_bpp_bpl_bom_id",
+            "unique": false,
+            "columnNames": [
+              "bpp_bpl_plat_id",
+              "bpp_bpl_bom_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_bpp_bombas_plataformas_planos_testes_bpp_bpl_plat_id_bpp_bpl_bom_id` ON `${TABLE_NAME}` (`bpp_bpl_plat_id`, `bpp_bpl_bom_id`)"
+          },
+          {
+            "name": "index_bpp_bombas_plataformas_planos_testes_bpp_ver_id",
+            "unique": false,
+            "columnNames": [
+              "bpp_ver_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_bpp_bombas_plataformas_planos_testes_bpp_ver_id` ON `${TABLE_NAME}` (`bpp_ver_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "plb_planos_testes_bombas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "bpp_plb_id"
+            ],
+            "referencedColumns": [
+              "plb_id"
+            ]
+          },
+          {
+            "table": "bpl_bombas_plataformas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "bpp_bpl_plat_id",
+              "bpp_bpl_bom_id"
+            ],
+            "referencedColumns": [
+              "bpl_plat_id",
+              "bpl_bom_id"
+            ]
+          },
+          {
+            "table": "ver_versoes",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "bpp_ver_id"
+            ],
+            "referencedColumns": [
+              "ver_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "cli_clientes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`cli_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cli_nome` TEXT NOT NULL, `cli_endereco` TEXT, `cli_numero` TEXT, `cli_bairro` TEXT, `cli_cep` TEXT, `cli_cidade` TEXT, `cli_estado` TEXT, `cli_telefone` TEXT, `cli_celular` TEXT, `cli_fax` TEXT, `cli_removido` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "cli_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "cli_nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endereco",
+            "columnName": "cli_endereco",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "numero",
+            "columnName": "cli_numero",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bairro",
+            "columnName": "cli_bairro",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cep",
+            "columnName": "cli_cep",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cidade",
+            "columnName": "cli_cidade",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "estado",
+            "columnName": "cli_estado",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "telefone",
+            "columnName": "cli_telefone",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "celular",
+            "columnName": "cli_celular",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fax",
+            "columnName": "cli_fax",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "removido",
+            "columnName": "cli_removido",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "cli_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "cpi_canal_ponto_teste_injetor",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`cpi_cti_id` INTEGER NOT NULL, `cpi_ptr_pir_id` INTEGER NOT NULL, `cpi_ptr_sequencia` INTEGER NOT NULL, `cpi_injecao` REAL, `cpi_retorno` REAL, `cpi_status` INTEGER, PRIMARY KEY(`cpi_cti_id`, `cpi_ptr_pir_id`, `cpi_ptr_sequencia`), FOREIGN KEY(`cpi_cti_id`) REFERENCES `cti_canais_testes_injetores`(`cti_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`cpi_ptr_pir_id`, `cpi_ptr_sequencia`) REFERENCES `ptr_pontos_testes_injetores_relatorio`(`ptr_pir_id`, `ptr_sequencia`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "ctiId",
+            "columnName": "cpi_cti_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ptrPirId",
+            "columnName": "cpi_ptr_pir_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ptrSequencia",
+            "columnName": "cpi_ptr_sequencia",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "injecao",
+            "columnName": "cpi_injecao",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "retorno",
+            "columnName": "cpi_retorno",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "cpi_status",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "cpi_cti_id",
+            "cpi_ptr_pir_id",
+            "cpi_ptr_sequencia"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_cpi_canal_ponto_teste_injetor_cpi_cti_id",
+            "unique": false,
+            "columnNames": [
+              "cpi_cti_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_cpi_canal_ponto_teste_injetor_cpi_cti_id` ON `${TABLE_NAME}` (`cpi_cti_id`)"
+          },
+          {
+            "name": "index_cpi_canal_ponto_teste_injetor_cpi_ptr_pir_id_cpi_ptr_sequencia",
+            "unique": false,
+            "columnNames": [
+              "cpi_ptr_pir_id",
+              "cpi_ptr_sequencia"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_cpi_canal_ponto_teste_injetor_cpi_ptr_pir_id_cpi_ptr_sequencia` ON `${TABLE_NAME}` (`cpi_ptr_pir_id`, `cpi_ptr_sequencia`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "cti_canais_testes_injetores",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "cpi_cti_id"
+            ],
+            "referencedColumns": [
+              "cti_id"
+            ]
+          },
+          {
+            "table": "ptr_pontos_testes_injetores_relatorio",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "cpi_ptr_pir_id",
+              "cpi_ptr_sequencia"
+            ],
+            "referencedColumns": [
+              "ptr_pir_id",
+              "ptr_sequencia"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "cti_canais_testes_injetores",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`cti_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cti_tin_id` INTEGER NOT NULL, `cti_posicao` INTEGER NOT NULL, `cti_numero_serie` TEXT, `cti_observacao` TEXT, `cti_teste_eletrico` TEXT, `cti_teste_estanqueidade` TEXT, `cti_resistencia` REAL, `cti_resistenciab` REAL, `cti_ima` TEXT, `cti_ima_antigo` TEXT, FOREIGN KEY(`cti_tin_id`) REFERENCES `tin_testes_injetores`(`tin_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "cti_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tinId",
+            "columnName": "cti_tin_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "posicao",
+            "columnName": "cti_posicao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "numeroSerie",
+            "columnName": "cti_numero_serie",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "observacao",
+            "columnName": "cti_observacao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "testeEletrico",
+            "columnName": "cti_teste_eletrico",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "testeEstanqueidade",
+            "columnName": "cti_teste_estanqueidade",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resistencia",
+            "columnName": "cti_resistencia",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resistenciab",
+            "columnName": "cti_resistenciab",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ima",
+            "columnName": "cti_ima",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "imaAntigo",
+            "columnName": "cti_ima_antigo",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "cti_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_cti_canais_testes_injetores_cti_tin_id",
+            "unique": false,
+            "columnNames": [
+              "cti_tin_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_cti_canais_testes_injetores_cti_tin_id` ON `${TABLE_NAME}` (`cti_tin_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "tin_testes_injetores",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "cti_tin_id"
+            ],
+            "referencedColumns": [
+              "tin_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "inj_injetores",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`inj_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `inj_codigo` TEXT NOT NULL, `inj_padrao` INTEGER NOT NULL, `inj_marca_id` INTEGER NOT NULL, `inj_aplicacao` TEXT, `inj_tipo` INTEGER NOT NULL, `inj_adapt_pressao` TEXT, `inj_adapt_retorno` TEXT, `inj_adapt_conector` TEXT, `inj_resistencia_minima` REAL, `inj_resistencia_maxima` REAL, `inj_resistenciab_minima` REAL, `inj_resistenciab_maxima` REAL, `inj_token` TEXT NOT NULL, `inj_revisao` INTEGER NOT NULL, `inj_deleted` INTEGER NOT NULL, FOREIGN KEY(`inj_marca_id`) REFERENCES `mar_marcas`(`mar_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`inj_revisao`) REFERENCES `rev_revisoes`(`rev_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "inj_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "codigo",
+            "columnName": "inj_codigo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "padrao",
+            "columnName": "inj_padrao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "marcaId",
+            "columnName": "inj_marca_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aplicacao",
+            "columnName": "inj_aplicacao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tipo",
+            "columnName": "inj_tipo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adaptPressao",
+            "columnName": "inj_adapt_pressao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "adaptRetorno",
+            "columnName": "inj_adapt_retorno",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "adaptConector",
+            "columnName": "inj_adapt_conector",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resistenciaMinima",
+            "columnName": "inj_resistencia_minima",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resistenciaMaxima",
+            "columnName": "inj_resistencia_maxima",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resistenciabMinima",
+            "columnName": "inj_resistenciab_minima",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resistenciabMaxima",
+            "columnName": "inj_resistenciab_maxima",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "injToken",
+            "columnName": "inj_token",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "injRevisao",
+            "columnName": "inj_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "injDeleted",
+            "columnName": "inj_deleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "inj_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_inj_injetores_inj_marca_id",
+            "unique": false,
+            "columnNames": [
+              "inj_marca_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_inj_injetores_inj_marca_id` ON `${TABLE_NAME}` (`inj_marca_id`)"
+          },
+          {
+            "name": "index_inj_injetores_inj_revisao",
+            "unique": false,
+            "columnNames": [
+              "inj_revisao"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_inj_injetores_inj_revisao` ON `${TABLE_NAME}` (`inj_revisao`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "mar_marcas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "inj_marca_id"
+            ],
+            "referencedColumns": [
+              "mar_id"
+            ]
+          },
+          {
+            "table": "rev_revisoes",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "inj_revisao"
+            ],
+            "referencedColumns": [
+              "rev_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "ipl_injetores_plataformas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ipl_inj_id` INTEGER NOT NULL, `ipl_plat_id` INTEGER NOT NULL, `ipl_adapt_conector` TEXT, `ipl_adapt_pressao` TEXT, `ipl_adapt_retorno` TEXT, PRIMARY KEY(`ipl_inj_id`, `ipl_plat_id`), FOREIGN KEY(`ipl_inj_id`) REFERENCES `inj_injetores`(`inj_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`ipl_plat_id`) REFERENCES `plat_plataformas`(`plat_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "injId",
+            "columnName": "ipl_inj_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "platId",
+            "columnName": "ipl_plat_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adaptConector",
+            "columnName": "ipl_adapt_conector",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "adaptPressao",
+            "columnName": "ipl_adapt_pressao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "adaptRetorno",
+            "columnName": "ipl_adapt_retorno",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ipl_inj_id",
+            "ipl_plat_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_ipl_injetores_plataformas_ipl_inj_id",
+            "unique": false,
+            "columnNames": [
+              "ipl_inj_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_ipl_injetores_plataformas_ipl_inj_id` ON `${TABLE_NAME}` (`ipl_inj_id`)"
+          },
+          {
+            "name": "index_ipl_injetores_plataformas_ipl_plat_id",
+            "unique": false,
+            "columnNames": [
+              "ipl_plat_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_ipl_injetores_plataformas_ipl_plat_id` ON `${TABLE_NAME}` (`ipl_plat_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "inj_injetores",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "ipl_inj_id"
+            ],
+            "referencedColumns": [
+              "inj_id"
+            ]
+          },
+          {
+            "table": "plat_plataformas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "ipl_plat_id"
+            ],
+            "referencedColumns": [
+              "plat_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "ipp_injetores_plataformas_planos_testes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ipp_pli_id` INTEGER NOT NULL, `ipp_ipl_plat_id` INTEGER NOT NULL, `ipp_ipl_inj_id` INTEGER NOT NULL, `ipp_ver_id` INTEGER, PRIMARY KEY(`ipp_pli_id`, `ipp_ipl_plat_id`, `ipp_ipl_inj_id`), FOREIGN KEY(`ipp_pli_id`) REFERENCES `pli_planos_testes_injetores`(`pli_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`ipp_ipl_plat_id`, `ipp_ipl_inj_id`) REFERENCES `ipl_injetores_plataformas`(`ipl_plat_id`, `ipl_inj_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`ipp_ver_id`) REFERENCES `ver_versoes`(`ver_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "pliId",
+            "columnName": "ipp_pli_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "iplPlatId",
+            "columnName": "ipp_ipl_plat_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "iplInjId",
+            "columnName": "ipp_ipl_inj_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "verId",
+            "columnName": "ipp_ver_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ipp_pli_id",
+            "ipp_ipl_plat_id",
+            "ipp_ipl_inj_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_ipp_injetores_plataformas_planos_testes_ipp_pli_id",
+            "unique": false,
+            "columnNames": [
+              "ipp_pli_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_ipp_injetores_plataformas_planos_testes_ipp_pli_id` ON `${TABLE_NAME}` (`ipp_pli_id`)"
+          },
+          {
+            "name": "index_ipp_injetores_plataformas_planos_testes_ipp_ipl_plat_id_ipp_ipl_inj_id",
+            "unique": false,
+            "columnNames": [
+              "ipp_ipl_plat_id",
+              "ipp_ipl_inj_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_ipp_injetores_plataformas_planos_testes_ipp_ipl_plat_id_ipp_ipl_inj_id` ON `${TABLE_NAME}` (`ipp_ipl_plat_id`, `ipp_ipl_inj_id`)"
+          },
+          {
+            "name": "index_ipp_injetores_plataformas_planos_testes_ipp_ver_id",
+            "unique": false,
+            "columnNames": [
+              "ipp_ver_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_ipp_injetores_plataformas_planos_testes_ipp_ver_id` ON `${TABLE_NAME}` (`ipp_ver_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "pli_planos_testes_injetores",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "ipp_pli_id"
+            ],
+            "referencedColumns": [
+              "pli_id"
+            ]
+          },
+          {
+            "table": "ipl_injetores_plataformas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "ipp_ipl_plat_id",
+              "ipp_ipl_inj_id"
+            ],
+            "referencedColumns": [
+              "ipl_plat_id",
+              "ipl_inj_id"
+            ]
+          },
+          {
+            "table": "ver_versoes",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "ipp_ver_id"
+            ],
+            "referencedColumns": [
+              "ver_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "mar_marcas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mar_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mar_nome` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "mar_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "mar_nome",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mar_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "ord_ordem_servicos",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ord_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `ord_codigo` TEXT, `ord_placa` TEXT, `ord_data_criacao` INTEGER NOT NULL, `ord_hora_criacao` TEXT NOT NULL, `ord_removido` INTEGER, `ord_cli_id` INTEGER, FOREIGN KEY(`ord_cli_id`) REFERENCES `cli_clientes`(`cli_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "ord_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "codigo",
+            "columnName": "ord_codigo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "placa",
+            "columnName": "ord_placa",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dataCriacao",
+            "columnName": "ord_data_criacao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "horaCriacao",
+            "columnName": "ord_hora_criacao",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "removido",
+            "columnName": "ord_removido",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cliId",
+            "columnName": "ord_cli_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ord_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_ord_ordem_servicos_ord_cli_id",
+            "unique": false,
+            "columnNames": [
+              "ord_cli_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_ord_ordem_servicos_ord_cli_id` ON `${TABLE_NAME}` (`ord_cli_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "cli_clientes",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "ord_cli_id"
+            ],
+            "referencedColumns": [
+              "cli_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "par_parametros_remotos",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`par_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `par_nome` TEXT NOT NULL, `par_posicao` INTEGER NOT NULL, `par_tamanho_dado` INTEGER NOT NULL, `par_tipo_dado` INTEGER NOT NULL, `par_tipo_placa` INTEGER NOT NULL, `par_valor_default` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "par_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "par_nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "posicao",
+            "columnName": "par_posicao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tamanhoDado",
+            "columnName": "par_tamanho_dado",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoDado",
+            "columnName": "par_tipo_dado",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoPlaca",
+            "columnName": "par_tipo_placa",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "valorDefault",
+            "columnName": "par_valor_default",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "par_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "pbr_planos_testes_bombas_relatorio",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`pbr_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `pbr_tipo_plano` INTEGER NOT NULL, `pbr_tipo_plano_id` INTEGER NOT NULL, `pbr_revisao` INTEGER NOT NULL, `pbr_plataforma` TEXT NOT NULL, `pbr_nome` TEXT NOT NULL, `pbr_nome_en` TEXT, `pbr_nome_es` TEXT, `pbr_pressao` INTEGER NOT NULL, `pbr_rotacao` INTEGER, `pbr_vazao_minima` INTEGER, `pbr_rlb_token` TEXT NOT NULL, `pbr_rlb_id` INTEGER NOT NULL, FOREIGN KEY(`pbr_rlb_id`) REFERENCES `rlb_bombas_relatorio`(`rlb_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "pbr_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoPlano",
+            "columnName": "pbr_tipo_plano",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoPlanoId",
+            "columnName": "pbr_tipo_plano_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revisao",
+            "columnName": "pbr_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "plataforma",
+            "columnName": "pbr_plataforma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "pbr_nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nomeEn",
+            "columnName": "pbr_nome_en",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nomeEs",
+            "columnName": "pbr_nome_es",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pressao",
+            "columnName": "pbr_pressao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rotacao",
+            "columnName": "pbr_rotacao",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "vazaoMinima",
+            "columnName": "pbr_vazao_minima",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rlbToken",
+            "columnName": "pbr_rlb_token",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rlbId",
+            "columnName": "pbr_rlb_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "pbr_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_pbr_planos_testes_bombas_relatorio_pbr_rlb_id",
+            "unique": false,
+            "columnNames": [
+              "pbr_rlb_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_pbr_planos_testes_bombas_relatorio_pbr_rlb_id` ON `${TABLE_NAME}` (`pbr_rlb_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "rlb_bombas_relatorio",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "pbr_rlb_id"
+            ],
+            "referencedColumns": [
+              "rlb_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "pir_planos_testes_injetores_relatorio",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`pir_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `pir_tipo_plano` INTEGER NOT NULL, `pir_tipo_plano_id` INTEGER NOT NULL, `pir_revisao` INTEGER NOT NULL, `pir_plataforma` TEXT NOT NULL, `pir_nome` TEXT, `pir_nome_en` TEXT, `pir_nome_es` TEXT, `pir_token` TEXT NOT NULL, `pir_rli_inj_id` INTEGER NOT NULL, FOREIGN KEY(`pir_rli_inj_id`) REFERENCES `rli_injetores_relatorio`(`rli_inj_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "pir_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoPlano",
+            "columnName": "pir_tipo_plano",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoPlanoId",
+            "columnName": "pir_tipo_plano_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revisao",
+            "columnName": "pir_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "plataforma",
+            "columnName": "pir_plataforma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "pir_nome",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nomeEn",
+            "columnName": "pir_nome_en",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nomeEs",
+            "columnName": "pir_nome_es",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "token",
+            "columnName": "pir_token",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rliInjId",
+            "columnName": "pir_rli_inj_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "pir_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_pir_planos_testes_injetores_relatorio_pir_rli_inj_id",
+            "unique": false,
+            "columnNames": [
+              "pir_rli_inj_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_pir_planos_testes_injetores_relatorio_pir_rli_inj_id` ON `${TABLE_NAME}` (`pir_rli_inj_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "rli_injetores_relatorio",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "pir_rli_inj_id"
+            ],
+            "referencedColumns": [
+              "rli_inj_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "plat_plataformas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`plat_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `plat_nome` TEXT NOT NULL, `plat_pressao_max` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "plat_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "plat_nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pressaoMax",
+            "columnName": "plat_pressao_max",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "plat_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "plb_planos_testes_bombas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`plb_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `plb_tpl_id` INTEGER NOT NULL, `plb_tipo_plano_id` INTEGER NOT NULL, `plb_pressao` INTEGER NOT NULL, `plb_rotacao` INTEGER NOT NULL, `plb_vazao_minima` INTEGER, `plb_periodo` INTEGER NOT NULL, `plb_prescaler` INTEGER NOT NULL, `plb_token` TEXT NOT NULL, `plb_revisao` INTEGER NOT NULL, `plb_deleted` INTEGER NOT NULL, `plb_deleted_permanente` INTEGER NOT NULL, FOREIGN KEY(`plb_tpl_id`) REFERENCES `tpl_tipo_plano_teste`(`tpl_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`plb_revisao`) REFERENCES `rev_revisoes`(`rev_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "plb_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tplId",
+            "columnName": "plb_tpl_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoPlanoId",
+            "columnName": "plb_tipo_plano_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pressao",
+            "columnName": "plb_pressao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rotacao",
+            "columnName": "plb_rotacao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vazaoMinima",
+            "columnName": "plb_vazao_minima",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "periodo",
+            "columnName": "plb_periodo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "prescaler",
+            "columnName": "plb_prescaler",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "token",
+            "columnName": "plb_token",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revisao",
+            "columnName": "plb_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deleted",
+            "columnName": "plb_deleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deletedPermanente",
+            "columnName": "plb_deleted_permanente",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "plb_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_plb_planos_testes_bombas_plb_tpl_id",
+            "unique": false,
+            "columnNames": [
+              "plb_tpl_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_plb_planos_testes_bombas_plb_tpl_id` ON `${TABLE_NAME}` (`plb_tpl_id`)"
+          },
+          {
+            "name": "index_plb_planos_testes_bombas_plb_revisao",
+            "unique": false,
+            "columnNames": [
+              "plb_revisao"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_plb_planos_testes_bombas_plb_revisao` ON `${TABLE_NAME}` (`plb_revisao`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "tpl_tipo_plano_teste",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "plb_tpl_id"
+            ],
+            "referencedColumns": [
+              "tpl_id"
+            ]
+          },
+          {
+            "table": "rev_revisoes",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "plb_revisao"
+            ],
+            "referencedColumns": [
+              "rev_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "pli_planos_testes_injetores",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`pli_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `pli_tpl_id` INTEGER NOT NULL, `pli_tipo_plano_id` INTEGER NOT NULL, `pli_token` TEXT NOT NULL, `pli_revisao` INTEGER NOT NULL, `pli_codifica` INTEGER NOT NULL, `pli_deleted` INTEGER NOT NULL, `pli_usa_adapt_sinal` INTEGER NOT NULL, FOREIGN KEY(`pli_tpl_id`) REFERENCES `tpl_tipo_plano_teste`(`tpl_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`pli_revisao`) REFERENCES `rev_revisoes`(`rev_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "pli_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tplId",
+            "columnName": "pli_tpl_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoPlanoId",
+            "columnName": "pli_tipo_plano_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "token",
+            "columnName": "pli_token",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revisao",
+            "columnName": "pli_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "codifica",
+            "columnName": "pli_codifica",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deleted",
+            "columnName": "pli_deleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "usaAdaptSinal",
+            "columnName": "pli_usa_adapt_sinal",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "pli_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_pli_planos_testes_injetores_pli_tpl_id",
+            "unique": false,
+            "columnNames": [
+              "pli_tpl_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_pli_planos_testes_injetores_pli_tpl_id` ON `${TABLE_NAME}` (`pli_tpl_id`)"
+          },
+          {
+            "name": "index_pli_planos_testes_injetores_pli_revisao",
+            "unique": false,
+            "columnNames": [
+              "pli_revisao"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_pli_planos_testes_injetores_pli_revisao` ON `${TABLE_NAME}` (`pli_revisao`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "tpl_tipo_plano_teste",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "pli_tpl_id"
+            ],
+            "referencedColumns": [
+              "tpl_id"
+            ]
+          },
+          {
+            "table": "rev_revisoes",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "pli_revisao"
+            ],
+            "referencedColumns": [
+              "rev_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "pls_planos_testes_sensores",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`pls_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `pls_tpl_id` INTEGER NOT NULL, `pls_tipo_plano_id` INTEGER NOT NULL, `pls_pressao_1` INTEGER NOT NULL, `pls_pressao_2` INTEGER NOT NULL, `pls_pressao_3` INTEGER NOT NULL, `pls_pressao_4` INTEGER NOT NULL, `pls_pressao_5` INTEGER NOT NULL, `pls_limite1_min` REAL NOT NULL, `pls_limite1_max` REAL NOT NULL, `pls_limite2_min` REAL NOT NULL, `pls_limite2_max` REAL NOT NULL, `pls_limite3_min` REAL NOT NULL, `pls_limite3_max` REAL NOT NULL, `pls_limite4_min` REAL NOT NULL, `pls_limite4_max` REAL NOT NULL, `pls_limite5_min` REAL NOT NULL, `pls_limite5_max` REAL NOT NULL, `pls_tempo_teste` INTEGER NOT NULL, `pls_numero_pontos` INTEGER NOT NULL, `pls_token` TEXT NOT NULL, `pls_revisao` INTEGER NOT NULL, `pls_deleted` INTEGER NOT NULL, FOREIGN KEY(`pls_tpl_id`) REFERENCES `tpl_tipo_plano_teste`(`tpl_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`pls_revisao`) REFERENCES `rev_revisoes`(`rev_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "pls_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tplId",
+            "columnName": "pls_tpl_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoPlanoId",
+            "columnName": "pls_tipo_plano_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pressao1",
+            "columnName": "pls_pressao_1",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pressao2",
+            "columnName": "pls_pressao_2",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pressao3",
+            "columnName": "pls_pressao_3",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pressao4",
+            "columnName": "pls_pressao_4",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pressao5",
+            "columnName": "pls_pressao_5",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite1Min",
+            "columnName": "pls_limite1_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite1Max",
+            "columnName": "pls_limite1_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite2Min",
+            "columnName": "pls_limite2_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite2Max",
+            "columnName": "pls_limite2_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite3Min",
+            "columnName": "pls_limite3_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite3Max",
+            "columnName": "pls_limite3_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite4Min",
+            "columnName": "pls_limite4_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite4Max",
+            "columnName": "pls_limite4_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite5Min",
+            "columnName": "pls_limite5_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite5Max",
+            "columnName": "pls_limite5_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tempoTeste",
+            "columnName": "pls_tempo_teste",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "numeroPontos",
+            "columnName": "pls_numero_pontos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "token",
+            "columnName": "pls_token",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revisao",
+            "columnName": "pls_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deleted",
+            "columnName": "pls_deleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "pls_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_pls_planos_testes_sensores_pls_tpl_id",
+            "unique": false,
+            "columnNames": [
+              "pls_tpl_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_pls_planos_testes_sensores_pls_tpl_id` ON `${TABLE_NAME}` (`pls_tpl_id`)"
+          },
+          {
+            "name": "index_pls_planos_testes_sensores_pls_revisao",
+            "unique": false,
+            "columnNames": [
+              "pls_revisao"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_pls_planos_testes_sensores_pls_revisao` ON `${TABLE_NAME}` (`pls_revisao`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "tpl_tipo_plano_teste",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "pls_tpl_id"
+            ],
+            "referencedColumns": [
+              "tpl_id"
+            ]
+          },
+          {
+            "table": "rev_revisoes",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "pls_revisao"
+            ],
+            "referencedColumns": [
+              "rev_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "plv_planos_testes_valvulas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`plv_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `plv_tpl_id` INTEGER NOT NULL, `plv_tipo_plano_id` INTEGER NOT NULL, `plv_duty_1` INTEGER, `plv_duty_2` INTEGER, `plv_duty_3` INTEGER, `plv_duty_4` INTEGER, `plv_duty_5` INTEGER, `plv_limite_1_max` REAL NOT NULL, `plv_limite_1_min` REAL NOT NULL, `plv_limite_2_max` REAL NOT NULL, `plv_limite_2_min` REAL NOT NULL, `plv_limite_3_max` REAL NOT NULL, `plv_limite_3_min` REAL NOT NULL, `plv_limite_4_max` REAL NOT NULL, `plv_limite_4_min` REAL NOT NULL, `plv_limite_5_max` REAL NOT NULL, `plv_limite_5_min` REAL NOT NULL, `plv_tempo_teste` INTEGER, `plv_numero_pontos` INTEGER, `plv_main_duty` INTEGER, `plv_locking_duty` INTEGER, `plv_pwm_periodo` INTEGER, `plv_pwm_prescaler` INTEGER, `plv_token` TEXT, `plv_revisao` INTEGER NOT NULL, `plv_deleted` INTEGER NOT NULL, FOREIGN KEY(`plv_tpl_id`) REFERENCES `tpl_tipo_plano_teste`(`tpl_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`plv_revisao`) REFERENCES `rev_revisoes`(`rev_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "plv_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tplId",
+            "columnName": "plv_tpl_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoPlanoId",
+            "columnName": "plv_tipo_plano_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "duty1",
+            "columnName": "plv_duty_1",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "duty2",
+            "columnName": "plv_duty_2",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "duty3",
+            "columnName": "plv_duty_3",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "duty4",
+            "columnName": "plv_duty_4",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "duty5",
+            "columnName": "plv_duty_5",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "limite1Max",
+            "columnName": "plv_limite_1_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite1Min",
+            "columnName": "plv_limite_1_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite2Max",
+            "columnName": "plv_limite_2_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite2Min",
+            "columnName": "plv_limite_2_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite3Max",
+            "columnName": "plv_limite_3_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite3Min",
+            "columnName": "plv_limite_3_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite4Max",
+            "columnName": "plv_limite_4_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite4Min",
+            "columnName": "plv_limite_4_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite5Max",
+            "columnName": "plv_limite_5_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite5Min",
+            "columnName": "plv_limite_5_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tempoTeste",
+            "columnName": "plv_tempo_teste",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "numeroPontos",
+            "columnName": "plv_numero_pontos",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mainDuty",
+            "columnName": "plv_main_duty",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lockingDuty",
+            "columnName": "plv_locking_duty",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pwmPeriodo",
+            "columnName": "plv_pwm_periodo",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pwmPrescaler",
+            "columnName": "plv_pwm_prescaler",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "token",
+            "columnName": "plv_token",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "revisao",
+            "columnName": "plv_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deleted",
+            "columnName": "plv_deleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "plv_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_plv_planos_testes_valvulas_plv_tpl_id",
+            "unique": false,
+            "columnNames": [
+              "plv_tpl_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_plv_planos_testes_valvulas_plv_tpl_id` ON `${TABLE_NAME}` (`plv_tpl_id`)"
+          },
+          {
+            "name": "index_plv_planos_testes_valvulas_plv_revisao",
+            "unique": false,
+            "columnNames": [
+              "plv_revisao"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_plv_planos_testes_valvulas_plv_revisao` ON `${TABLE_NAME}` (`plv_revisao`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "tpl_tipo_plano_teste",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "plv_tpl_id"
+            ],
+            "referencedColumns": [
+              "tpl_id"
+            ]
+          },
+          {
+            "table": "rev_revisoes",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "plv_revisao"
+            ],
+            "referencedColumns": [
+              "rev_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "ppr_permissao_parametro_remoto",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ppr_grupo` INTEGER NOT NULL, `ppr_par_id` INTEGER NOT NULL, `ppr_tipo_operacao` INTEGER NOT NULL, PRIMARY KEY(`ppr_grupo`, `ppr_par_id`), FOREIGN KEY(`ppr_par_id`) REFERENCES `par_parametros_remotos`(`par_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "grupo",
+            "columnName": "ppr_grupo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "parId",
+            "columnName": "ppr_par_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoOperacao",
+            "columnName": "ppr_tipo_operacao",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ppr_grupo",
+            "ppr_par_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_ppr_permissao_parametro_remoto_ppr_par_id",
+            "unique": false,
+            "columnNames": [
+              "ppr_par_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_ppr_permissao_parametro_remoto_ppr_par_id` ON `${TABLE_NAME}` (`ppr_par_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "par_parametros_remotos",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "ppr_par_id"
+            ],
+            "referencedColumns": [
+              "par_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "psr_planos_testes_sensores_relatorio",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`psr_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `psr_tipo_plano` INTEGER NOT NULL, `psr_tipo_plano_id` INTEGER NOT NULL, `psr_revisao` INTEGER NOT NULL, `psr_plataforma` TEXT NOT NULL, `psr_nome` TEXT, `psr_nome_en` TEXT, `psr_nome_es` TEXT, `psr_pressao_1` INTEGER NOT NULL, `psr_pressao_2` INTEGER NOT NULL, `psr_pressao_3` INTEGER NOT NULL, `psr_pressao_4` INTEGER NOT NULL, `psr_pressao_5` INTEGER NOT NULL, `psr_limite1_min` REAL NOT NULL, `psr_limite1_max` REAL NOT NULL, `psr_limite2_min` REAL NOT NULL, `psr_limite2_max` REAL NOT NULL, `psr_limite3_min` REAL NOT NULL, `psr_limite3_max` REAL NOT NULL, `psr_limite4_min` REAL NOT NULL, `psr_limite4_max` REAL NOT NULL, `psr_limite5_min` REAL NOT NULL, `psr_limite5_max` REAL NOT NULL, `psr_token` TEXT NOT NULL, `psr_rls_id` INTEGER NOT NULL, FOREIGN KEY(`psr_rls_id`) REFERENCES `rls_sensores_relatorio`(`rls_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "psrId",
+            "columnName": "psr_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrTipoPlano",
+            "columnName": "psr_tipo_plano",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrTipoPlanoId",
+            "columnName": "psr_tipo_plano_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrRevisao",
+            "columnName": "psr_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrPlataforma",
+            "columnName": "psr_plataforma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrNome",
+            "columnName": "psr_nome",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "psrNomeEn",
+            "columnName": "psr_nome_en",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "psrNomeEs",
+            "columnName": "psr_nome_es",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "psrPressao1",
+            "columnName": "psr_pressao_1",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrPressao2",
+            "columnName": "psr_pressao_2",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrPressao3",
+            "columnName": "psr_pressao_3",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrPressao4",
+            "columnName": "psr_pressao_4",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrPressao5",
+            "columnName": "psr_pressao_5",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrLimite1Min",
+            "columnName": "psr_limite1_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrLimite1Max",
+            "columnName": "psr_limite1_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrLimite2Min",
+            "columnName": "psr_limite2_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrLimite2Max",
+            "columnName": "psr_limite2_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrLimite3Min",
+            "columnName": "psr_limite3_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrLimite3Max",
+            "columnName": "psr_limite3_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrLimite4Min",
+            "columnName": "psr_limite4_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrLimite4Max",
+            "columnName": "psr_limite4_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrLimite5Min",
+            "columnName": "psr_limite5_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrLimite5Max",
+            "columnName": "psr_limite5_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrToken",
+            "columnName": "psr_token",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrRlsId",
+            "columnName": "psr_rls_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "psr_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_psr_planos_testes_sensores_relatorio_psr_rls_id",
+            "unique": false,
+            "columnNames": [
+              "psr_rls_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_psr_planos_testes_sensores_relatorio_psr_rls_id` ON `${TABLE_NAME}` (`psr_rls_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "rls_sensores_relatorio",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "psr_rls_id"
+            ],
+            "referencedColumns": [
+              "rls_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "pti_pontos_testes_injetores",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`pti_pli_id` INTEGER NOT NULL, `pti_sequencia` INTEGER NOT NULL, `pti_tpt_id` INTEGER NOT NULL, `pti_pressao` INTEGER NOT NULL, `pti_frequencia` INTEGER NOT NULL, `pti_tempo_de_teste` INTEGER NOT NULL, `pti_tempo_de_injecao` INTEGER NOT NULL, `pti_tempo_ligado` INTEGER NOT NULL, `pti_tempo_desligado` INTEGER NOT NULL, `pti_tempo_sinal_alto` INTEGER NOT NULL, `pti_tempo_sinal_cst_alto` INTEGER NOT NULL, `pti_injecao_ativa` INTEGER NOT NULL, `pti_medir_injecao` INTEGER NOT NULL, `pti_medir_retorno` INTEGER NOT NULL, `pti_injecao_maxima` REAL, `pti_injecao_minima` REAL, `pti_retorno_maximo` REAL, `pti_retorno_minimo` REAL, `pti_pre_encher_med_inj` INTEGER NOT NULL, `pti_exec_preset_usuario` INTEGER NOT NULL, `pti_origem_ponto` TEXT, `pti_tempo_sinal_desligado` INTEGER, `pti_tensao_alta` INTEGER, `pti_tensao_menor` INTEGER, PRIMARY KEY(`pti_pli_id`, `pti_sequencia`), FOREIGN KEY(`pti_pli_id`) REFERENCES `pli_planos_testes_injetores`(`pli_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`pti_tpt_id`) REFERENCES `tpt_tipo_ponto_teste_injetor`(`tpt_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "pliId",
+            "columnName": "pti_pli_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sequencia",
+            "columnName": "pti_sequencia",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tptId",
+            "columnName": "pti_tpt_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pressao",
+            "columnName": "pti_pressao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "frequencia",
+            "columnName": "pti_frequencia",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tempoDeTeste",
+            "columnName": "pti_tempo_de_teste",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tempoDeInjecao",
+            "columnName": "pti_tempo_de_injecao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tempoLigado",
+            "columnName": "pti_tempo_ligado",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tempoDesligado",
+            "columnName": "pti_tempo_desligado",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tempoSinalAlto",
+            "columnName": "pti_tempo_sinal_alto",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tempoSinalCstAlto",
+            "columnName": "pti_tempo_sinal_cst_alto",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "injecaoAtiva",
+            "columnName": "pti_injecao_ativa",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "medirInjecao",
+            "columnName": "pti_medir_injecao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "medirRetorno",
+            "columnName": "pti_medir_retorno",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "injecaoMaxima",
+            "columnName": "pti_injecao_maxima",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "injecaoMinima",
+            "columnName": "pti_injecao_minima",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "retornoMaximo",
+            "columnName": "pti_retorno_maximo",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "retornoMinimo",
+            "columnName": "pti_retorno_minimo",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "preEncherMedInj",
+            "columnName": "pti_pre_encher_med_inj",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "execPresetUsuario",
+            "columnName": "pti_exec_preset_usuario",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "origemPonto",
+            "columnName": "pti_origem_ponto",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tempoSinalDesligado",
+            "columnName": "pti_tempo_sinal_desligado",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tensaoAlta",
+            "columnName": "pti_tensao_alta",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tensaoMenor",
+            "columnName": "pti_tensao_menor",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "pti_pli_id",
+            "pti_sequencia"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_pti_pontos_testes_injetores_pti_pli_id",
+            "unique": false,
+            "columnNames": [
+              "pti_pli_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_pti_pontos_testes_injetores_pti_pli_id` ON `${TABLE_NAME}` (`pti_pli_id`)"
+          },
+          {
+            "name": "index_pti_pontos_testes_injetores_pti_tpt_id",
+            "unique": false,
+            "columnNames": [
+              "pti_tpt_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_pti_pontos_testes_injetores_pti_tpt_id` ON `${TABLE_NAME}` (`pti_tpt_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "pli_planos_testes_injetores",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "pti_pli_id"
+            ],
+            "referencedColumns": [
+              "pli_id"
+            ]
+          },
+          {
+            "table": "tpt_tipo_ponto_teste_injetor",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "pti_tpt_id"
+            ],
+            "referencedColumns": [
+              "tpt_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "ptr_pontos_testes_injetores_relatorio",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ptr_pir_id` INTEGER NOT NULL, `ptr_sequencia` INTEGER NOT NULL, `ptr_descricao` TEXT NOT NULL, `ptr_descricao_en` TEXT, `ptr_descricao_es` TEXT, `ptr_tipo_teste` INTEGER NOT NULL, `ptr_pressao` INTEGER NOT NULL, `ptr_frequencia` INTEGER NOT NULL, `ptr_tempo_injecao` INTEGER NOT NULL, `ptr_medir_injecao` INTEGER NOT NULL, `ptr_medir_retorno` INTEGER NOT NULL, `ptr_injecao_maxima` REAL, `ptr_injecao_minima` REAL, `ptr_retorno_maximo` REAL, `ptr_retorno_minimo` REAL, PRIMARY KEY(`ptr_pir_id`, `ptr_sequencia`), FOREIGN KEY(`ptr_pir_id`) REFERENCES `pir_planos_testes_injetores_relatorio`(`pir_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "pirId",
+            "columnName": "ptr_pir_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sequencia",
+            "columnName": "ptr_sequencia",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descricao",
+            "columnName": "ptr_descricao",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descricaoEn",
+            "columnName": "ptr_descricao_en",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "descricaoEs",
+            "columnName": "ptr_descricao_es",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tipoTeste",
+            "columnName": "ptr_tipo_teste",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pressao",
+            "columnName": "ptr_pressao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "frequencia",
+            "columnName": "ptr_frequencia",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tempoInjecao",
+            "columnName": "ptr_tempo_injecao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "medirInjecao",
+            "columnName": "ptr_medir_injecao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "medirRetorno",
+            "columnName": "ptr_medir_retorno",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "injecaoMaxima",
+            "columnName": "ptr_injecao_maxima",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "injecaoMinima",
+            "columnName": "ptr_injecao_minima",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "retornoMaximo",
+            "columnName": "ptr_retorno_maximo",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "retornoMinimo",
+            "columnName": "ptr_retorno_minimo",
+            "affinity": "REAL",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ptr_pir_id",
+            "ptr_sequencia"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_ptr_pontos_testes_injetores_relatorio_ptr_pir_id",
+            "unique": false,
+            "columnNames": [
+              "ptr_pir_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_ptr_pontos_testes_injetores_relatorio_ptr_pir_id` ON `${TABLE_NAME}` (`ptr_pir_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "pir_planos_testes_injetores_relatorio",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "ptr_pir_id"
+            ],
+            "referencedColumns": [
+              "pir_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "ptb_pontos_testes_bombas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ptb_plb_id` INTEGER NOT NULL, `ptb_sequencia` INTEGER NOT NULL, `ptb_tptb_id` INTEGER NOT NULL, `ptb_nome_generico` TEXT NOT NULL, `ptb_tipo_rotacao` INTEGER NOT NULL, `ptb_rotacao` INTEGER NOT NULL, `ptb_variacao_rotacao` INTEGER NOT NULL, `ptb_pressao_alimentacao_bomba` INTEGER NOT NULL, `ptb_tolerancia_pressao_alimentacao_bomba` INTEGER NOT NULL, `ptb_temperatura_alimentacao_bomba` INTEGER NOT NULL, `ptb_tolerancia_temperatura_alimentacao_bomba` INTEGER NOT NULL, `ptb_temperatura_retorno` INTEGER NOT NULL, `ptb_tolerancia_temperatura_retorno` INTEGER NOT NULL, `ptb_pressao_transferencia` INTEGER NOT NULL, `ptb_tolerancia_pressao_transferencia` INTEGER NOT NULL, `ptb_vazao_principal` REAL NOT NULL, `ptb_tolerancia_vazao_principal` REAL NOT NULL, `ptb_vazao_retorno` REAL NOT NULL, `ptb_tolerancia_vazao_retorno` REAL NOT NULL, `ptb_pressao_teste` INTEGER NOT NULL, `ptb_tolerancia_pressao_teste` INTEGER NOT NULL, `ptb_atuador_1_tipo` INTEGER NOT NULL, `ptb_atuador_1_valor` INTEGER NOT NULL, `ptb_atuador_1_tolerancia_valor` INTEGER NOT NULL, `ptb_atuador_1_acionamento` INTEGER NOT NULL, `ptb_atuador_1_valor_acionamento` INTEGER NOT NULL, `ptb_atuador_1_tolerancia_valor_acionamento` INTEGER NOT NULL, `ptb_atuador_2_tipo` INTEGER NOT NULL, `ptb_atuador_2_valor` INTEGER NOT NULL, `ptb_atuador_2_tolerancia_valor` INTEGER NOT NULL, `ptb_atuador_2_acionamento` INTEGER NOT NULL, `ptb_atuador_2_valor_acionamento` INTEGER NOT NULL, `ptb_atuador_2_tolerancia_valor_acionamento` INTEGER NOT NULL, `ptb_tempo_espera_medicao` INTEGER NOT NULL, `ptb_exec_preset_usuario` INTEGER NOT NULL, PRIMARY KEY(`ptb_plb_id`, `ptb_sequencia`), FOREIGN KEY(`ptb_plb_id`) REFERENCES `plb_planos_testes_bombas`(`plb_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`ptb_tptb_id`) REFERENCES `tptb_tipo_ponto_teste_bomba`(`tptb_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "ptb_plb_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sequencia",
+            "columnName": "ptb_sequencia",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoPonto",
+            "columnName": "ptb_tptb_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nomeGenerico",
+            "columnName": "ptb_nome_generico",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoRotacao",
+            "columnName": "ptb_tipo_rotacao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rotacao",
+            "columnName": "ptb_rotacao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "variacaoRotacao",
+            "columnName": "ptb_variacao_rotacao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pressureFeed",
+            "columnName": "ptb_pressao_alimentacao_bomba",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tolerancePressureFeed",
+            "columnName": "ptb_tolerancia_pressao_alimentacao_bomba",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "powerTemperature",
+            "columnName": "ptb_temperatura_alimentacao_bomba",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "toleranciaTemperaturaAlimentacao",
+            "columnName": "ptb_tolerancia_temperatura_alimentacao_bomba",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "temperaturaRetorno",
+            "columnName": "ptb_temperatura_retorno",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "toleranciaTemperaturaRetorno",
+            "columnName": "ptb_tolerancia_temperatura_retorno",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pressaoTransferencia",
+            "columnName": "ptb_pressao_transferencia",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "toleranciaPressaoTransferencia",
+            "columnName": "ptb_tolerancia_pressao_transferencia",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vazaoPrincipal",
+            "columnName": "ptb_vazao_principal",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "toleranciaVazaoPrincipal",
+            "columnName": "ptb_tolerancia_vazao_principal",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vazaoRetorno",
+            "columnName": "ptb_vazao_retorno",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "toleranciaVazaoRetorno",
+            "columnName": "ptb_tolerancia_vazao_retorno",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pressaoTeste",
+            "columnName": "ptb_pressao_teste",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "toleranciaPressaoTeste",
+            "columnName": "ptb_tolerancia_pressao_teste",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "atuador1Tipo",
+            "columnName": "ptb_atuador_1_tipo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "atuador1Valor",
+            "columnName": "ptb_atuador_1_valor",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "atuador1ToleranciaValor",
+            "columnName": "ptb_atuador_1_tolerancia_valor",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "atuador1Acionamento",
+            "columnName": "ptb_atuador_1_acionamento",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "atuador1ValorAcionamento",
+            "columnName": "ptb_atuador_1_valor_acionamento",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "atuador1ToleranciaValorAcionamento",
+            "columnName": "ptb_atuador_1_tolerancia_valor_acionamento",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "atuador2Tipo",
+            "columnName": "ptb_atuador_2_tipo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "atuador2Valor",
+            "columnName": "ptb_atuador_2_valor",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "atuador2ToleranciaValor",
+            "columnName": "ptb_atuador_2_tolerancia_valor",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "atuador2Acionamento",
+            "columnName": "ptb_atuador_2_acionamento",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "atuador2ValorAcionamento",
+            "columnName": "ptb_atuador_2_valor_acionamento",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "atuador2ToleranciaValorAcionamento",
+            "columnName": "ptb_atuador_2_tolerancia_valor_acionamento",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tempoEsperaMedicao",
+            "columnName": "ptb_tempo_espera_medicao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "presetUsuario",
+            "columnName": "ptb_exec_preset_usuario",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ptb_plb_id",
+            "ptb_sequencia"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "plb_planos_testes_bombas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "ptb_plb_id"
+            ],
+            "referencedColumns": [
+              "plb_id"
+            ]
+          },
+          {
+            "table": "tptb_tipo_ponto_teste_bomba",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "ptb_tptb_id"
+            ],
+            "referencedColumns": [
+              "tptb_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "pvr_planos_testes_valvulas_relatorio",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`pvr_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `pvr_tipo_plano` INTEGER NOT NULL, `pvr_tipo_plano_id` INTEGER NOT NULL, `pvr_revisao` INTEGER NOT NULL, `pvr_plataforma` TEXT NOT NULL, `pvr_nome` TEXT, `pvr_nome_en` TEXT, `pvr_nome_es` TEXT, `pvr_duty_1` INTEGER NOT NULL, `pvr_duty_2` INTEGER NOT NULL, `pvr_duty_3` INTEGER NOT NULL, `pvr_duty_4` INTEGER NOT NULL, `pvr_duty_5` INTEGER NOT NULL, `pvr_limite_1_min` REAL NOT NULL, `pvr_limite_1_max` REAL NOT NULL, `pvr_limite_2_min` REAL NOT NULL, `pvr_limite_2_max` REAL NOT NULL, `pvr_limite_3_min` REAL NOT NULL, `pvr_limite_3_max` REAL NOT NULL, `pvr_limite_4_min` REAL NOT NULL, `pvr_limite_4_max` REAL NOT NULL, `pvr_limite_5_min` REAL NOT NULL, `pvr_limite_5_max` REAL NOT NULL, `pvr_token` TEXT NOT NULL, `pvr_rlv_id` INTEGER NOT NULL, FOREIGN KEY(`pvr_rlv_id`) REFERENCES `rlv_valvulas_relatorio`(`rlv_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "pvr_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoPlano",
+            "columnName": "pvr_tipo_plano",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoPlanoId",
+            "columnName": "pvr_tipo_plano_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revisao",
+            "columnName": "pvr_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "plataforma",
+            "columnName": "pvr_plataforma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "pvr_nome",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nomeEn",
+            "columnName": "pvr_nome_en",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nomeEs",
+            "columnName": "pvr_nome_es",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "duty1",
+            "columnName": "pvr_duty_1",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "duty2",
+            "columnName": "pvr_duty_2",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "duty3",
+            "columnName": "pvr_duty_3",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "duty4",
+            "columnName": "pvr_duty_4",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "duty5",
+            "columnName": "pvr_duty_5",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite1Min",
+            "columnName": "pvr_limite_1_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite1Max",
+            "columnName": "pvr_limite_1_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite2Min",
+            "columnName": "pvr_limite_2_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite2Max",
+            "columnName": "pvr_limite_2_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite3Min",
+            "columnName": "pvr_limite_3_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite3Max",
+            "columnName": "pvr_limite_3_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite4Min",
+            "columnName": "pvr_limite_4_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite4Max",
+            "columnName": "pvr_limite_4_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite5Min",
+            "columnName": "pvr_limite_5_min",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limite5Max",
+            "columnName": "pvr_limite_5_max",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "token",
+            "columnName": "pvr_token",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rlvId",
+            "columnName": "pvr_rlv_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "pvr_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_pvr_planos_testes_valvulas_relatorio_pvr_rlv_id",
+            "unique": false,
+            "columnNames": [
+              "pvr_rlv_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_pvr_planos_testes_valvulas_relatorio_pvr_rlv_id` ON `${TABLE_NAME}` (`pvr_rlv_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "rlv_valvulas_relatorio",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "pvr_rlv_id"
+            ],
+            "referencedColumns": [
+              "rlv_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "rev_revisoes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`rev_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `rev_motivo` TEXT, `rev_data_hora` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "rev_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "motivo",
+            "columnName": "rev_motivo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dataHora",
+            "columnName": "rev_data_hora",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "rev_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "rlb_bombas_relatorio",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`rlb_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `rlb_codigo` TEXT NOT NULL, `rlb_padrao` INTEGER NOT NULL, `rlb_revisao` INTEGER NOT NULL, `rlb_aplicacao` TEXT, `rlb_marca` TEXT, `rlb_token` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "rlb_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "codigo",
+            "columnName": "rlb_codigo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "padrao",
+            "columnName": "rlb_padrao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revisao",
+            "columnName": "rlb_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aplicacao",
+            "columnName": "rlb_aplicacao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "marca",
+            "columnName": "rlb_marca",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "token",
+            "columnName": "rlb_token",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "rlb_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "rli_injetores_relatorio",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`rli_inj_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `rli_inj_codigo` TEXT NOT NULL, `rli_inj_padrao` INTEGER NOT NULL, `rli_inj_revisao` INTEGER NOT NULL, `rli_inj_marca_nome` TEXT, `rli_inj_aplicacao` TEXT, `rli_inj_tipo` INTEGER NOT NULL, `rli_inj_adapt_pressao` TEXT, `rli_inj_adapt_retorno` TEXT, `rli_inj_adapt_conector` TEXT, `rli_inj_resistencia_minima` REAL, `rli_inj_resistencia_maxima` REAL, `rli_inj_resistenciab_minima` REAL, `rli_inj_resistenciab_maxima` REAL, `rli_inj_token` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "injId",
+            "columnName": "rli_inj_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "injCodigo",
+            "columnName": "rli_inj_codigo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "injPadrao",
+            "columnName": "rli_inj_padrao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "injRevisao",
+            "columnName": "rli_inj_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "injMarcaNome",
+            "columnName": "rli_inj_marca_nome",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "injAplicacao",
+            "columnName": "rli_inj_aplicacao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "injTipo",
+            "columnName": "rli_inj_tipo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "injAdaptPressao",
+            "columnName": "rli_inj_adapt_pressao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "injAdaptRetorno",
+            "columnName": "rli_inj_adapt_retorno",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "injAdaptConector",
+            "columnName": "rli_inj_adapt_conector",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "injResistenciaMinima",
+            "columnName": "rli_inj_resistencia_minima",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "injResistenciaMaxima",
+            "columnName": "rli_inj_resistencia_maxima",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "injResistenciabMinima",
+            "columnName": "rli_inj_resistenciab_minima",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "injResistenciabMaxima",
+            "columnName": "rli_inj_resistenciab_maxima",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "injToken",
+            "columnName": "rli_inj_token",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "rli_inj_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "rls_sensores_relatorio",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`rls_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `rls_codigo` TEXT NOT NULL, `rls_padrao` INTEGER NOT NULL, `rls_revisao` INTEGER NOT NULL, `rls_aplicacao` TEXT, `rls_marca` TEXT NOT NULL, `rls_adapt_pressao` TEXT, `rls_adapt_conector` TEXT, `rls_token` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "rls_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "codigo",
+            "columnName": "rls_codigo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "padrao",
+            "columnName": "rls_padrao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revisao",
+            "columnName": "rls_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aplicacao",
+            "columnName": "rls_aplicacao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "marca",
+            "columnName": "rls_marca",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adaptPressao",
+            "columnName": "rls_adapt_pressao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "adaptConector",
+            "columnName": "rls_adapt_conector",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "token",
+            "columnName": "rls_token",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "rls_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "rlv_valvulas_relatorio",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`rlv_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `rlv_codigo` TEXT NOT NULL, `rlv_padrao` INTEGER NOT NULL, `rlv_revisao` INTEGER NOT NULL, `rlv_aplicacao` TEXT, `rlv_adapt_pressao` TEXT, `rlv_adapt_retorno` TEXT, `rlv_adapt_conector` TEXT, `rlv_marca_nome` TEXT NOT NULL, `rlv_resistencia_minima` REAL NOT NULL, `rlv_resistencia_maxima` REAL NOT NULL, `rlv_tipo_valvula` INTEGER NOT NULL, `rlv_operacao_valvula` INTEGER NOT NULL, `rlv_token` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "rlv_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "codigo",
+            "columnName": "rlv_codigo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "padrao",
+            "columnName": "rlv_padrao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revisao",
+            "columnName": "rlv_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aplicacao",
+            "columnName": "rlv_aplicacao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "adaptPressao",
+            "columnName": "rlv_adapt_pressao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "adaptRetorno",
+            "columnName": "rlv_adapt_retorno",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "adaptConector",
+            "columnName": "rlv_adapt_conector",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "marcaNome",
+            "columnName": "rlv_marca_nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resistenciaMinima",
+            "columnName": "rlv_resistencia_minima",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resistenciaMaxima",
+            "columnName": "rlv_resistencia_maxima",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoValvula",
+            "columnName": "rlv_tipo_valvula",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "operacaoValvula",
+            "columnName": "rlv_operacao_valvula",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "token",
+            "columnName": "rlv_token",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "rlv_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "sen_sensores",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`sen_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sen_codigo` TEXT NOT NULL, `sen_padrao` INTEGER NOT NULL, `sen_marca_id` INTEGER NOT NULL, `sen_aplicacao` TEXT, `sen_adapt_pressao` TEXT, `sen_adapt_conector` TEXT, `sen_token` TEXT NOT NULL, `sen_revisao` INTEGER NOT NULL, `sen_deleted` INTEGER NOT NULL, FOREIGN KEY(`sen_marca_id`) REFERENCES `mar_marcas`(`mar_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`sen_revisao`) REFERENCES `rev_revisoes`(`rev_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "senId",
+            "columnName": "sen_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "senCodigo",
+            "columnName": "sen_codigo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "senPadrao",
+            "columnName": "sen_padrao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "senMarcaId",
+            "columnName": "sen_marca_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "senAplicacao",
+            "columnName": "sen_aplicacao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "senAdaptPressao",
+            "columnName": "sen_adapt_pressao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "senAdaptConector",
+            "columnName": "sen_adapt_conector",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "senToken",
+            "columnName": "sen_token",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "senRevisao",
+            "columnName": "sen_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "senDeleted",
+            "columnName": "sen_deleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "sen_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_sen_sensores_sen_marca_id",
+            "unique": false,
+            "columnNames": [
+              "sen_marca_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_sen_sensores_sen_marca_id` ON `${TABLE_NAME}` (`sen_marca_id`)"
+          },
+          {
+            "name": "index_sen_sensores_sen_revisao",
+            "unique": false,
+            "columnNames": [
+              "sen_revisao"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_sen_sensores_sen_revisao` ON `${TABLE_NAME}` (`sen_revisao`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "mar_marcas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "sen_marca_id"
+            ],
+            "referencedColumns": [
+              "mar_id"
+            ]
+          },
+          {
+            "table": "rev_revisoes",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "sen_revisao"
+            ],
+            "referencedColumns": [
+              "rev_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "spl_sensores_plataformas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`spl_plat_id` INTEGER NOT NULL, `spl_sen_id` INTEGER NOT NULL, PRIMARY KEY(`spl_plat_id`, `spl_sen_id`), FOREIGN KEY(`spl_plat_id`) REFERENCES `plat_plataformas`(`plat_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`spl_sen_id`) REFERENCES `sen_sensores`(`sen_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "platId",
+            "columnName": "spl_plat_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "senId",
+            "columnName": "spl_sen_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "spl_plat_id",
+            "spl_sen_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_spl_sensores_plataformas_spl_plat_id",
+            "unique": false,
+            "columnNames": [
+              "spl_plat_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_spl_sensores_plataformas_spl_plat_id` ON `${TABLE_NAME}` (`spl_plat_id`)"
+          },
+          {
+            "name": "index_spl_sensores_plataformas_spl_sen_id",
+            "unique": false,
+            "columnNames": [
+              "spl_sen_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_spl_sensores_plataformas_spl_sen_id` ON `${TABLE_NAME}` (`spl_sen_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "plat_plataformas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "spl_plat_id"
+            ],
+            "referencedColumns": [
+              "plat_id"
+            ]
+          },
+          {
+            "table": "sen_sensores",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "spl_sen_id"
+            ],
+            "referencedColumns": [
+              "sen_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "spp_sensores_plataformas_planos_testes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`spp_pls_id` INTEGER NOT NULL, `spp_spl_plat_id` INTEGER NOT NULL, `spp_spl_sen_id` INTEGER NOT NULL, `spp_ver_id` INTEGER, PRIMARY KEY(`spp_pls_id`, `spp_spl_plat_id`, `spp_spl_sen_id`), FOREIGN KEY(`spp_pls_id`) REFERENCES `pls_planos_testes_sensores`(`pls_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`spp_spl_plat_id`, `spp_spl_sen_id`) REFERENCES `spl_sensores_plataformas`(`spl_plat_id`, `spl_sen_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`spp_ver_id`) REFERENCES `ver_versoes`(`ver_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "plsId",
+            "columnName": "spp_pls_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "splPlatId",
+            "columnName": "spp_spl_plat_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "splSenId",
+            "columnName": "spp_spl_sen_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "verId",
+            "columnName": "spp_ver_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "spp_pls_id",
+            "spp_spl_plat_id",
+            "spp_spl_sen_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_spp_sensores_plataformas_planos_testes_spp_pls_id",
+            "unique": false,
+            "columnNames": [
+              "spp_pls_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_spp_sensores_plataformas_planos_testes_spp_pls_id` ON `${TABLE_NAME}` (`spp_pls_id`)"
+          },
+          {
+            "name": "index_spp_sensores_plataformas_planos_testes_spp_spl_plat_id_spp_spl_sen_id",
+            "unique": false,
+            "columnNames": [
+              "spp_spl_plat_id",
+              "spp_spl_sen_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_spp_sensores_plataformas_planos_testes_spp_spl_plat_id_spp_spl_sen_id` ON `${TABLE_NAME}` (`spp_spl_plat_id`, `spp_spl_sen_id`)"
+          },
+          {
+            "name": "index_spp_sensores_plataformas_planos_testes_spp_ver_id",
+            "unique": false,
+            "columnNames": [
+              "spp_ver_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_spp_sensores_plataformas_planos_testes_spp_ver_id` ON `${TABLE_NAME}` (`spp_ver_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "pls_planos_testes_sensores",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "spp_pls_id"
+            ],
+            "referencedColumns": [
+              "pls_id"
+            ]
+          },
+          {
+            "table": "spl_sensores_plataformas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "spp_spl_plat_id",
+              "spp_spl_sen_id"
+            ],
+            "referencedColumns": [
+              "spl_plat_id",
+              "spl_sen_id"
+            ]
+          },
+          {
+            "table": "ver_versoes",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "spp_ver_id"
+            ],
+            "referencedColumns": [
+              "ver_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "tbo_testes_bombas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tbo_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `tbo_ord_id` INTEGER NOT NULL, `tbo_vazao` INTEGER, `tbo_numero_serie` TEXT, `tbo_observacao` TEXT, `tbo_data` INTEGER NOT NULL, `tbo_hora` TEXT NOT NULL, `tbo_versao_software` TEXT NOT NULL, `tbo_versao_plataforma` TEXT NOT NULL, `tbo_removido` INTEGER NOT NULL, `tbo_pbr_id` INTEGER NOT NULL, FOREIGN KEY(`tbo_ord_id`) REFERENCES `ord_ordem_servicos`(`ord_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`tbo_pbr_id`) REFERENCES `pbr_planos_testes_bombas_relatorio`(`pbr_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "tbo_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ordId",
+            "columnName": "tbo_ord_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vazao",
+            "columnName": "tbo_vazao",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "numeroSerie",
+            "columnName": "tbo_numero_serie",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "observacao",
+            "columnName": "tbo_observacao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tboData",
+            "columnName": "tbo_data",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tboHora",
+            "columnName": "tbo_hora",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "versaoSoftware",
+            "columnName": "tbo_versao_software",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "versaoPlataforma",
+            "columnName": "tbo_versao_plataforma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "removido",
+            "columnName": "tbo_removido",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pbrId",
+            "columnName": "tbo_pbr_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tbo_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_tbo_testes_bombas_tbo_ord_id",
+            "unique": false,
+            "columnNames": [
+              "tbo_ord_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tbo_testes_bombas_tbo_ord_id` ON `${TABLE_NAME}` (`tbo_ord_id`)"
+          },
+          {
+            "name": "index_tbo_testes_bombas_tbo_pbr_id",
+            "unique": false,
+            "columnNames": [
+              "tbo_pbr_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tbo_testes_bombas_tbo_pbr_id` ON `${TABLE_NAME}` (`tbo_pbr_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "ord_ordem_servicos",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tbo_ord_id"
+            ],
+            "referencedColumns": [
+              "ord_id"
+            ]
+          },
+          {
+            "table": "pbr_planos_testes_bombas_relatorio",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tbo_pbr_id"
+            ],
+            "referencedColumns": [
+              "pbr_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "tin_testes_injetores",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tin_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `tin_ord_id` INTEGER NOT NULL, `tin_data` INTEGER NOT NULL, `tin_hora` TEXT NOT NULL, `tin_versao_software` TEXT NOT NULL, `tin_versao_plataforma` TEXT NOT NULL, `tin_removido` INTEGER NOT NULL, `tin_teste_codificacao` INTEGER, `tin_pir_id` INTEGER NOT NULL, FOREIGN KEY(`tin_ord_id`) REFERENCES `ord_ordem_servicos`(`ord_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`tin_pir_id`) REFERENCES `pir_planos_testes_injetores_relatorio`(`pir_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "tin_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ordId",
+            "columnName": "tin_ord_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "data",
+            "columnName": "tin_data",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hora",
+            "columnName": "tin_hora",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "versaoSoftware",
+            "columnName": "tin_versao_software",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "versaoPlataforma",
+            "columnName": "tin_versao_plataforma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "removido",
+            "columnName": "tin_removido",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "testeCodificacao",
+            "columnName": "tin_teste_codificacao",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pirId",
+            "columnName": "tin_pir_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tin_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_tin_testes_injetores_tin_ord_id",
+            "unique": false,
+            "columnNames": [
+              "tin_ord_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tin_testes_injetores_tin_ord_id` ON `${TABLE_NAME}` (`tin_ord_id`)"
+          },
+          {
+            "name": "index_tin_testes_injetores_tin_pir_id",
+            "unique": false,
+            "columnNames": [
+              "tin_pir_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tin_testes_injetores_tin_pir_id` ON `${TABLE_NAME}` (`tin_pir_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "ord_ordem_servicos",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tin_ord_id"
+            ],
+            "referencedColumns": [
+              "ord_id"
+            ]
+          },
+          {
+            "table": "pir_planos_testes_injetores_relatorio",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tin_pir_id"
+            ],
+            "referencedColumns": [
+              "pir_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "tpb_traducao_tipo_plano_teste_bomba",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tpb_idioma` TEXT NOT NULL, `tpb_tpl_id` INTEGER NOT NULL, `tpb_traducao` TEXT NOT NULL, PRIMARY KEY(`tpb_idioma`, `tpb_tpl_id`), FOREIGN KEY(`tpb_tpl_id`) REFERENCES `tpl_tipo_plano_teste`(`tpl_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "idioma",
+            "columnName": "tpb_idioma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tplId",
+            "columnName": "tpb_tpl_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "traducao",
+            "columnName": "tpb_traducao",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tpb_idioma",
+            "tpb_tpl_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_tpb_traducao_tipo_plano_teste_bomba_tpb_tpl_id",
+            "unique": false,
+            "columnNames": [
+              "tpb_tpl_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tpb_traducao_tipo_plano_teste_bomba_tpb_tpl_id` ON `${TABLE_NAME}` (`tpb_tpl_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "tpl_tipo_plano_teste",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tpb_tpl_id"
+            ],
+            "referencedColumns": [
+              "tpl_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "tpi_traducao_tipo_plano_teste_injetor",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tpi_idioma` TEXT NOT NULL, `tpi_tpl_id` INTEGER NOT NULL, `tpi_traducao` TEXT NOT NULL, PRIMARY KEY(`tpi_idioma`, `tpi_tpl_id`), FOREIGN KEY(`tpi_tpl_id`) REFERENCES `tpl_tipo_plano_teste`(`tpl_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "idioma",
+            "columnName": "tpi_idioma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tplId",
+            "columnName": "tpi_tpl_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "traducao",
+            "columnName": "tpi_traducao",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tpi_idioma",
+            "tpi_tpl_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_tpi_traducao_tipo_plano_teste_injetor_tpi_tpl_id",
+            "unique": false,
+            "columnNames": [
+              "tpi_tpl_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tpi_traducao_tipo_plano_teste_injetor_tpi_tpl_id` ON `${TABLE_NAME}` (`tpi_tpl_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "tpl_tipo_plano_teste",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tpi_tpl_id"
+            ],
+            "referencedColumns": [
+              "tpl_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "tbp_traducao_tipo_ponto_teste_bomba",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tbp_idioma` TEXT NOT NULL, `tbp_tptb_id` INTEGER NOT NULL, `tbp_traducao` TEXT NOT NULL, PRIMARY KEY(`tbp_idioma`), FOREIGN KEY(`tbp_tptb_id`) REFERENCES `tptb_tipo_ponto_teste_bomba`(`tptb_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "idioma",
+            "columnName": "tbp_idioma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoPonto",
+            "columnName": "tbp_tptb_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "traducao",
+            "columnName": "tbp_traducao",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tbp_idioma"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "tptb_tipo_ponto_teste_bomba",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tbp_tptb_id"
+            ],
+            "referencedColumns": [
+              "tptb_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "tbo_tipo_bomba",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tbo_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `tbo_nome` TEXT NOT NULL, `tbo_mar_id` INTEGER NOT NULL, FOREIGN KEY(`tbo_mar_id`) REFERENCES `mar_marcas`(`mar_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "tbo_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "tbo_nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "marca",
+            "columnName": "tbo_mar_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tbo_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "mar_marcas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tbo_mar_id"
+            ],
+            "referencedColumns": [
+              "mar_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "tpl_tipo_plano_teste",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tpl_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `tpl_descricao` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "tpl_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descricao",
+            "columnName": "tpl_descricao",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tpl_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "tpt_tipo_ponto_teste_injetor",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tpt_id` INTEGER NOT NULL, `tpt_descricao` TEXT, `tpt_tipo_ponto` INTEGER NOT NULL, PRIMARY KEY(`tpt_id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "tpt_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descricao",
+            "columnName": "tpt_descricao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tipoPonto",
+            "columnName": "tpt_tipo_ponto",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tpt_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "tptb_tipo_ponto_teste_bomba",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tptb_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `tptb_descricao` TEXT NOT NULL, `tptb_tipo_ponto` INTEGER NOT NULL, `tptb_mar_id` INTEGER NOT NULL, FOREIGN KEY(`tptb_mar_id`) REFERENCES `mar_marcas`(`mar_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "tptb_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descricao",
+            "columnName": "tptb_descricao",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoPonto",
+            "columnName": "tptb_tipo_ponto",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "marcaId",
+            "columnName": "tptb_mar_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tptb_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "mar_marcas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tptb_mar_id"
+            ],
+            "referencedColumns": [
+              "mar_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "tpo_traducao_tipo_ponto_teste_injetor",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tpo_idioma` TEXT NOT NULL, `tpo_tpt_id` INTEGER NOT NULL, `tpo_traducao` TEXT NOT NULL, PRIMARY KEY(`tpo_idioma`, `tpo_tpt_id`), FOREIGN KEY(`tpo_tpt_id`) REFERENCES `tpt_tipo_ponto_teste_injetor`(`tpt_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "tpoIdioma",
+            "columnName": "tpo_idioma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tpoTptId",
+            "columnName": "tpo_tpt_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tpoTraducao",
+            "columnName": "tpo_traducao",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tpo_idioma",
+            "tpo_tpt_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_tpo_traducao_tipo_ponto_teste_injetor_tpo_tpt_id",
+            "unique": false,
+            "columnNames": [
+              "tpo_tpt_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tpo_traducao_tipo_ponto_teste_injetor_tpo_tpt_id` ON `${TABLE_NAME}` (`tpo_tpt_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "tpt_tipo_ponto_teste_injetor",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tpo_tpt_id"
+            ],
+            "referencedColumns": [
+              "tpt_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "tpr_traducao_parametro_remoto",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tpr_idioma` TEXT NOT NULL, `tpr_par_id` INTEGER NOT NULL, `tpr_traducao` TEXT NOT NULL, PRIMARY KEY(`tpr_idioma`, `tpr_par_id`), FOREIGN KEY(`tpr_par_id`) REFERENCES `par_parametros_remotos`(`par_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "idioma",
+            "columnName": "tpr_idioma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "parId",
+            "columnName": "tpr_par_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "traducao",
+            "columnName": "tpr_traducao",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tpr_idioma",
+            "tpr_par_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_tpr_traducao_parametro_remoto_tpr_par_id",
+            "unique": false,
+            "columnNames": [
+              "tpr_par_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tpr_traducao_parametro_remoto_tpr_par_id` ON `${TABLE_NAME}` (`tpr_par_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "par_parametros_remotos",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tpr_par_id"
+            ],
+            "referencedColumns": [
+              "par_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "tps_traducao_tipo_plano_teste_sensor",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tps_idioma` TEXT NOT NULL, `tps_tpl_id` INTEGER NOT NULL, `tps_traducao` TEXT NOT NULL, PRIMARY KEY(`tps_idioma`, `tps_tpl_id`), FOREIGN KEY(`tps_tpl_id`) REFERENCES `tpl_tipo_plano_teste`(`tpl_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "idioma",
+            "columnName": "tps_idioma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tplId",
+            "columnName": "tps_tpl_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "traducao",
+            "columnName": "tps_traducao",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tps_idioma",
+            "tps_tpl_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_tps_traducao_tipo_plano_teste_sensor_tps_tpl_id",
+            "unique": false,
+            "columnNames": [
+              "tps_tpl_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tps_traducao_tipo_plano_teste_sensor_tps_tpl_id` ON `${TABLE_NAME}` (`tps_tpl_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "tpl_tipo_plano_teste",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tps_tpl_id"
+            ],
+            "referencedColumns": [
+              "tpl_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "tpv_traducao_tipo_plano_teste_valvula",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tpv_idioma` TEXT NOT NULL, `tpv_tpl_id` INTEGER NOT NULL, `tpv_traducao` TEXT NOT NULL, PRIMARY KEY(`tpv_idioma`, `tpv_tpl_id`), FOREIGN KEY(`tpv_tpl_id`) REFERENCES `tpl_tipo_plano_teste`(`tpl_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "idioma",
+            "columnName": "tpv_idioma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tplId",
+            "columnName": "tpv_tpl_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "traducao",
+            "columnName": "tpv_traducao",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tpv_idioma",
+            "tpv_tpl_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_tpv_traducao_tipo_plano_teste_valvula_tpv_tpl_id",
+            "unique": false,
+            "columnNames": [
+              "tpv_tpl_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tpv_traducao_tipo_plano_teste_valvula_tpv_tpl_id` ON `${TABLE_NAME}` (`tpv_tpl_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "tpl_tipo_plano_teste",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tpv_tpl_id"
+            ],
+            "referencedColumns": [
+              "tpl_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "tse_testes_sensores",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tse_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `tse_ord_id` INTEGER NOT NULL, `tse_result_teste1` REAL, `tse_result_teste2` REAL, `tse_result_teste3` REAL, `tse_result_teste4` REAL, `tse_result_teste5` REAL, `tse_numero_serie` TEXT, `tse_observacao` TEXT, `tse_data` INTEGER NOT NULL, `tse_hora` TEXT NOT NULL, `tse_versao_software` TEXT NOT NULL, `tse_versao_plataforma` TEXT NOT NULL, `tse_removido` INTEGER NOT NULL, `tse_psr_id` INTEGER NOT NULL, FOREIGN KEY(`tse_ord_id`) REFERENCES `ord_ordem_servicos`(`ord_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`tse_psr_id`) REFERENCES `psr_planos_testes_sensores_relatorio`(`psr_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "tse_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ordId",
+            "columnName": "tse_ord_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resultTeste1",
+            "columnName": "tse_result_teste1",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resultTeste2",
+            "columnName": "tse_result_teste2",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resultTeste3",
+            "columnName": "tse_result_teste3",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resultTeste4",
+            "columnName": "tse_result_teste4",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resultTeste5",
+            "columnName": "tse_result_teste5",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "numeroSerie",
+            "columnName": "tse_numero_serie",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "observacao",
+            "columnName": "tse_observacao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tseData",
+            "columnName": "tse_data",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tseHora",
+            "columnName": "tse_hora",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "versaoSoftware",
+            "columnName": "tse_versao_software",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "versaoPlataforma",
+            "columnName": "tse_versao_plataforma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "removido",
+            "columnName": "tse_removido",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "psrId",
+            "columnName": "tse_psr_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tse_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_tse_testes_sensores_tse_ord_id",
+            "unique": false,
+            "columnNames": [
+              "tse_ord_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tse_testes_sensores_tse_ord_id` ON `${TABLE_NAME}` (`tse_ord_id`)"
+          },
+          {
+            "name": "index_tse_testes_sensores_tse_psr_id",
+            "unique": false,
+            "columnNames": [
+              "tse_psr_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tse_testes_sensores_tse_psr_id` ON `${TABLE_NAME}` (`tse_psr_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "ord_ordem_servicos",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tse_ord_id"
+            ],
+            "referencedColumns": [
+              "ord_id"
+            ]
+          },
+          {
+            "table": "psr_planos_testes_sensores_relatorio",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tse_psr_id"
+            ],
+            "referencedColumns": [
+              "psr_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "tva_testes_valvulas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tva_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `tva_ord_id` INTEGER NOT NULL, `tva_result_teste1` REAL, `tva_result_teste2` REAL, `tva_result_teste3` REAL, `tva_result_teste4` REAL, `tva_result_teste5` REAL, `tva_teste_eletrico` INTEGER, `tva_resistencia` REAL, `tva_numero_serie` TEXT, `tva_observacao` TEXT, `tva_data` INTEGER NOT NULL, `tva_hora` TEXT NOT NULL, `tva_versao_software` TEXT NOT NULL, `tva_versao_plataforma` TEXT NOT NULL, `tva_removido` INTEGER NOT NULL, `tva_pvr_id` INTEGER NOT NULL, FOREIGN KEY(`tva_ord_id`) REFERENCES `ord_ordem_servicos`(`ord_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`tva_pvr_id`) REFERENCES `pvr_planos_testes_valvulas_relatorio`(`pvr_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "tva_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ordId",
+            "columnName": "tva_ord_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resultTeste1",
+            "columnName": "tva_result_teste1",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resultTeste2",
+            "columnName": "tva_result_teste2",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resultTeste3",
+            "columnName": "tva_result_teste3",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resultTeste4",
+            "columnName": "tva_result_teste4",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resultTeste5",
+            "columnName": "tva_result_teste5",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "testeEletrico",
+            "columnName": "tva_teste_eletrico",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resistencia",
+            "columnName": "tva_resistencia",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "numeroSerie",
+            "columnName": "tva_numero_serie",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "observacao",
+            "columnName": "tva_observacao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "data",
+            "columnName": "tva_data",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hora",
+            "columnName": "tva_hora",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "versaoSoftware",
+            "columnName": "tva_versao_software",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "versaoPlataforma",
+            "columnName": "tva_versao_plataforma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "removido",
+            "columnName": "tva_removido",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pvrId",
+            "columnName": "tva_pvr_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tva_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_tva_testes_valvulas_tva_ord_id",
+            "unique": false,
+            "columnNames": [
+              "tva_ord_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tva_testes_valvulas_tva_ord_id` ON `${TABLE_NAME}` (`tva_ord_id`)"
+          },
+          {
+            "name": "index_tva_testes_valvulas_tva_pvr_id",
+            "unique": false,
+            "columnNames": [
+              "tva_pvr_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tva_testes_valvulas_tva_pvr_id` ON `${TABLE_NAME}` (`tva_pvr_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "ord_ordem_servicos",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tva_ord_id"
+            ],
+            "referencedColumns": [
+              "ord_id"
+            ]
+          },
+          {
+            "table": "pvr_planos_testes_valvulas_relatorio",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "tva_pvr_id"
+            ],
+            "referencedColumns": [
+              "pvr_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "val_valvulas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`val_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `val_codigo` TEXT NOT NULL, `val_padrao` INTEGER NOT NULL, `val_marca_id` INTEGER NOT NULL, `val_aplicacao` TEXT, `val_adapt_pressao` TEXT, `val_adapt_retorno` TEXT, `val_adapt_conector` TEXT, `val_resistencia_minima` REAL NOT NULL, `val_resistencia_maxima` REAL NOT NULL, `val_tipo_valvula` INTEGER NOT NULL, `val_operacao_valvula` INTEGER NOT NULL, `val_token` TEXT NOT NULL, `val_revisao` INTEGER NOT NULL, `val_deleted` INTEGER NOT NULL, FOREIGN KEY(`val_marca_id`) REFERENCES `mar_marcas`(`mar_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`val_revisao`) REFERENCES `rev_revisoes`(`rev_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "val_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "codigo",
+            "columnName": "val_codigo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "padrao",
+            "columnName": "val_padrao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "marcaId",
+            "columnName": "val_marca_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aplicacao",
+            "columnName": "val_aplicacao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "adaptPressao",
+            "columnName": "val_adapt_pressao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "adaptRetorno",
+            "columnName": "val_adapt_retorno",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "adaptConector",
+            "columnName": "val_adapt_conector",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resistenciaMinima",
+            "columnName": "val_resistencia_minima",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resistenciaMaxima",
+            "columnName": "val_resistencia_maxima",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipoValvula",
+            "columnName": "val_tipo_valvula",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "operacaoValvula",
+            "columnName": "val_operacao_valvula",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "token",
+            "columnName": "val_token",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revisao",
+            "columnName": "val_revisao",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deleted",
+            "columnName": "val_deleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "val_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_val_valvulas_val_marca_id",
+            "unique": false,
+            "columnNames": [
+              "val_marca_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_val_valvulas_val_marca_id` ON `${TABLE_NAME}` (`val_marca_id`)"
+          },
+          {
+            "name": "index_val_valvulas_val_revisao",
+            "unique": false,
+            "columnNames": [
+              "val_revisao"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_val_valvulas_val_revisao` ON `${TABLE_NAME}` (`val_revisao`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "mar_marcas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "val_marca_id"
+            ],
+            "referencedColumns": [
+              "mar_id"
+            ]
+          },
+          {
+            "table": "rev_revisoes",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "val_revisao"
+            ],
+            "referencedColumns": [
+              "rev_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "ver_versoes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ver_id` INTEGER NOT NULL, `ver_data_hora_liberacao` INTEGER, `ver_liberada` INTEGER NOT NULL, PRIMARY KEY(`ver_id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "ver_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataHoraLiberacao",
+            "columnName": "ver_data_hora_liberacao",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "liberada",
+            "columnName": "ver_liberada",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ver_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "vpl_valvulas_plataformas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`vpl_plat_id` INTEGER NOT NULL, `vpl_val_id` INTEGER NOT NULL, PRIMARY KEY(`vpl_plat_id`, `vpl_val_id`), FOREIGN KEY(`vpl_plat_id`) REFERENCES `plat_plataformas`(`plat_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`vpl_val_id`) REFERENCES `val_valvulas`(`val_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "platId",
+            "columnName": "vpl_plat_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "valId",
+            "columnName": "vpl_val_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "vpl_plat_id",
+            "vpl_val_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_vpl_valvulas_plataformas_vpl_plat_id",
+            "unique": false,
+            "columnNames": [
+              "vpl_plat_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_vpl_valvulas_plataformas_vpl_plat_id` ON `${TABLE_NAME}` (`vpl_plat_id`)"
+          },
+          {
+            "name": "index_vpl_valvulas_plataformas_vpl_val_id",
+            "unique": false,
+            "columnNames": [
+              "vpl_val_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_vpl_valvulas_plataformas_vpl_val_id` ON `${TABLE_NAME}` (`vpl_val_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "plat_plataformas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "vpl_plat_id"
+            ],
+            "referencedColumns": [
+              "plat_id"
+            ]
+          },
+          {
+            "table": "val_valvulas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "vpl_val_id"
+            ],
+            "referencedColumns": [
+              "val_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "vpp_valvulas_plataformas_planos_testes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`vpp_vpl_plat_id` INTEGER NOT NULL, `vpp_vpl_val_id` INTEGER NOT NULL, `vpp_plv_id` INTEGER NOT NULL, `vpp_ver_id` INTEGER, PRIMARY KEY(`vpp_vpl_plat_id`, `vpp_vpl_val_id`, `vpp_plv_id`), FOREIGN KEY(`vpp_vpl_plat_id`, `vpp_vpl_val_id`) REFERENCES `vpl_valvulas_plataformas`(`vpl_plat_id`, `vpl_val_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`vpp_plv_id`) REFERENCES `plv_planos_testes_valvulas`(`plv_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`vpp_ver_id`) REFERENCES `ver_versoes`(`ver_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "vplPlatId",
+            "columnName": "vpp_vpl_plat_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vplValId",
+            "columnName": "vpp_vpl_val_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "plvId",
+            "columnName": "vpp_plv_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "verId",
+            "columnName": "vpp_ver_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "vpp_vpl_plat_id",
+            "vpp_vpl_val_id",
+            "vpp_plv_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_vpp_valvulas_plataformas_planos_testes_vpp_vpl_plat_id_vpp_vpl_val_id",
+            "unique": false,
+            "columnNames": [
+              "vpp_vpl_plat_id",
+              "vpp_vpl_val_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_vpp_valvulas_plataformas_planos_testes_vpp_vpl_plat_id_vpp_vpl_val_id` ON `${TABLE_NAME}` (`vpp_vpl_plat_id`, `vpp_vpl_val_id`)"
+          },
+          {
+            "name": "index_vpp_valvulas_plataformas_planos_testes_vpp_plv_id",
+            "unique": false,
+            "columnNames": [
+              "vpp_plv_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_vpp_valvulas_plataformas_planos_testes_vpp_plv_id` ON `${TABLE_NAME}` (`vpp_plv_id`)"
+          },
+          {
+            "name": "index_vpp_valvulas_plataformas_planos_testes_vpp_ver_id",
+            "unique": false,
+            "columnNames": [
+              "vpp_ver_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_vpp_valvulas_plataformas_planos_testes_vpp_ver_id` ON `${TABLE_NAME}` (`vpp_ver_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "vpl_valvulas_plataformas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "vpp_vpl_plat_id",
+              "vpp_vpl_val_id"
+            ],
+            "referencedColumns": [
+              "vpl_plat_id",
+              "vpl_val_id"
+            ]
+          },
+          {
+            "table": "plv_planos_testes_valvulas",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "vpp_plv_id"
+            ],
+            "referencedColumns": [
+              "plv_id"
+            ]
+          },
+          {
+            "table": "ver_versoes",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "vpp_ver_id"
+            ],
+            "referencedColumns": [
+              "ver_id"
+            ]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8d8095c776471f7f8caf0b9978f9ddd9')"
+    ]
+  }
+}

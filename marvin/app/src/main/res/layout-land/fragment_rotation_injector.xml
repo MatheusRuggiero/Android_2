@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cinza_claro_tecnomotor">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_rotation_test_injector"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.49" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/gauge"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_rotation"
+            app:layout_constraintTop_toBottomOf="@+id/txt_instructions_rotation_injector" />
+
+        <TextView
+            android:id="@+id/value_pressure_point_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/dark_gray"
+            android:textSize="30sp"
+            android:layout_marginTop="-30dp"
+            app:layout_constraintStart_toStartOf="@+id/gauge"
+            app:layout_constraintEnd_toEndOf="@+id/gauge"
+            app:layout_constraintTop_toBottomOf="@+id/gauge"
+            tools:text="1000 rpm" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/pieChartGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="gauge, value_pressure_point_test" />
+
+        <TextView
+            android:id="@+id/txt_title_temp_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/temperatura"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:layout_marginStart="64dp"
+            android:layout_marginBottom="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_value_temp_rotation_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:layout_marginTop="-10dp"
+            app:layout_constraintStart_toStartOf="@+id/txt_title_temp_injector"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title_temp_injector"
+            tools:text="---"/>
+
+        <TextView
+            android:id="@+id/value_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="36sp"
+            android:textStyle="italic"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Executando" />
+
+        <TextView
+            android:id="@+id/value_error"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/vermelho_tecnomotor"
+            android:textSize="30sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="48dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_rotation"
+            app:layout_constraintStart_toStartOf="@id/value_status"
+            app:layout_constraintTop_toBottomOf="@id/value_status"
+            tools:text="Mensagem de erro" />
+
+        <TextView
+            android:id="@+id/txt_instructions_rotation_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_instrucoes"
+            android:textColor="@color/blue_tecnomotor"
+            android:textSize="56sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/guideline_rotation"
+            app:layout_constraintTop_toTopOf="@+id/value_status" />
+
+        <ImageButton
+            android:id="@+id/btn_rotation_cancel"
+            android:layout_width="278dp"
+            android:layout_height="126dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_finalize_rotation"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_rotation_cancel"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_rotation_cancel"
+            app:layout_constraintStart_toStartOf="@+id/btn_rotation_cancel"
+            app:layout_constraintTop_toTopOf="@+id/btn_rotation_cancel"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_cancelar" />
+
+        <TextView
+            android:id="@+id/text_rotation_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_cancel"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_rotation_cancel"
+            app:layout_constraintEnd_toEndOf="@+id/btn_rotation_cancel"
+            app:layout_constraintStart_toEndOf="@+id/img_rotation_cancel"
+            app:layout_constraintTop_toTopOf="@+id/img_rotation_cancel" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupButtonRotationCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_rotation_cancel, img_rotation_cancel, text_rotation_cancel" />
+
+        <ImageButton
+            android:id="@+id/btn_finalize_rotation"
+            android:layout_width="278dp"
+            android:layout_height="126dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_finalize_rotation"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_finalize_rotation"
+            app:layout_constraintStart_toStartOf="@+id/btn_finalize_rotation"
+            app:layout_constraintTop_toTopOf="@+id/btn_finalize_rotation"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_terminar"
+            android:contentDescription="TODO" />
+
+        <TextView
+            android:id="@+id/txt_finalize_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_finish"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_finalize_rotation"
+            app:layout_constraintEnd_toEndOf="@+id/btn_finalize_rotation"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/img_finalize_rotation"
+            app:layout_constraintTop_toTopOf="@+id/img_finalize_rotation" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupButtonRotationFinalize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_finalize_rotation, img_finalize_rotation, txt_finalize_rotation" />
+
+        <TextView
+            android:id="@+id/txt_info_rotation_01"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_info_rotacao_inj_01"
+            android:textSize="24sp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txt_instructions_rotation_injector"
+            app:layout_constraintTop_toBottomOf="@id/txt_instructions_rotation_injector" />
+
+        <TextView
+            android:id="@+id/txt_info_rotation_02"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_info_rotacao_inj_02"
+            android:textSize="24sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txt_info_rotation_01"
+            app:layout_constraintTop_toBottomOf="@+id/txt_info_rotation_01" />
+
+        <TextView
+            android:id="@+id/txt_info_rotation_03"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_info_rotacao_03"
+            android:textSize="24sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txt_info_rotation_02"
+            app:layout_constraintTop_toBottomOf="@+id/txt_info_rotation_02" />
+
+        <TextView
+            android:id="@+id/txt_info_rotation_04"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_info_rotacao_04"
+            android:textSize="24sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txt_info_rotation_03"
+            app:layout_constraintTop_toBottomOf="@+id/txt_info_rotation_03" />
+
+        <TextView
+            android:id="@+id/txt_info_rotation_05"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_info_rotacao_05"
+            android:textSize="24sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txt_info_rotation_03"
+            app:layout_constraintTop_toBottomOf="@+id/txt_info_rotation_04" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

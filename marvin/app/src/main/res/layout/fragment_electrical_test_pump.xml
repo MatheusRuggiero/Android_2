@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_electrical_test_pump"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cinza_claro_tecnomotor">
+
+        <ImageView
+            android:id="@+id/logo_tecnomotor"
+            android:layout_width="133dp"
+            android:layout_height="98dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_tecnomotor_2" />
+
+        <TextView
+            android:id="@+id/txt_executando_teste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_exe_electrical_test_pump"
+            android:textColor="@color/black"
+            android:textSize="65sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.20"
+            app:layout_constraintStart_toEndOf="@+id/logo_tecnomotor"
+            app:layout_constraintTop_toTopOf="@+id/logo_tecnomotor" />
+
+        <TextView
+            android:id="@+id/txt_condition_electrical_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="@string/txt_pump_test_condição"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/logo_tecnomotor"
+            app:layout_constraintTop_toBottomOf="@+id/txt_executando_teste" />
+
+        <TextView
+            android:id="@+id/txt_condicao_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:textColor="@color/green"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/txt_condition_electrical_pump"
+            app:layout_constraintTop_toTopOf="@+id/txt_condition_electrical_pump"
+            tools:text="@string/txt_pump_test_condição" />
+
+        <TextView
+            android:id="@+id/txt_resistencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/txt_pump_test_resistencia"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_condition_electrical_pump"
+            app:layout_constraintTop_toBottomOf="@+id/txt_condition_electrical_pump" />
+
+        <TextView
+            android:id="@+id/txt_resistencia_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_condicao_value"
+            app:layout_constraintTop_toTopOf="@+id/txt_resistencia"
+            tools:text="@string/txt_pump_test_resistencia" />
+
+        <TextView
+            android:id="@+id/txt_condicao_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/txt_pump_test_condição_b"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/txt_resistencia"
+            app:layout_constraintTop_toBottomOf="@+id/txt_resistencia" />
+
+        <TextView
+            android:id="@+id/txt_condicao_b_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/txt_resistencia_value"
+            app:layout_constraintTop_toTopOf="@+id/txt_condicao_b"
+            tools:text="@string/txt_pump_test_condição_b" />
+
+        <TextView
+            android:id="@+id/txt_resistencia_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/txt_pump_test_resistencia_b"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/txt_condicao_b"
+            app:layout_constraintTop_toBottomOf="@+id/txt_condicao_b" />
+
+        <TextView
+            android:id="@+id/txt_resistencia_b_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/txt_condicao_b_value"
+            app:layout_constraintTop_toTopOf="@+id/txt_resistencia_b"
+            tools:text="@string/txt_pump_test_resistencia_b" />
+
+        <ImageView
+            android:id="@+id/img_electrical_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_executando_teste"
+            app:srcCompat="@drawable/svg_pumps" />
+
+        <ImageView
+            android:id="@+id/status_test_electrical_fail"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/todo"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/img_electrical_test_pump"
+            app:layout_constraintEnd_toEndOf="@+id/img_electrical_test_pump"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/img_electrical_test_pump"
+            app:layout_constraintTop_toTopOf="@+id/img_electrical_test_pump"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/svg_nao_verificado" />
+
+        <ImageView
+            android:id="@+id/status_test_electrical_ok"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/todo"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/img_electrical_test_pump"
+            app:layout_constraintEnd_toEndOf="@+id/img_electrical_test_pump"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/img_electrical_test_pump"
+            app:layout_constraintTop_toTopOf="@+id/img_electrical_test_pump"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/svg_verificado" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/btn_eletric_test_repeat_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_repeat_eletric_test, img_repeat_eletric_test, text_repeat_eletric_test"
+            android:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/btn_repeat_eletric_test"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/btn_eletric_test_next"
+            app:layout_constraintTop_toBottomOf="@+id/txt_status_eletric_inj"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_repeat_eletric_test"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_repeat_eletric_test"
+            app:layout_constraintStart_toStartOf="@+id/btn_repeat_eletric_test"
+            app:layout_constraintTop_toTopOf="@+id/btn_repeat_eletric_test"
+            app:layout_constraintVertical_bias="0.45" />
+
+        <TextView
+            android:id="@+id/text_repeat_eletric_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_repeat"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/img_repeat_eletric_test"
+            app:layout_constraintEnd_toEndOf="@+id/btn_repeat_eletric_test"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@+id/img_repeat_eletric_test"
+            app:layout_constraintTop_toTopOf="@+id/img_repeat_eletric_test" />
+
+
+
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/btn_eletric_test_cancel_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_cancel_eletric_test, img_cancel_eletric_test, text_cancel_eletric_test"
+            android:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/btn_cancel_eletric_test"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/btn_eletric_test_next"
+            app:layout_constraintTop_toBottomOf="@+id/txt_status_eletric_inj"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_cancel_eletric_test"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_cancel_eletric_test"
+            app:layout_constraintStart_toStartOf="@+id/btn_cancel_eletric_test"
+            app:layout_constraintTop_toTopOf="@+id/btn_cancel_eletric_test"
+            app:layout_constraintVertical_bias="0.45" />
+        <!-- app:srcCompat="@drawable/ic_resetar_prancheta" /> -->
+
+        <TextView
+            android:id="@+id/text_cancel_eletric_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_repeat"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/img_cancel_eletric_test"
+            app:layout_constraintEnd_toEndOf="@+id/btn_cancel_eletric_test"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@+id/img_cancel_eletric_test"
+            app:layout_constraintTop_toTopOf="@+id/img_cancel_eletric_test" />
+
+
+
+
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/btn_eletric_test_next_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_eletric_test_next, img_eletric_test_next, text_eletric_test_next"
+            android:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/btn_eletric_test_next"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_repeat_eletric_test"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_eletric_test_next"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_eletric_test_next"
+            app:layout_constraintStart_toStartOf="@+id/btn_eletric_test_next"
+            app:layout_constraintTop_toTopOf="@+id/btn_eletric_test_next"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_proximo" />
+
+        <TextView
+            android:id="@+id/text_eletric_test_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_next"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/img_eletric_test_next"
+            app:layout_constraintEnd_toEndOf="@+id/btn_eletric_test_next"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@+id/img_eletric_test_next"
+            app:layout_constraintTop_toTopOf="@+id/img_eletric_test_next" />
+
+        <TextView
+            android:id="@+id/txt_status_eletric_inj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/txt_pump_test_status"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/img_electrical_test_pump"
+            app:layout_constraintTop_toBottomOf="@+id/img_electrical_test_pump" />
+
+        <TextView
+            android:id="@+id/txt_status_eletric_inj_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/dark_gray"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:text="Executando"
+            app:layout_constraintStart_toEndOf="@+id/txt_status_eletric_inj"
+            app:layout_constraintTop_toTopOf="@+id/txt_status_eletric_inj" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

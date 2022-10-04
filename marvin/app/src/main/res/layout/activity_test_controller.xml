@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.test.pump.TestControllerActivity">
+
+    <TextView
+        android:id="@+id/tvMeasurementStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/green"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvControlStatus"
+        app:layout_constraintTop_toBottomOf="@+id/tvControlError"
+        tools:text="@string/MSG_STATUSTESTE_TESTE_PARADO" />
+
+    <TextView
+        android:id="@+id/tvMedicaoRx"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/green"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="TestResult(status=Parado, error=)" />
+
+    <Button
+        android:id="@+id/btnExecTestMeasurement"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Exec. Test M."
+        app:layout_constraintEnd_toEndOf="@+id/btnFlush"
+        app:layout_constraintStart_toStartOf="@+id/btnFlush"
+        app:layout_constraintTop_toBottomOf="@+id/btnFlush" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/txt_start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnExecute"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Executar"
+        app:layout_constraintEnd_toEndOf="@+id/btnStart"
+        app:layout_constraintStart_toStartOf="@+id/btnStart"
+        app:layout_constraintTop_toBottomOf="@+id/btnStart" />
+
+    <Button
+        android:id="@+id/btnPause"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Pausar"
+        app:layout_constraintEnd_toEndOf="@+id/btnStart"
+        app:layout_constraintStart_toStartOf="@+id/btnStart"
+        app:layout_constraintTop_toBottomOf="@+id/btnExecute" />
+
+    <Button
+        android:id="@+id/btnContinue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Continuar"
+        app:layout_constraintEnd_toEndOf="@+id/btnStart"
+        app:layout_constraintStart_toStartOf="@+id/btnStart"
+        app:layout_constraintTop_toBottomOf="@+id/btnPause" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Cancelar"
+        app:layout_constraintEnd_toEndOf="@+id/btnContinue"
+        app:layout_constraintStart_toStartOf="@+id/btnContinue"
+        app:layout_constraintTop_toBottomOf="@+id/btnContinue" />
+
+    <Button
+        android:id="@+id/btnFinish"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Finalizar"
+        app:layout_constraintEnd_toEndOf="@+id/btnCancel"
+        app:layout_constraintStart_toStartOf="@+id/btnCancel"
+        app:layout_constraintTop_toBottomOf="@+id/btnCancel" />
+
+    <TextView
+        android:id="@+id/tvControlStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/light_blue"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/MSG_STATUSTESTE_TESTE_PARADO" />
+
+    <Button
+        android:id="@+id/btnParamTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Param. Test."
+        app:layout_constraintStart_toStartOf="@+id/btnResetParam"
+        app:layout_constraintTop_toBottomOf="@+id/btnResetParam" />
+
+    <TextView
+        android:id="@+id/tvControlLog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/light_blue"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvMedicaoRx"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="TestResult(status=Parado, error=)" />
+
+    <Button
+        android:id="@+id/btnExecRot"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Exec. Rot."
+        app:layout_constraintEnd_toEndOf="@+id/btnParamTest"
+        app:layout_constraintStart_toStartOf="@+id/btnParamTest"
+        app:layout_constraintTop_toBottomOf="@+id/btnParamTest" />
+
+    <Button
+        android:id="@+id/btnExecTest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Exec. Test"
+        app:layout_constraintEnd_toEndOf="@+id/btnExecRot"
+        app:layout_constraintStart_toStartOf="@+id/btnExecRot"
+        app:layout_constraintTop_toBottomOf="@+id/btnExecRot" />
+
+    <Button
+        android:id="@+id/btnResetParam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:text="Reset Param"
+        app:layout_constraintStart_toEndOf="@+id/btnStart"
+        app:layout_constraintTop_toTopOf="@+id/btnStart" />
+
+    <Button
+        android:id="@+id/btnCondition"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Condition"
+        app:layout_constraintEnd_toEndOf="@+id/btnParamMeasure"
+        app:layout_constraintStart_toStartOf="@+id/btnParamMeasure"
+        app:layout_constraintTop_toBottomOf="@+id/btnParamMeasure" />
+
+    <Button
+        android:id="@+id/btnFlush"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Flush"
+        app:layout_constraintEnd_toEndOf="@+id/btnCondition"
+        app:layout_constraintStart_toStartOf="@+id/btnCondition"
+        app:layout_constraintTop_toBottomOf="@+id/btnCondition" />
+
+    <Button
+        android:id="@+id/btnParamMeasure"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Param. M."
+        app:layout_constraintStart_toEndOf="@+id/btnResetParam"
+        app:layout_constraintTop_toTopOf="@+id/btnStart" />
+
+    <TextView
+        android:id="@+id/tvControlError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        tools:text="Error"
+        app:layout_constraintEnd_toEndOf="@+id/tvControlStatus"
+        app:layout_constraintTop_toBottomOf="@+id/tvControlStatus" />
+
+    <TextView
+        android:id="@+id/tvMeasurementError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        tools:text="Error"
+        app:layout_constraintEnd_toEndOf="@+id/tvControlStatus"
+        app:layout_constraintTop_toBottomOf="@+id/tvMeasurementStatus" />
+
+    <Button
+        android:id="@+id/btnControlYes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Send Yes"
+        app:layout_constraintEnd_toEndOf="@+id/btnExecTest"
+        app:layout_constraintStart_toStartOf="@+id/btnExecTest"
+        app:layout_constraintTop_toBottomOf="@+id/btnExecTest" />
+
+    <Button
+        android:id="@+id/btnControlReturn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Send Return"
+        app:layout_constraintEnd_toEndOf="@+id/btnControlYes"
+        app:layout_constraintStart_toStartOf="@+id/btnControlYes"
+        app:layout_constraintTop_toBottomOf="@+id/btnControlYes" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Próximo"
+        app:layout_constraintEnd_toEndOf="@+id/btnFinish"
+        app:layout_constraintStart_toStartOf="@+id/btnFinish"
+        app:layout_constraintTop_toBottomOf="@+id/btnFinish" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

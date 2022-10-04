@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_electrical_test_pump"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cinza_claro_tecnomotor">
+
+        <ImageView
+            android:id="@+id/logo_tecnomotor"
+            android:layout_width="133dp"
+            android:layout_height="98dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_tecnomotor_2" />
+
+        <TextView
+            android:id="@+id/txt_executando_teste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_exe_electrical_test_pump"
+            android:textColor="@color/blue_tecnomotor"
+            android:textSize="65sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/logo_tecnomotor" />
+
+
+        <!--        Títulos linhas-->
+        <TextView
+            android:id="@+id/txt_resistencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_pump_test_resistencia"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="130dp"
+            app:layout_constraintStart_toStartOf="@+id/logo_tecnomotor"
+            app:layout_constraintTop_toBottomOf="@+id/txt_executando_teste" />
+
+        <TextView
+            android:id="@+id/txt_condicao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_pump_test_condição"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="44dp"
+            app:layout_constraintStart_toStartOf="@+id/txt_resistencia"
+            app:layout_constraintTop_toBottomOf="@+id/txt_resistencia" />
+
+
+<!--        Coluna A -->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_column_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="column_a, txt_resistencia_value_a, txt_condition_value_a"  />
+
+        <TextView
+            android:id="@+id/column_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:text="@string/drv_1"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/txt_resistencia_value_a"
+            app:layout_constraintStart_toStartOf="@id/txt_resistencia_value_a" />
+
+        <TextView
+            android:id="@+id/txt_resistencia_value_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:text=""
+            android:textColor="@color/dark_gray"
+            android:textSize="32sp"
+            app:layout_constraintStart_toEndOf="@+id/txt_resistencia"
+            app:layout_constraintTop_toTopOf="@+id/txt_resistencia"
+            tools:text="0.25 Ohm" />
+
+        <TextView
+            android:id="@+id/txt_condition_value_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_resistencia_value_a"
+            app:layout_constraintTop_toTopOf="@+id/txt_condicao"
+            android:text=""
+            tools:text="Ok"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="column_a, txt_resistencia_value_a, txt_condition_value_a" />
+
+
+        <!--        Coluna B-->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_column_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="column_b, txt_resistencia_value_b, txt_condition_value_b, view_b"  />
+
+        <ViewAnimator
+            android:id="@+id/view_b"
+            android:layout_width="3dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toTopOf="@id/txt_resistencia_value_a"
+            app:layout_constraintBottom_toBottomOf="@id/txt_condition_value_a"
+            app:layout_constraintStart_toStartOf="@+id/barrier_a" />
+
+        <TextView
+            android:id="@+id/column_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/drv_2"
+            android:layout_marginBottom="30dp"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginStart="30dp"
+            app:layout_constraintStart_toEndOf="@id/view_b"
+            app:layout_constraintBottom_toTopOf="@id/txt_resistencia_value_b" />
+
+        <TextView
+            android:id="@+id/txt_resistencia_value_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/dark_gray"
+            android:textSize="32sp"
+            android:layout_marginStart="30dp"
+            app:layout_constraintStart_toEndOf="@id/view_b"
+            app:layout_constraintTop_toTopOf="@+id/txt_resistencia"
+            tools:text="0.21 Ohm"/>
+
+        <TextView
+            android:id="@+id/txt_condition_value_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="32sp"
+            android:layout_marginStart="30dp"
+            app:layout_constraintStart_toEndOf="@id/view_b"
+            app:layout_constraintTop_toTopOf="@+id/txt_condicao"
+            android:text=""
+            tools:text="Ok"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="column_b, txt_resistencia_value_b, txt_condition_value_b" />
+
+
+<!--        Coluna C -->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_column_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="column_c, txt_resistencia_value_c, txt_condition_value_c, view_c"  />
+
+        <ViewAnimator
+            android:id="@+id/view_c"
+            android:layout_width="3dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toTopOf="@id/txt_resistencia_value_b"
+            app:layout_constraintBottom_toBottomOf="@id/txt_condition_value_b"
+            app:layout_constraintStart_toStartOf="@+id/barrier_b" />
+
+        <TextView
+            android:id="@+id/column_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="30dp"
+            android:text="@string/ext_1"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/txt_resistencia_value_c"
+            app:layout_constraintStart_toEndOf="@id/view_c" />
+
+        <TextView
+            android:id="@+id/txt_resistencia_value_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/dark_gray"
+            android:textSize="32sp"
+            android:layout_marginStart="30dp"
+            app:layout_constraintStart_toEndOf="@id/view_c"
+            app:layout_constraintTop_toTopOf="@+id/txt_resistencia"
+            tools:text="0.22 Ohm"/>
+
+        <TextView
+            android:id="@+id/txt_condition_value_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="32sp"
+            android:layout_marginStart="30dp"
+            app:layout_constraintStart_toEndOf="@id/view_c"
+            app:layout_constraintTop_toTopOf="@+id/txt_condicao"
+            android:text=""
+            tools:text="Ok"/>
+
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="column_c, txt_resistencia_value_c, txt_condition_value_c" />
+
+<!--        Coluna D -->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_column_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="column_d, txt_resistencia_value_d, txt_condition_value_d, view_d"  />
+
+        <ViewAnimator
+            android:id="@+id/view_d"
+            android:layout_width="3dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toTopOf="@id/txt_resistencia_value_c"
+            app:layout_constraintBottom_toBottomOf="@id/txt_condition_value_c"
+            app:layout_constraintStart_toStartOf="@+id/barrier_c" />
+
+        <TextView
+            android:id="@+id/column_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="30dp"
+            android:text="@string/ext_2"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/txt_resistencia_value_d"
+            app:layout_constraintStart_toStartOf="@id/view_d" />
+
+        <TextView
+            android:id="@+id/txt_resistencia_value_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/dark_gray"
+            android:textSize="32sp"
+            android:layout_marginStart="30dp"
+            app:layout_constraintStart_toEndOf="@id/view_d"
+            app:layout_constraintTop_toTopOf="@+id/txt_resistencia"
+            tools:text="0.29 Ohm"/>
+
+        <TextView
+            android:id="@+id/txt_condition_value_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="32sp"
+            android:layout_marginStart="30dp"
+            app:layout_constraintStart_toEndOf="@id/view_d"
+            app:layout_constraintTop_toTopOf="@+id/txt_condicao"
+            android:text=""
+            tools:text="Ok"/>
+
+        <ImageView
+            android:id="@+id/img_electrical_test_pump"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="100dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/svg_pumps" />
+
+        <ImageView
+            android:id="@+id/status_test_electrical_fail"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="40dp"
+            android:contentDescription="@string/todo"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/img_electrical_test_pump"
+            app:layout_constraintStart_toStartOf="@+id/img_electrical_test_pump"
+            app:layout_constraintTop_toBottomOf="@+id/img_electrical_test_pump"
+            app:srcCompat="@drawable/svg_nao_verificado" />
+
+        <ImageView
+            android:id="@+id/status_test_electrical_ok"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="40dp"
+            android:contentDescription="@string/todo"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/img_electrical_test_pump"
+            app:layout_constraintStart_toStartOf="@+id/img_electrical_test_pump"
+            app:layout_constraintTop_toBottomOf="@+id/img_electrical_test_pump"
+            app:srcCompat="@drawable/svg_verificado" />
+
+        <TextView
+            android:id="@+id/txt_status_eletric_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_pump_test_status"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toTopOf="@id/status_test_electrical_ok"
+            app:layout_constraintEnd_toStartOf="@id/img_electrical_test_pump" />
+
+        <TextView
+            android:id="@+id/txt_status_eletric_pump_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@id/txt_status_eletric_pump"
+            app:layout_constraintTop_toBottomOf="@id/txt_status_eletric_pump"
+            tools:text="Finalizado" />
+
+<!--        Botões-->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/btn_eletric_test_cancel_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="btn_cancel_electric_test, img_cancel_electric_test, text_cancel_electric_test" />
+
+        <ImageButton
+            android:id="@+id/btn_cancel_electric_test"
+            android:layout_width="278dp"
+            android:layout_height="126dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_repeat_electric_test"
+            app:layout_constraintTop_toTopOf="@+id/btn_repeat_electric_test"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_cancel_electric_test"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_cancel_electric_test"
+            app:layout_constraintStart_toStartOf="@+id/btn_cancel_electric_test"
+            app:layout_constraintTop_toTopOf="@+id/btn_cancel_electric_test"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_cancelar" />
+
+        <TextView
+            android:id="@+id/text_cancel_electric_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_cancel"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_cancel_electric_test"
+            app:layout_constraintEnd_toEndOf="@+id/btn_cancel_electric_test"
+            app:layout_constraintStart_toEndOf="@+id/img_cancel_electric_test"
+            app:layout_constraintTop_toTopOf="@+id/img_cancel_electric_test" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/btn_eletric_test_repeat_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="btn_repeat_electric_test, img_repeat_electric_test, text_repeat_electric_test" />
+
+        <ImageButton
+            android:id="@+id/btn_repeat_electric_test"
+            android:layout_width="278dp"
+            android:layout_height="126dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_electric_test_next"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_repeat_electric_test"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_repeat_electric_test"
+            app:layout_constraintStart_toStartOf="@+id/btn_repeat_electric_test"
+            app:layout_constraintTop_toTopOf="@+id/btn_repeat_electric_test"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_repeat" />
+
+        <TextView
+            android:id="@+id/text_repeat_electric_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_repeat"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_repeat_electric_test"
+            app:layout_constraintEnd_toEndOf="@+id/btn_repeat_electric_test"
+            app:layout_constraintStart_toEndOf="@+id/img_repeat_electric_test"
+            app:layout_constraintTop_toTopOf="@+id/img_repeat_electric_test" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/btn_eletric_test_next_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="btn_electric_test_next, img_electric_test_next, text_electric_test_next" />
+
+        <ImageButton
+            android:id="@+id/btn_electric_test_next"
+            android:layout_width="278dp"
+            android:layout_height="126dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_repeat_electric_test"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_electric_test_next"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_electric_test_next"
+            app:layout_constraintStart_toStartOf="@+id/btn_electric_test_next"
+            app:layout_constraintTop_toTopOf="@+id/btn_electric_test_next"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_proximo02" />
+
+        <TextView
+            android:id="@+id/text_electric_test_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_next"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_electric_test_next"
+            app:layout_constraintEnd_toEndOf="@+id/btn_electric_test_next"
+            app:layout_constraintStart_toEndOf="@+id/img_electric_test_next"
+            app:layout_constraintTop_toTopOf="@+id/img_electric_test_next" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

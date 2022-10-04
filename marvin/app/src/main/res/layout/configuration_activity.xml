@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cinza_claro_tecnomotor"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/logo_tecnomotor"
+        android:layout_width="133dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="70dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_tecnomotor_2" />
+
+    <Button
+        android:id="@+id/btn_test_parametros"
+        android:layout_width="215dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/parameters"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_tecnomotor" />
+
+    <Button
+        android:id="@+id/btn_test_manFluido"
+        android:layout_width="215dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="100dp"
+        android:text="@string/manutencao_fluido"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/btn_test_parametros"
+        app:layout_constraintTop_toTopOf="@id/btn_test_parametros" />
+
+    <Button
+        android:id="@+id/btn_test_estanqueidade"
+        android:layout_width="215dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/estanqueidade"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/btn_test_parametros"
+        app:layout_constraintTop_toBottomOf="@+id/btn_test_parametros" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

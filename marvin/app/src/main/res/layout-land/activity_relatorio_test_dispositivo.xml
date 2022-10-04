@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cinza_claro_tecnomotor"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/logo_tecnomotor"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_tecnomotor" />
+
+        <Button
+            android:id="@+id/btn_rel_inicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            android:text="@string/relatorio_btn_inicio"
+            android:backgroundTint="@color/blue_tecnomotor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/logo_tecnomotor" />
+
+        <TextView
+            android:id="@+id/fixed_cod_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/txt_cod_rel"
+            android:textColor="@color/pantone_black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo_tecnomotor" />
+
+        <TextView
+            android:id="@+id/txt_cod_rel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/pantone_silver_11c"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/fixed_cod_rel"
+            app:layout_constraintTop_toBottomOf="@+id/fixed_cod_rel"
+            tools:text="text_cod" />
+
+        <TextView
+            android:id="@+id/fixed_plano_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_plano_rel"
+            android:textColor="@color/pantone_black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/fixed_marca_rel"
+            app:layout_constraintStart_toEndOf="@+id/fixed_cod_rel"
+            app:layout_constraintTop_toTopOf="@+id/fixed_cod_rel" />
+
+        <TextView
+            android:id="@+id/txt_plano_rel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/pantone_silver_11c"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/fixed_plano_rel"
+            app:layout_constraintTop_toBottomOf="@+id/fixed_plano_rel"
+            tools:text="text_plano" />
+
+        <TextView
+            android:id="@+id/fixed_marca_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="200dp"
+            android:text="@string/txt_marca_rel"
+            android:textColor="@color/pantone_black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fixed_plano_rel" />
+
+        <TextView
+            android:id="@+id/txt_marca_rel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/pantone_silver_11c"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/fixed_marca_rel"
+            app:layout_constraintTop_toBottomOf="@+id/fixed_marca_rel"
+            tools:text="text_marca" />
+
+        <TextView
+            android:id="@+id/fixed_resultado_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/txt_resultado_rel"
+            android:textColor="@color/pantone_black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/fixed_cod_rel"
+            app:layout_constraintTop_toBottomOf="@+id/txt_cod_rel" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/txt_resultado_rel"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:textColor="@color/pantone_silver_11c"-->
+<!--            android:textSize="18sp"-->
+<!--            app:drawableLeftCompat="@drawable/ic_ok"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/fixed_resultado_rel"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/fixed_resultado_rel" />-->
+
+        <TextView
+            android:id="@+id/fixed_data_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_data_rel"
+            android:textColor="@color/pantone_black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/fixed_plano_rel"
+            app:layout_constraintTop_toTopOf="@+id/fixed_resultado_rel" />
+
+        <TextView
+            android:id="@+id/txt_data_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/pantone_silver_11c"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/fixed_data_rel"
+            app:layout_constraintTop_toBottomOf="@+id/fixed_data_rel"
+            tools:text="text_data" />
+
+        <TextView
+            android:id="@+id/fixed_hora_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_hora_rel"
+            android:textColor="@color/pantone_black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/fixed_marca_rel"
+            app:layout_constraintTop_toTopOf="@+id/fixed_data_rel" />
+
+        <TextView
+            android:id="@+id/txt_hora_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/pantone_silver_11c"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/fixed_hora_rel"
+            app:layout_constraintTop_toBottomOf="@+id/fixed_hora_rel"
+            tools:text="text_hora" />
+
+        <View
+            android:id="@+id/view_linha_rel_01"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/pantone_black"
+            app:layout_constraintTop_toBottomOf="@+id/txt_data_rel"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-85dp" />
+
+        <TextView
+            android:id="@+id/fixed_ponto_rel_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/txt_ponto_rel_01"
+            android:textColor="@color/pantone_black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/fixed_cod_rel"
+            app:layout_constraintTop_toBottomOf="@+id/view_linha_rel_01" />
+
+        <TextView
+            android:id="@+id/txt_ponto_rel_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="40dp"
+            android:textColor="@color/pantone_silver_11c"
+            android:textSize="18sp"
+            android:text="@string/relatorio_informacoes_test_zme"
+            app:layout_constraintStart_toStartOf="@+id/fixed_ponto_rel_01"
+            app:layout_constraintTop_toBottomOf="@+id/fixed_ponto_rel_01" />
+
+        <View
+            android:id="@+id/view_linha_rel_02"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/pantone_black"
+            app:layout_constraintTop_toBottomOf="@+id/txt_ponto_rel_01"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/fixed_ponto_rel_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/txt_ponto_rel_02"
+            android:textColor="@color/pantone_black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/fixed_ponto_rel_01"
+            app:layout_constraintTop_toBottomOf="@+id/view_linha_rel_02" />
+
+        <TextView
+            android:id="@+id/txt_ponto_rel_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="40dp"
+            android:textColor="@color/pantone_silver_11c"
+            android:textSize="18sp"
+            android:text="@string/relatorio_informacoes_test_check"
+            app:layout_constraintStart_toStartOf="@+id/fixed_ponto_rel_02"
+            app:layout_constraintTop_toBottomOf="@+id/fixed_ponto_rel_02" />
+
+        <View
+            android:id="@+id/view_linha_rel_03"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/pantone_black"
+            app:layout_constraintTop_toBottomOf="@+id/txt_ponto_rel_02"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/fixed_ponto_rel_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/txt_ponto_rel_03"
+            android:textColor="@color/pantone_black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/fixed_ponto_rel_02"
+            app:layout_constraintTop_toBottomOf="@+id/view_linha_rel_03" />
+
+        <TextView
+            android:id="@+id/txt_ponto_rel_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="40dp"
+            android:textColor="@color/pantone_silver_11c"
+            android:textSize="18sp"
+            android:text="@string/relatorio_informacoes_test_temperature_conditioning"
+            app:layout_constraintStart_toStartOf="@+id/fixed_ponto_rel_03"
+            app:layout_constraintTop_toBottomOf="@+id/fixed_ponto_rel_03" />
+
+        <View
+            android:id="@+id/view_linha_rel_04"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/pantone_black"
+            app:layout_constraintTop_toBottomOf="@+id/txt_ponto_rel_03"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/fixed_ponto_rel_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/txt_ponto_rel_04"
+            android:textColor="@color/pantone_black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/fixed_ponto_rel_03"
+            app:layout_constraintTop_toBottomOf="@+id/view_linha_rel_04" />
+
+        <TextView
+            android:id="@+id/txt_ponto_rel_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="40dp"
+            android:textColor="@color/pantone_silver_11c"
+            android:textSize="18sp"
+            android:text="@string/relatorio_informacoes_test_oil_tightness"
+            app:layout_constraintStart_toStartOf="@+id/fixed_ponto_rel_04"
+            app:layout_constraintTop_toBottomOf="@+id/fixed_ponto_rel_04" />
+
+        <View
+            android:id="@+id/view_linha_rel_05"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/pantone_black"
+            app:layout_constraintTop_toBottomOf="@+id/txt_ponto_rel_04"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/fixed_ponto_rel_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/txt_ponto_rel_05"
+            android:textColor="@color/pantone_black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/fixed_ponto_rel_04"
+            app:layout_constraintTop_toBottomOf="@+id/view_linha_rel_05" />
+
+        <TextView
+            android:id="@+id/txt_ponto_rel_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="40dp"
+            android:textColor="@color/pantone_silver_11c"
+            android:textSize="18sp"
+            android:text="@string/relatorio_informacoes_test_kl"
+            app:layout_constraintStart_toStartOf="@+id/fixed_ponto_rel_05"
+            app:layout_constraintTop_toBottomOf="@+id/fixed_ponto_rel_05" />
+
+        <View
+            android:id="@+id/view_linha_rel_06"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/pantone_black"
+            app:layout_constraintTop_toBottomOf="@+id/txt_ponto_rel_05"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/fixed_ponto_rel_06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/txt_ponto_rel_06"
+            android:textColor="@color/pantone_black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/fixed_ponto_rel_05"
+            app:layout_constraintTop_toBottomOf="@+id/view_linha_rel_06" />
+
+        <TextView
+            android:id="@+id/txt_ponto_rel_06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="40dp"
+            android:textColor="@color/pantone_silver_11c"
+            android:textSize="18sp"
+            android:text="@string/relatorio_informacoes_test_suction_check"
+            app:layout_constraintStart_toStartOf="@+id/fixed_ponto_rel_06"
+            app:layout_constraintTop_toBottomOf="@+id/fixed_ponto_rel_06" />
+
+        <View
+            android:id="@+id/view_linha_rel_07"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/pantone_black"
+            app:layout_constraintTop_toBottomOf="@+id/txt_ponto_rel_06"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/fixed_ponto_rel_07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/txt_ponto_rel_07"
+            android:textColor="@color/pantone_black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/fixed_ponto_rel_06"
+            app:layout_constraintTop_toBottomOf="@+id/view_linha_rel_07" />
+
+        <TextView
+            android:id="@+id/txt_ponto_rel_07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="40dp"
+            android:textColor="@color/pantone_silver_11c"
+            android:textSize="18sp"
+            android:text="@string/relatorio_informacoes_test_warm_up"
+            app:layout_constraintStart_toStartOf="@+id/fixed_ponto_rel_07"
+            app:layout_constraintTop_toBottomOf="@+id/fixed_ponto_rel_07" />
+
+        <View
+            android:id="@+id/view_linha_rel_08"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/pantone_black"
+            app:layout_constraintTop_toBottomOf="@+id/txt_ponto_rel_07"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

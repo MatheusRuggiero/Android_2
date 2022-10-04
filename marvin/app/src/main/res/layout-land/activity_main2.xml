@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cinza_claro_tecnomotor"
+    tools:context=".view.MainActivity">
+
+    <TextView
+        android:id="@+id/text_version_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:textSize="20sp"
+        android:textColor="@color/blue_tecnomotor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="v00.00.00" />
+
+    <ProgressBar
+        android:id="@+id/loading_spinner_main"
+        style="?android:progressBarStyleLarge"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.55"
+        tools:ignore="InconsistentLayout" />
+
+    <ImageView
+        android:id="@+id/logo_tecnomotor"
+        android:layout_width="133dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="36dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="?android:attr/selectableItemBackground"
+        app:srcCompat="@drawable/logo_tecnomotor_2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_view_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/blue_tecnomotor"
+        app:layout_constraintTop_toTopOf="@id/guideline_view_divider" />
+
+    <ImageButton
+        android:id="@+id/btn_main_pump"
+        android:layout_width="350dp"
+        android:layout_height="120dp"
+        android:contentDescription="@string/todo"
+        android:background="@color/cinza_claro_tecnomotor"
+        app:layout_constraintBottom_toTopOf="@id/btn_main_valve"
+        app:layout_constraintEnd_toStartOf="@id/btn_main_injector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_tecnomotor"
+        app:srcCompat="@drawable/svg_button_large_selector"
+        tools:ignore="InconsistentLayout" />
+
+    <ImageView
+        android:id="@+id/img_pump"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="20dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_main_pump"
+        app:layout_constraintStart_toStartOf="@+id/btn_main_pump"
+        app:layout_constraintTop_toTopOf="@+id/btn_main_pump"
+        app:layout_constraintVertical_bias="0.4"
+        app:srcCompat="@drawable/svg_pumps" />
+
+    <TextView
+        android:id="@+id/text_pump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Bombas"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_pump"
+        app:layout_constraintEnd_toEndOf="@+id/btn_main_pump"
+        app:layout_constraintStart_toEndOf="@+id/img_pump"
+        app:layout_constraintTop_toTopOf="@+id/img_pump" />
+
+    <ImageButton
+        android:id="@+id/btn_main_injector"
+        android:layout_width="350dp"
+        android:layout_height="120dp"
+        android:background="@color/cinza_claro_tecnomotor"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_main_pump"
+        app:layout_constraintTop_toTopOf="@+id/btn_main_pump"
+        app:srcCompat="@drawable/svg_button_large_selector"
+        tools:ignore="InconsistentLayout" />
+
+    <ImageView
+        android:id="@+id/img_injector"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="20dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_main_injector"
+        app:layout_constraintStart_toStartOf="@+id/btn_main_injector"
+        app:layout_constraintTop_toTopOf="@+id/btn_main_injector"
+        app:layout_constraintVertical_bias="0.4"
+        app:srcCompat="@drawable/svg_injector" />
+
+    <TextView
+        android:id="@+id/text_injector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Injetores"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_injector"
+        app:layout_constraintEnd_toEndOf="@+id/btn_main_injector"
+        app:layout_constraintStart_toEndOf="@+id/img_injector"
+        app:layout_constraintTop_toTopOf="@+id/img_injector" />
+
+    <ImageButton
+        android:id="@+id/btn_main_sensor"
+        android:layout_width="350dp"
+        android:layout_height="120dp"
+        android:background="@color/cinza_claro_tecnomotor"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@id/view_divider"
+        app:layout_constraintEnd_toEndOf="@id/btn_main_pump"
+        app:layout_constraintStart_toStartOf="@id/btn_main_pump"
+        app:layout_constraintTop_toBottomOf="@+id/btn_main_pump"
+        app:srcCompat="@drawable/svg_button_large_selector"
+        tools:ignore="InconsistentLayout" />
+
+    <ImageView
+        android:id="@+id/img_sensor"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="24dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_main_sensor"
+        app:layout_constraintStart_toStartOf="@+id/btn_main_sensor"
+        app:layout_constraintTop_toTopOf="@+id/btn_main_sensor"
+        app:layout_constraintVertical_bias="0.39"
+        app:srcCompat="@drawable/svg_sensor" />
+
+    <TextView
+        android:id="@+id/txt_sensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Sensores"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_sensor"
+        app:layout_constraintEnd_toEndOf="@+id/btn_main_sensor"
+        app:layout_constraintStart_toEndOf="@+id/img_sensor"
+        app:layout_constraintTop_toTopOf="@+id/img_sensor" />
+
+    <ImageButton
+        android:id="@+id/btn_main_valve"
+        android:layout_width="350dp"
+        android:layout_height="120dp"
+        android:background="@color/cinza_claro_tecnomotor"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@id/view_divider"
+        app:layout_constraintEnd_toEndOf="@+id/btn_main_injector"
+        app:layout_constraintStart_toStartOf="@+id/btn_main_injector"
+        app:layout_constraintTop_toBottomOf="@+id/btn_main_injector"
+        app:srcCompat="@drawable/svg_button_large_selector"
+        tools:ignore="InconsistentLayout" />
+
+    <ImageView
+        android:id="@+id/img_valve"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="24dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_main_valve"
+        app:layout_constraintStart_toStartOf="@+id/btn_main_valve"
+        app:layout_constraintTop_toTopOf="@+id/btn_main_valve"
+        app:layout_constraintVertical_bias="0.4"
+        app:srcCompat="@drawable/svg_valve" />
+
+    <TextView
+        android:id="@+id/txt_valve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Valvulas"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_valve"
+        app:layout_constraintEnd_toEndOf="@+id/btn_main_valve"
+        app:layout_constraintStart_toEndOf="@+id/img_valve"
+        app:layout_constraintTop_toTopOf="@+id/img_valve" />
+
+<!--    Botão Relatório-->
+    <LinearLayout
+        android:id="@+id/btn_main_report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_main_pump"
+        app:layout_constraintStart_toStartOf="@+id/btn_main_pump"
+        app:layout_constraintTop_toBottomOf="@+id/view_divider"
+        tools:ignore="InconsistentLayout">
+
+        <ImageView
+            android:id="@+id/img_report"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/svg_report" />
+
+        <TextView
+            android:id="@+id/txt_report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/relatorios"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+<!--    Botão Configurações-->
+    <LinearLayout
+        android:id="@+id/btn_main_configuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/btn_main_report"
+        app:layout_constraintEnd_toEndOf="@+id/btn_main_injector"
+        app:layout_constraintStart_toStartOf="@+id/btn_main_injector"
+        app:layout_constraintTop_toTopOf="@+id/btn_main_report"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="InconsistentLayout">
+
+        <ImageView
+            android:id="@+id/img_configuration"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/svg_settings" />
+
+        <TextView
+            android:id="@+id/txt_configuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/configuration"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <!--    Botão sincronização-->
+    <LinearLayout
+        android:id="@+id/btn_main_synchronization_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/btn_main_report"
+        app:layout_constraintEnd_toStartOf="@+id/btn_main_injector"
+        app:layout_constraintStart_toEndOf="@+id/btn_main_pump"
+        app:layout_constraintTop_toTopOf="@+id/btn_main_report"
+        tools:ignore="InconsistentLayout">
+
+        <ImageView
+            android:id="@+id/img_syncronization"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/ic_repeat" />
+
+        <TextView
+            android:id="@+id/txt_main_synchronization_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/synchronization"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/text_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="20sp"
+        android:textColor="@color/blue_tecnomotor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="v00.00 / v00.00"
+        tools:ignore="InconsistentLayout" />
+
+    <ProgressBar
+        android:id="@+id/loading_version"
+        style="?android:progressBarStyleLarge"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="InconsistentLayout,MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

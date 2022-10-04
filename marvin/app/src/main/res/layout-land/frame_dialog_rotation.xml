@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cinza_claro_tecnomotor_transp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/border_show_values"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline1">
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChartRotation"
+            android:layout_width="320dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/value_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/dark_gray"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@+id/pieChartRotation"
+            app:layout_constraintStart_toStartOf="@+id/pieChartRotation"
+            app:layout_constraintTop_toBottomOf="@+id/pieChartRotation"
+            tools:text="Rotação" />
+
+        <TextView
+            android:id="@+id/txt_info_rotation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="42sp"
+            app:layout_constraintBottom_toBottomOf="@+id/pieChartRotation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pieChartRotation"
+            app:layout_constraintTop_toTopOf="@+id/pieChartRotation"
+            tools:text="Mantenha a rotação em \n 1000 rpm" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupButtonTightnessSkip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="btn_rotation_test_skip_rotation, img_rotation_test_skip_rotation, text_rotation_test_skip_rotation" />
+
+        <ImageButton
+            android:id="@+id/btn_rotation_test_skip_rotation"
+            android:layout_width="200dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:scaleX="1"
+            android:scaleY="1.2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_rotation_test_skip_test_point"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_rotation_test_skip_rotation"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_rotation_test_skip_rotation"
+            app:layout_constraintStart_toStartOf="@+id/btn_rotation_test_skip_rotation"
+            app:layout_constraintTop_toTopOf="@+id/btn_rotation_test_skip_rotation"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_skip02" />
+
+        <TextView
+            android:id="@+id/text_rotation_test_skip_rotation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_skip_rotation"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_rotation_test_skip_rotation"
+            app:layout_constraintEnd_toEndOf="@+id/btn_rotation_test_skip_rotation"
+            app:layout_constraintStart_toEndOf="@+id/img_rotation_test_skip_rotation"
+            app:layout_constraintTop_toTopOf="@+id/img_rotation_test_skip_rotation" />
+
+        <ImageButton
+            android:id="@+id/btn_rotation_test_skip_test_point"
+            android:layout_width="200dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:scaleX="1"
+            android:scaleY="1.2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_repeat_rotation"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_rotation_test_skip_test_point"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_rotation_test_skip_test_point"
+            app:layout_constraintStart_toStartOf="@+id/btn_rotation_test_skip_test_point"
+            app:layout_constraintTop_toTopOf="@+id/btn_rotation_test_skip_test_point"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_proximo02" />
+
+        <TextView
+            android:id="@+id/text_rotation_test_skip_test_point"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_skip_test_point"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_rotation_test_skip_test_point"
+            app:layout_constraintEnd_toEndOf="@+id/btn_rotation_test_skip_test_point"
+            app:layout_constraintStart_toEndOf="@+id/img_rotation_test_skip_test_point"
+            app:layout_constraintTop_toTopOf="@+id/img_rotation_test_skip_test_point" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupButtonRotationCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_cancel_rotation, img_cancel_rotation, txt_cancel_rotation" />
+
+        <ImageButton
+            android:id="@+id/btn_cancel_rotation"
+            android:layout_width="200dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:scaleX="1"
+            android:scaleY="1.2"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_rotation_test_skip_rotation"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck,DuplicateClickableBoundsCheck" />
+
+        <ImageView
+            android:id="@+id/img_cancel_rotation"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_cancel_rotation"
+            app:layout_constraintStart_toStartOf="@+id/btn_cancel_rotation"
+            app:layout_constraintTop_toTopOf="@+id/btn_cancel_rotation"
+            app:layout_constraintVertical_bias="0.40"
+            app:srcCompat="@drawable/ic_cancelar" />
+
+        <TextView
+            android:id="@+id/txt_cancel_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_cancel"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_cancel_rotation"
+            app:layout_constraintEnd_toEndOf="@+id/btn_cancel_rotation"
+            app:layout_constraintHorizontal_bias="0.65"
+            app:layout_constraintStart_toEndOf="@+id/img_cancel_rotation"
+            app:layout_constraintTop_toTopOf="@+id/img_cancel_rotation"
+            app:layout_constraintVertical_bias="0.547" />
+
+        <!-- Repetir Verificação de Rotação -->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupButtonRotationRepeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="btn_repeat_rotation, img_repeat_rotation, txt_repeat_rotation" />
+
+        <ImageButton
+            android:id="@+id/btn_repeat_rotation"
+            android:layout_width="200dp"
+            android:layout_height="90dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:scaleX="1"
+            android:scaleY="1.2"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+        <ImageView
+            android:id="@+id/img_repeat_rotation"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_repeat_rotation"
+            app:layout_constraintStart_toStartOf="@+id/btn_repeat_rotation"
+            app:layout_constraintTop_toTopOf="@+id/btn_repeat_rotation"
+            app:layout_constraintVertical_bias="0.40"
+            app:srcCompat="@drawable/ic_repeat" />
+
+        <TextView
+            android:id="@+id/txt_repeat_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_repeat"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_repeat_rotation"
+            app:layout_constraintEnd_toEndOf="@+id/btn_repeat_rotation"
+            app:layout_constraintHorizontal_bias="0.65"
+            app:layout_constraintStart_toEndOf="@+id/img_repeat_rotation"
+            app:layout_constraintTop_toTopOf="@+id/img_repeat_rotation"
+            app:layout_constraintVertical_bias="0.547" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

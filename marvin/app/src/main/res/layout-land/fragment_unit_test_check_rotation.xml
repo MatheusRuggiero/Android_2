@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.unit_test.pump.UnitTestCheckRotationFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txt_HW_check_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="80dp"
+            android:text="@string/rotacao"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/guideline_unit_test_check_rotation"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edt_HW_check_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:text="@string/_500"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_check_rotation"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_check_rotation"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_timeout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="@string/timeout"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/edt_HW_check_rotation"
+            app:layout_constraintTop_toBottomOf="@+id/edt_HW_check_rotation" />
+
+        <EditText
+            android:id="@+id/edt_HW_timeout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:text="@string/_300"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_timeout"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_timeout"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/btn_HW_check_rotation_param"
+            android:layout_width="150dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/param"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_unit_test_check_rotation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_HW_check_rotation_start"
+            android:layout_width="150dp"
+            android:layout_height="56dp"
+            android:text="@string/txt_start"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_check_rotation_param"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_check_rotation_param" />
+
+        <Button
+            android:id="@+id/btn_HW_check_rotation_yes"
+            android:layout_width="150dp"
+            android:layout_height="56dp"
+            android:text="@string/sim"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_check_rotation_start"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_check_rotation_start" />
+
+        <Button
+            android:id="@+id/btn_HW_check_rotation_no"
+            android:layout_width="150dp"
+            android:layout_height="56dp"
+            android:text="@string/nao"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_check_rotation_yes"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_check_rotation_yes" />
+
+        <Button
+            android:id="@+id/btn_HW_check_rotation_ret"
+            android:layout_width="150dp"
+            android:layout_height="56dp"
+            android:text="@string/ret"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_check_rotation_no"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_check_rotation_no" />
+
+        <Button
+            android:id="@+id/btn_HW_check_rotation_error"
+            android:layout_width="150dp"
+            android:layout_height="56dp"
+            android:text="@string/error"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_check_rotation_ret"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_check_rotation_ret"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/btn_HW_check_rotation_skip"
+            android:layout_width="150dp"
+            android:layout_height="56dp"
+            android:text="@string/txt_skip"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_check_rotation_error"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_check_rotation_error"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_unit_test_check_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <TextView
+            android:id="@+id/txt_HW_check_rotation_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/txt_status"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toEndOf="@+id/edt_HW_check_rotation"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_value_check_HW_rotation_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_check_rotation_status"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_check_rotation_status"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_check_HW_rotation_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/error"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_check_rotation_status"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_check_rotation_status" />
+
+        <TextView
+            android:id="@+id/txt_value_check_HW_rotation_error"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_check_HW_rotation_error"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txt_value_check_HW_rotation_status"
+            app:layout_constraintTop_toTopOf="@+id/txt_check_HW_rotation_error"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_HW_check_rotation_desired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/rotacao_desejada_2"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_check_HW_rotation_error"
+            app:layout_constraintTop_toBottomOf="@+id/txt_check_HW_rotation_error" />
+
+        <TextView
+            android:id="@+id/txt_value_check_HW_rotation_desired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_value_check_HW_rotation_error"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_check_rotation_desired"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_check_HW_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/rotacao"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_check_rotation_desired"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_check_rotation_desired" />
+
+        <TextView
+            android:id="@+id/txt_value_check_HW_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_value_check_HW_rotation_desired"
+            app:layout_constraintTop_toTopOf="@+id/txt_check_HW_rotation"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_check_HW_rotation_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/temperatura"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_check_HW_rotation"
+            app:layout_constraintTop_toBottomOf="@+id/txt_check_HW_rotation" />
+
+        <TextView
+            android:id="@+id/txt_value_check_HW_rotation_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_value_check_HW_rotation"
+            app:layout_constraintTop_toTopOf="@+id/txt_check_HW_rotation_temp"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_check_HW_rotation_timeout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/timeout"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_check_HW_rotation_temp"
+            app:layout_constraintTop_toBottomOf="@+id/txt_check_HW_rotation_temp" />
+
+        <TextView
+            android:id="@+id/txt_value_check_HW_rotation_timeout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_value_check_HW_rotation_temp"
+            app:layout_constraintTop_toTopOf="@+id/txt_check_HW_rotation_timeout"
+            tools:text="Value Test" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

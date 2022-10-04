@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cinza_claro_tecnomotor"
+    app:cardCornerRadius="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cinza_claro_tecnomotor">
+
+<!--        Nome do ponto de teste -->
+        <TextView
+            android:id="@+id/name_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/blue_tecnomotor"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Name point" />
+
+<!--        Status de execução do ponto de teste -->
+        <TextView
+            android:id="@+id/value_status_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="36sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@id/name_point_test_injector"
+            app:layout_constraintTop_toBottomOf="@id/name_point_test_injector"
+            tools:text="Executando" />
+
+<!--        Gráfico de pressão de teste -->
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/point_test_injector_pie_chart"
+            android:layout_width="317dp"
+            android:layout_height="298dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/chart_flow_point_test_injector"
+            app:layout_constraintStart_toStartOf="@id/name_point_test_injector"
+            app:layout_constraintTop_toBottomOf="@+id/value_status_point_test_injector"
+            app:layout_constraintVertical_bias="0.20" />
+
+        <TextView
+            android:id="@+id/value_pressure_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/dark_gray"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@+id/point_test_injector_pie_chart"
+            app:layout_constraintStart_toStartOf="@+id/point_test_injector_pie_chart"
+            app:layout_constraintTop_toBottomOf="@+id/point_test_injector_pie_chart"
+            tools:text="Pressure Rail" />
+
+<!--        Guideline que separa gráficos à esquerda e valores em texto à direita-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineGraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.55" />
+
+<!--        Gráfico de vazão de retorno-->
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/chart_return_point_test_injector"
+            android:layout_width="160dp"
+            android:layout_height="400dp"
+            android:background="@color/white"
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineGraph"
+            app:layout_constraintTop_toTopOf="@+id/value_status_point_test_injector" />
+
+        <TextView
+            android:id="@+id/legend_chart_return_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/dark_gray"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/chart_return_point_test_injector"
+            app:layout_constraintStart_toStartOf="@+id/chart_return_point_test_injector"
+            app:layout_constraintTop_toBottomOf="@+id/chart_return_point_test_injector"
+            android:text="@string/txt_return" />
+
+<!--        Gráfico de vazão principal-->
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/chart_flow_point_test_injector"
+            android:layout_width="160dp"
+            android:layout_height="400dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/chart_return_point_test_injector"
+            app:layout_constraintTop_toTopOf="@+id/chart_return_point_test_injector" />
+
+        <TextView
+            android:id="@+id/legend_chart_flow_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/dark_gray"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/chart_flow_point_test_injector"
+            app:layout_constraintStart_toStartOf="@+id/chart_flow_point_test_injector"
+            app:layout_constraintTop_toBottomOf="@+id/chart_flow_point_test_injector"
+            android:text="@string/txt_flow" />
+
+<!--        Guideline que separa gráficos à esquerda e valores em texto à direita-->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineGraph2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.6" />
+
+<!--        Tempo do ponto de teste-->
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_time_point_test_injector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:constraint_referenced_ids="time_point_test_injector, value_time_point_test_injector" >
+            </androidx.constraintlayout.widget.Group>
+
+            <TextView
+                android:id="@+id/time_point_test_injector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_time"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txt_ponto_teste_legenda_pequeno"
+                app:layout_constraintStart_toEndOf="@+id/guidelineGraph2"
+                app:layout_constraintTop_toTopOf="@id/chart_return_point_test_injector" />
+
+            <TextView
+                android:id="@+id/value_time_point_test_injector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/txt_ponto_teste_valor_pequeno"
+                android:text="@string/_00_s"
+                android:layout_marginTop="-10dp"
+                app:layout_constraintTop_toBottomOf="@+id/time_point_test_injector"
+                app:layout_constraintStart_toStartOf="@+id/time_point_test_injector" />
+
+<!--            Frequência -->
+
+        <TextView
+            android:id="@+id/frequency_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_frequency"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_pequeno"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="@+id/time_point_test_injector"
+            app:layout_constraintTop_toBottomOf="@id/value_time_point_test_injector" />
+
+        <TextView
+            android:id="@+id/value_frequency_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_ponto_teste_valor_pequeno"
+            android:layout_marginTop="-10dp"
+            app:layout_constraintTop_toBottomOf="@+id/frequency_point_test_injector"
+            app:layout_constraintStart_toStartOf="@+id/frequency_point_test_injector"
+            tools:text="125 Hz" />
+
+<!--        Tempo injeção-->
+        <TextView
+            android:id="@+id/time_injection_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_time_injection"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_pequeno"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="@+id/frequency_point_test_injector"
+            app:layout_constraintTop_toBottomOf="@+id/value_frequency_point_test_injector" />
+
+        <TextView
+            android:id="@+id/value_time_injection_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_ponto_teste_valor_pequeno"
+            android:layout_marginTop="-10dp"
+            app:layout_constraintTop_toBottomOf="@+id/time_injection_point_test_injector"
+            app:layout_constraintStart_toStartOf="@+id/time_injection_point_test_injector"
+            tools:text="0.1 s" />
+
+
+<!--        Vazão-->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_flow_point_test_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="flow_point_test_injector, value_flow_min_or_max_point_test_injector, value_flow_point_test_injector, chart_flow_point_test_injector, legend_chart_flow_point_test_injector" >
+        </androidx.constraintlayout.widget.Group>
+
+        <TextView
+            android:id="@+id/flow_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-10dp"
+            android:text="@string/txt_flow"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_pequeno"
+            android:layout_marginTop="72dp"
+            app:layout_constraintStart_toStartOf="@+id/value_time_injection_point_test_injector"
+            app:layout_constraintTop_toBottomOf="@+id/value_time_injection_point_test_injector" />
+
+        <TextView
+            android:id="@+id/value_flow_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_ponto_teste_valor_medio"
+            android:textStyle="bold"
+            android:layout_marginTop="-10dp"
+            app:layout_constraintTop_toBottomOf="@+id/flow_point_test_injector"
+            app:layout_constraintStart_toStartOf="@+id/flow_point_test_injector"
+            tools:text="45.6 ml" />
+
+        <TextView
+            android:id="@+id/value_flow_min_or_max_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_pequeno"
+            android:layout_marginTop="-10dp"
+            app:layout_constraintStart_toStartOf="@+id/value_flow_point_test_injector"
+            app:layout_constraintTop_toBottomOf="@id/value_flow_point_test_injector"
+            tools:layout_editor_absoluteY="505dp"
+            tools:text="30.0 ml / 50.5 ml" />
+
+<!--        Guideline para separar as duas colunas de dados-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8" />
+
+<!--        Retorno-->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_return_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="return_point_test_injector,value_return_min_or_max_point_test_injector,value_return_point_test_injector,chart_return_point_test_injector,legend_chart_return_point_test_injector" >
+        </androidx.constraintlayout.widget.Group>
+
+        <TextView
+            android:id="@+id/return_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_return"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_pequeno"
+            app:layout_constraintStart_toStartOf="@+id/guidelineData"
+            app:layout_constraintTop_toTopOf="@+id/flow_point_test_injector" />
+
+        <TextView
+            android:id="@+id/value_return_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_ponto_teste_valor_medio"
+            android:textStyle="bold"
+            android:layout_marginTop="-10dp"
+            app:layout_constraintTop_toBottomOf="@+id/return_point_test_injector"
+            app:layout_constraintStart_toStartOf="@+id/return_point_test_injector"
+            tools:text="23.1 ml" />
+
+        <TextView
+            android:id="@+id/value_return_min_or_max_point_test_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_ponto_teste_legenda_pequeno"
+            android:layout_marginTop="-10dp"
+            app:layout_constraintStart_toStartOf="@+id/value_return_point_test_injector"
+            app:layout_constraintTop_toBottomOf="@+id/value_return_point_test_injector"
+            tools:text="10.0 ml / 30.0 ml" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

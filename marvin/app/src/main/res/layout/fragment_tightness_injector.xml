@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_tightness_injector_container"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cinza_claro_tecnomotor">
+
+        <ImageView
+            android:id="@+id/logo_tecnomotor"
+            android:layout_width="133dp"
+            android:layout_height="98dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_tecnomotor_2" />
+
+        <TextView
+            android:id="@+id/txt_test_tightness_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_test_tightness_injector"
+            android:textColor="@color/black"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/logo_tecnomotor"
+            app:layout_constraintTop_toTopOf="@+id/logo_tecnomotor" />
+
+        <TextView
+            android:id="@+id/txt_condition_tightness_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="@string/txt_condition_tightness_injector"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/logo_tecnomotor"
+            app:layout_constraintTop_toBottomOf="@+id/logo_tecnomotor" />
+
+        <TextView
+            android:id="@+id/txt_condition_tightness_injector_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:textColor="@color/green"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            tools:text="@string/txt_injector_test_condição"
+            app:layout_constraintStart_toEndOf="@+id/txt_condition_tightness_injector"
+            app:layout_constraintTop_toTopOf="@+id/txt_condition_tightness_injector" />
+
+        <TextView
+            android:id="@+id/txt_status_test_tightness_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/txt_status_test_tightness_injector"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_condition_tightness_injector"
+            app:layout_constraintTop_toBottomOf="@+id/txt_condition_tightness_injector" />
+
+        <TextView
+            android:id="@+id/txt_status_test_tightness_injector_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            tools:text="@string/txt_status"
+            app:layout_constraintStart_toStartOf="@+id/txt_condition_tightness_injector_value"
+            app:layout_constraintTop_toTopOf="@+id/txt_status_test_tightness_injector" />
+
+
+        <ImageView
+            android:id="@+id/img_tightness_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="100dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintStart_toStartOf="@+id/txt_status_test_tightness_injector"
+            app:layout_constraintTop_toBottomOf="@+id/txt_status_test_tightness_injector"
+            app:srcCompat="@drawable/svg_injector" />
+
+        <ImageView
+            android:id="@+id/status_test_tightness_fail"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/todo"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/img_tightness_injector"
+            app:layout_constraintEnd_toEndOf="@+id/img_tightness_injector"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/img_tightness_injector"
+            app:layout_constraintTop_toTopOf="@+id/img_tightness_injector"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/svg_nao_verificado" />
+
+        <ImageView
+            android:id="@+id/status_test_tightness_ok"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/todo"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/img_tightness_injector"
+            app:layout_constraintEnd_toEndOf="@+id/img_tightness_injector"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/img_tightness_injector"
+            app:layout_constraintTop_toTopOf="@+id/img_tightness_injector"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/svg_verificado" />
+
+        <ImageButton
+            android:id="@+id/btn_tightness_test_cancel"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            app:layout_constraintStart_toStartOf="@+id/btn_tightness_test_skip"
+            app:layout_constraintTop_toBottomOf="@+id/btn_tightness_test_skip"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_tightness_test_cancel"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_tightness_test_cancel"
+            app:layout_constraintStart_toStartOf="@+id/btn_tightness_test_cancel"
+            app:layout_constraintTop_toTopOf="@+id/btn_tightness_test_cancel"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_cancelar" />
+
+        <TextView
+            android:id="@+id/text_tightness_test_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_cancel"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/img_tightness_test_cancel"
+            app:layout_constraintEnd_toEndOf="@+id/btn_tightness_test_cancel"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@+id/img_tightness_test_cancel"
+            app:layout_constraintTop_toTopOf="@+id/img_tightness_test_cancel" />
+
+        <ImageButton
+            android:id="@+id/btn_tightness_test_next"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_tightness_injector"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_tightness_test_next"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_tightness_test_next"
+            app:layout_constraintStart_toStartOf="@+id/btn_tightness_test_next"
+            app:layout_constraintTop_toTopOf="@+id/btn_tightness_test_next"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_proximo02" />
+
+        <TextView
+            android:id="@+id/text_tightness_test_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_next"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/img_tightness_test_next"
+            app:layout_constraintEnd_toEndOf="@+id/btn_tightness_test_next"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@+id/img_tightness_test_next"
+            app:layout_constraintTop_toTopOf="@+id/img_tightness_test_next" />
+
+        <ImageButton
+            android:id="@+id/btn_tightness_test_skip"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            app:layout_constraintStart_toStartOf="@+id/btn_tightness_test_save"
+            app:layout_constraintTop_toBottomOf="@+id/btn_tightness_test_save"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_tightness_test_skip"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_tightness_test_skip"
+            app:layout_constraintStart_toStartOf="@+id/btn_tightness_test_skip"
+            app:layout_constraintTop_toTopOf="@+id/btn_tightness_test_skip"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_skip02" />
+
+        <TextView
+            android:id="@+id/text_tightness_test_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_skip"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/img_tightness_test_skip"
+            app:layout_constraintEnd_toEndOf="@+id/btn_tightness_test_skip"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@+id/img_tightness_test_skip"
+            app:layout_constraintTop_toTopOf="@+id/img_tightness_test_skip" />
+
+        <ImageButton
+            android:id="@+id/btn_tightness_test_save"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            app:layout_constraintStart_toStartOf="@+id/btn_tightness_test_next"
+            app:layout_constraintTop_toBottomOf="@+id/btn_tightness_test_next"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_tightness_test_save"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_tightness_test_save"
+            app:layout_constraintStart_toStartOf="@+id/btn_tightness_test_save"
+            app:layout_constraintTop_toTopOf="@+id/btn_tightness_test_save"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_gravar" />
+
+        <TextView
+            android:id="@+id/text_tightness_test_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_gravar"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/img_tightness_test_save"
+            app:layout_constraintEnd_toEndOf="@+id/btn_tightness_test_save"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@+id/img_tightness_test_save"
+            app:layout_constraintTop_toTopOf="@+id/img_tightness_test_save" />
+
+        <ImageButton
+            android:id="@+id/btn_tightness_test_finish"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:background="@color/cinza_claro_tecnomotor"
+            android:contentDescription="@string/todo"
+            app:layout_constraintStart_toStartOf="@+id/btn_tightness_test_cancel"
+            app:layout_constraintTop_toBottomOf="@+id/btn_tightness_test_cancel"
+            app:srcCompat="@drawable/svg_button_medium_selector"
+            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/img_tightness_test_finish"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_tightness_test_finish"
+            app:layout_constraintStart_toStartOf="@+id/btn_tightness_test_finish"
+            app:layout_constraintTop_toTopOf="@+id/btn_tightness_test_finish"
+            app:layout_constraintVertical_bias="0.45"
+            app:srcCompat="@drawable/ic_terminar" />
+
+        <TextView
+            android:id="@+id/text_tightness_test_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_finish"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/img_tightness_test_finish"
+            app:layout_constraintEnd_toEndOf="@+id/btn_tightness_test_finish"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@+id/img_tightness_test_finish"
+            app:layout_constraintTop_toTopOf="@+id/img_tightness_test_finish" />
+
+        <ProgressBar
+            android:id="@+id/processBarTestTightness"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="80dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_condition_tightness_injector" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupButtonTightnessFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_tightness_test_finish, img_tightness_test_finish, text_tightness_test_finish" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupButtonTightnessNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_tightness_test_next, img_tightness_test_next, text_tightness_test_next" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupButtonTightnessSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_tightness_test_save, img_tightness_test_save, text_tightness_test_save" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupButtonTightnessCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_tightness_test_cancel, img_tightness_test_cancel, text_tightness_test_cancel" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupButtonTightnessSkip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="btn_tightness_test_skip, img_tightness_test_skip, text_tightness_test_skip" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

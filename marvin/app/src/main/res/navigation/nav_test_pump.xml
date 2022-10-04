@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_test_pump"
+    app:startDestination="@id/instructions_connectors_pump_fragment">
+
+    <fragment
+        android:id="@+id/instructions_connectors_pump_fragment"
+        android:name="br.com.tecnomotor.marvin.view.pump.tests.InstructionsConnectorsPumpFragment"
+        android:label="@string/txt_instrucoes"
+        tools:layout="@layout/fragment_instructions_connectors_pump" >
+
+        <action
+            android:id="@+id/action_instructionsConnectorsPump_to_electricalTestPumppointTestPumpFragment"
+            app:destination="@id/electrical_test_pump_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/electrical_test_pump_fragment"
+        android:name="br.com.tecnomotor.marvin.view.pump.tests.ElectricalTestPumpFragment"
+        android:label="@string/txt_electrical_pump_test"
+        tools:layout="@layout/fragment_electrical_test_pump" >
+
+        <action
+            android:id="@+id/action_electricalTestPumpFragment_to_rotationPumpFragment"
+            app:destination="@id/rotation_test_pump_fragment" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/rotation_test_pump_fragment"
+        android:name="br.com.tecnomotor.marvin.view.pump.tests.RotationPumpFragment"
+        android:label="@string/txt_rotation_test_pump"
+        tools:layout="@layout/fragment_rotation_pump" >
+
+        <action
+            android:id="@+id/action_rotationPumpFragment_to_pointTestPumpFragment"
+            app:destination="@id/point_test_pump_fragment" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/point_test_pump_fragment"
+        android:name="br.com.tecnomotor.marvin.view.pump.tests.PointTestPumpFragment"
+        android:label="@string/txt_point_test_pump"
+        tools:layout="@layout/fragment_point_test_pump" >
+<!--        <action-->
+<!--            android:id="@+id/action_pointTestPumpFragment_to_testPumpFragment"-->
+<!--            app:destination="@id/test_pump_fragment" />-->
+
+    </fragment>
+
+<!--    <fragment-->
+<!--        android:id="@+id/point_test_pump_fragment"-->
+<!--        android:name="br.com.tecnomotor.marvin.view.pump.tests.PointTestPumpFragment"-->
+<!--        android:label="@string/txt_point_test_pump"-->
+<!--        tools:layout="@layout/fragment_point_test_pump" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_pointTestPumpFragment_to_testPumpFragment"-->
+<!--            app:destination="@id/test_pump_fragment" />-->
+
+<!--        <argument-->
+<!--            android:name="deviceViewModel"-->
+<!--            app:argType="br.com.tecnomotor.marvin.view.viewmodel.device.DeviceViewModel" />-->
+<!--    </fragment>-->
+
+</navigation>

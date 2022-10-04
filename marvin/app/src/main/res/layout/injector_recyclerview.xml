@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="10dp"
+    tools:ignore="MissingConstraints">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_injector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/cinza_medio">
+
+        <TextView
+            android:id="@+id/code_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blue_tecnomotor"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_injector"
+            app:layout_constraintHorizontal_bias="0.463"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="0445110682" />
+
+        <TextView
+            android:id="@+id/txt_view_label_brand_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/txt_view_label_brand_injector"
+            android:textColor="@color/dark_gray"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/guideline_injector"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/brand_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/txt_view_label_brand_injector"
+            app:layout_constraintTop_toTopOf="@+id/txt_view_label_brand_injector"
+            tools:text="BOSCH" />
+
+        <TextView
+            android:id="@+id/txt_view_label_adapter_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:text="@string/txt_view_label_adapter_injector"
+            android:textColor="@color/dark_gray"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/type_injector"
+            app:layout_constraintTop_toTopOf="@+id/type_injector" />
+
+        <TextView
+            android:id="@+id/adapter_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/txt_view_label_adapter_injector"
+            app:layout_constraintTop_toTopOf="@+id/txt_view_label_adapter_injector"
+            tools:text="Pressão: AI-06, Retorno: AR-02, Conector: CI-02" />
+
+        <TextView
+            android:id="@+id/txt_view_label_revision_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/txt_view_label_revision_injector"
+            android:textColor="@color/dark_gray"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/revision_injector"
+            app:layout_constraintTop_toTopOf="@+id/adapter_injector" />
+
+        <TextView
+            android:id="@+id/revision_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_view_label_revision_injector"
+            tools:text="72" />
+
+        <TextView
+            android:id="@+id/application_injector"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_injector"
+            app:layout_constraintTop_toBottomOf="@+id/txt_view_label_brand_injector"
+            tools:text="Fiat Toro Diesel AT9 Volcano / Jeep Renegade Fiat Toro Diesel AT9 Volcano / Jeep Renegade Fiat Toro Diesel AT9 Volcano / Jeep Renegade Fiat Toro Diesel AT9 Volcano / Jeep Renegade Fiat Toro Diesel AT9 Volcano / Jeep Renegade " />
+
+
+        <TextView
+            android:id="@+id/txt_view_label_type_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/txt_view_label_type_injector"
+            android:textColor="@color/dark_gray"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/brand_injector"
+            app:layout_constraintTop_toTopOf="@+id/brand_injector" />
+
+        <TextView
+            android:id="@+id/type_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/txt_view_label_type_injector"
+            app:layout_constraintTop_toTopOf="@+id/txt_view_label_type_injector"
+            tools:text="INDUTIVO" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_injector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="197dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.unit_test.pump.UnitTestParamMedFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_HW_test_pump_param_med"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/param"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btn_HW_test_flush_med"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_HW_test_yes_param_med"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:text="@string/sim"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_pump_param_med"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_pump_param_med" />
+
+        <Button
+            android:id="@+id/btn_HW_test_no_param_med"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:text="@string/nao"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_yes_param_med"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_ret_param_med" />
+
+        <Button
+            android:id="@+id/btn_HW_test_ret_param_med"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:text="@string/ret"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_yes_param_med"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_yes_param_med" />
+
+        <Button
+            android:id="@+id/btn_HW_test_error_param_med"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:text="@string/error"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_no_param_med"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_no_param_med" />
+
+        <Button
+            android:id="@+id/btn_HW_test_flush_med"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="45dp"
+            android:text="@string/flush_param"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/view3"
+            app:layout_constraintTop_toTopOf="@+id/btn_HW_test_pump_param_med" />
+
+        <Button
+            android:id="@+id/btn_HW_test_cond_med"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:text="@string/condicionamento_param"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_flush_med"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_flush_med" />
+
+        <Button
+            android:id="@+id/btn_HW_test_estanq_med"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:text="@string/estanqueidade_param"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_cond_med"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_cond_med" />
+
+        <Button
+            android:id="@+id/btn_HW_test_inj_med"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:text="@string/injetor_param"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_estanq_med"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_estanq_med" />
+
+        <Button
+            android:id="@+id/btn_HW_test_val_med"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:text="@string/valvulas_param"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_inj_med"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_inj_med" />
+
+        <Button
+            android:id="@+id/btn_HW_test_pump_med"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:text="@string/Bombas_param"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_val_med"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_val_med" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="2dp"
+            android:layout_height="365dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/dark_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.40"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_param_dispositivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="@string/dispositivo"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toEndOf="@+id/view3"
+            app:layout_constraintTop_toTopOf="@+id/btn_HW_test_pump_param_med" />
+
+        <Spinner
+            android:id="@+id/spinner_param_dispositivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="180dp"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_param_dispositivo"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_param_dispositivo"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_param_ch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/centro_massa_ch1"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_param_dispositivo"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_param_dispositivo" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_param_ch1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/_1000"
+            app:layout_constraintStart_toStartOf="@+id/spinner_param_dispositivo"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_param_ch1"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_param_ch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/centro_massa_ch2"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_param_ch1"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_param_ch1" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_param_ch2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/_1000"
+            app:layout_constraintStart_toStartOf="@+id/edit_HW_test_param_ch1"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_param_ch2"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_param_freq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/txt_frequency"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_param_ch2"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_param_ch2" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_param_freq"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/_40"
+            app:layout_constraintStart_toStartOf="@+id/edit_HW_test_param_ch2"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_param_freq"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_param_timeout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/timeout"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_param_freq"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_param_freq" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_param_timeout"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/valor_timeout"
+            app:layout_constraintStart_toStartOf="@+id/edit_HW_test_param_freq"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_param_timeout"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_param_medicao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/medicao"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_param_timeout"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_param_timeout" />
+
+        <RadioGroup
+            android:id="@+id/opcaoRadioGroupMedicao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/edit_HW_test_param_timeout"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_param_medicao">
+
+            <RadioButton
+                android:id="@+id/op_ch1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ch1" />
+
+            <RadioButton
+                android:id="@+id/op_ch2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_weight="1"
+                android:text="@string/ch2" />
+
+            <RadioButton
+                android:id="@+id/op_dgt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/dgt" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/txt_HW_test_param_flag_injecao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/flag_injecao"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_param_medicao"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_param_medicao" />
+
+        <RadioGroup
+            android:id="@+id/opcaoRadioGroupFlagInjecao"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/opcaoRadioGroupMedicao"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_param_flag_injecao">
+
+            <RadioButton
+                android:id="@+id/op_injecao_desativado"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/desativado"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <RadioButton
+                android:id="@+id/op_injecao_ativado"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="@string/ativado"
+                android:checked="true"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/txt_HW_test_param_flag_retorno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/flag_retorno"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_param_flag_injecao"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_param_flag_injecao" />
+
+        <RadioGroup
+            android:id="@+id/opcaoRadioGroupFlagRetorno"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/opcaoRadioGroupFlagInjecao"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_param_flag_retorno">
+
+            <RadioButton
+                android:id="@+id/op_retorno_desativado"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/desativado" />
+
+            <RadioButton
+                android:id="@+id/op_retorno_ativado"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="@string/ativado" />
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

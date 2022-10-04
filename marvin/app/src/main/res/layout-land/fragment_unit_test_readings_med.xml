@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.unit_test.pump.UnitTestReadingsMedFragment">
+
+<!--    GUIAS-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline02"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline34"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.32" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline40"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline68"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline75"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.68" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline95"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline035horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.035" />
+
+    <!--CANAL 1-->
+    <!--CANAL 1-->
+    <!--CANAL 1-->
+    <TextView
+        android:id="@+id/titleCH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/canal_1"
+        android:textStyle="bold"
+        android:textSize="@dimen/font_leituras_medicao_titles"
+        android:textColor="@color/blue_tecnomotor"
+        app:layout_constraintStart_toStartOf="@id/guideline02"
+        app:layout_constraintTop_toTopOf="@id/guideline035horizontal" />
+
+    <TextView
+        android:id="@+id/tipo_teste_ch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao_primeira_linha"
+        android:background="@color/whisper"
+        android:text="@string/tipo_teste_ch1"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline02"
+        app:layout_constraintTop_toBottomOf="@+id/titleCH1" />
+
+    <TextView
+        android:id="@+id/tipo_teste_ch1_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/whisper"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline34"
+        app:layout_constraintStart_toEndOf="@+id/tipo_teste_ch1"
+        app:layout_constraintTop_toTopOf="@id/tipo_teste_ch1"
+        tools:text="SET CALIBRATION" />
+
+    <TextView
+        android:id="@+id/status_ch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/status_ch1"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        app:layout_constraintStart_toStartOf="@id/guideline02"
+        app:layout_constraintTop_toBottomOf="@+id/tipo_teste_ch1"
+        app:layout_constraintBottom_toBottomOf="@id/status_ch1_value"/>
+
+    <TextView
+        android:id="@+id/status_ch1_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline34"
+        app:layout_constraintStart_toEndOf="@+id/status_ch1"
+        app:layout_constraintTop_toTopOf="@id/status_ch1"
+        tools:text="Aguardando evento" />
+
+    <TextView
+        android:id="@+id/erro_ch1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:background="@color/whisper"
+        android:text="@string/erro_ch1"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline02"
+        app:layout_constraintTop_toBottomOf="@+id/status_ch1"
+        app:layout_constraintBottom_toBottomOf="@id/erro_ch1_value"/>
+
+    <TextView
+        android:id="@+id/erro_ch1_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/whisper"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values_erro"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline34"
+        app:layout_constraintStart_toEndOf="@+id/erro_ch1"
+        app:layout_constraintTop_toTopOf="@id/erro_ch1"
+        tools:text="ERRO FUNCIONAL! Falha no teste de estanqueidade de injeção direta" />
+
+    <TextView
+        android:id="@+id/centro_massa_ch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/centro_massa_ch1"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        app:layout_constraintStart_toStartOf="@id/guideline02"
+        app:layout_constraintTop_toBottomOf="@+id/erro_ch1" />
+
+    <TextView
+        android:id="@+id/centro_massa_ch1_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline34"
+        app:layout_constraintStart_toEndOf="@+id/centro_massa_ch1"
+        app:layout_constraintTop_toTopOf="@id/centro_massa_ch1"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/vazao_mls_ch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:background="@color/whisper"
+        android:text="@string/vazao_mls_ch1"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline02"
+        app:layout_constraintTop_toBottomOf="@+id/centro_massa_ch1" />
+
+    <TextView
+        android:id="@+id/vazao_mls_ch1_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/whisper"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline34"
+        app:layout_constraintStart_toEndOf="@+id/vazao_mls_ch1"
+        app:layout_constraintTop_toTopOf="@id/vazao_mls_ch1"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/vazao_mlkst_ch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:text="@string/vazao_mlkst_ch1"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline02"
+        app:layout_constraintTop_toBottomOf="@+id/vazao_mls_ch1" />
+
+    <TextView
+        android:id="@+id/vazao_mlkst_ch1_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline34"
+        app:layout_constraintStart_toEndOf="@+id/vazao_mlkst_ch1"
+        app:layout_constraintTop_toTopOf="@id/vazao_mlkst_ch1"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/coeficiente_r2_ch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:background="@color/whisper"
+        android:text="@string/coeficiente_r2"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline02"
+        app:layout_constraintTop_toBottomOf="@+id/vazao_mlkst_ch1" />
+
+    <TextView
+        android:id="@+id/coeficiente_r2_value_ch1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/whisper"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline34"
+        app:layout_constraintStart_toEndOf="@+id/coeficiente_r2_ch1"
+        app:layout_constraintTop_toTopOf="@id/coeficiente_r2_ch1"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/coeficiente_linear_ch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/coeficiente_linear_ch1"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        app:layout_constraintStart_toStartOf="@id/guideline02"
+        app:layout_constraintTop_toBottomOf="@+id/coeficiente_r2_ch1" />
+
+    <TextView
+        android:id="@+id/coeficiente_linear_ch1_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline34"
+        app:layout_constraintStart_toEndOf="@+id/coeficiente_linear_ch1"
+        app:layout_constraintTop_toTopOf="@id/coeficiente_linear_ch1"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/vazio_ch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:background="@color/whisper"
+        android:text="@string/vazio_21_ch1"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline02"
+        app:layout_constraintTop_toBottomOf="@+id/coeficiente_linear_ch1" />
+
+    <TextView
+        android:id="@+id/vazio_ch1_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/whisper"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline34"
+        app:layout_constraintStart_toEndOf="@+id/vazio_ch1"
+        app:layout_constraintTop_toTopOf="@id/vazio_ch1"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/fototransitores_ch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fototransitores_ch1"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        app:layout_constraintStart_toStartOf="@id/guideline02"
+        app:layout_constraintTop_toBottomOf="@+id/vazio_ch1" />
+
+    <TextView
+        android:id="@+id/fototransitores_ch1_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline34"
+        app:layout_constraintStart_toEndOf="@+id/fototransitores_ch1"
+        app:layout_constraintTop_toTopOf="@id/fototransitores_ch1"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/falhas_ch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:background="@color/whisper"
+        android:text="@string/falhas_ch1"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline02"
+        app:layout_constraintTop_toBottomOf="@+id/fototransitores_ch1" />
+
+    <TextView
+        android:id="@+id/falhas_ch1_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/whisper"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline34"
+        app:layout_constraintStart_toEndOf="@+id/falhas_ch1"
+        app:layout_constraintTop_toTopOf="@id/falhas_ch1"
+        tools:text="0.0" />
+
+    <!--CANAL 2-->
+    <!--CANAL 2-->
+    <!--CANAL 2-->
+    <TextView
+        android:id="@+id/titleCH2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/canal_2"
+        android:textStyle="bold"
+        android:textSize="@dimen/font_leituras_medicao_titles"
+        android:textColor="@color/blue_tecnomotor"
+        app:layout_constraintStart_toStartOf="@id/guideline40"
+        app:layout_constraintTop_toTopOf="@id/guideline035horizontal" />
+
+    <TextView
+        android:id="@+id/tipo_teste_ch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao_primeira_linha"
+        android:background="@color/whisper"
+        android:text="@string/tipo_teste_ch2"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline40"
+        app:layout_constraintTop_toBottomOf="@+id/titleCH2"
+        app:layout_constraintBottom_toBottomOf="@+id/tipo_teste_ch2_value"/>
+
+    <TextView
+        android:id="@+id/tipo_teste_ch2_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/whisper"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline68"
+        app:layout_constraintStart_toEndOf="@+id/tipo_teste_ch2"
+        app:layout_constraintTop_toTopOf="@id/tipo_teste_ch2"
+        tools:text="SET CALIBRATION" />
+
+    <TextView
+        android:id="@+id/status_ch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/status_ch2"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        app:layout_constraintStart_toStartOf="@id/guideline40"
+        app:layout_constraintTop_toBottomOf="@+id/tipo_teste_ch2"
+        app:layout_constraintBottom_toBottomOf="@+id/status_ch2_value"/>
+
+    <TextView
+        android:id="@+id/status_ch2_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline68"
+        app:layout_constraintStart_toEndOf="@+id/status_ch2"
+        app:layout_constraintTop_toTopOf="@id/status_ch2"
+        tools:text="Aguardando evento" />
+
+    <TextView
+        android:id="@+id/erro_ch2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:background="@color/whisper"
+        android:text="@string/erro_ch2"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline40"
+        app:layout_constraintTop_toBottomOf="@+id/status_ch2"
+        app:layout_constraintBottom_toBottomOf="@+id/erro_ch2_value" />
+
+    <TextView
+        android:id="@+id/erro_ch2_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/whisper"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values_erro"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline68"
+        app:layout_constraintStart_toEndOf="@+id/erro_ch2"
+        app:layout_constraintTop_toTopOf="@id/erro_ch2"
+        tools:text="ERRO FUNCIONAL! Falha no teste de estanqueidade de injeção direta" />
+
+    <TextView
+        android:id="@+id/centro_massa_ch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/centro_massa_ch2"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        app:layout_constraintStart_toStartOf="@id/guideline40"
+        app:layout_constraintTop_toBottomOf="@+id/erro_ch2" />
+
+    <TextView
+        android:id="@+id/centro_massa_ch2_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline68"
+        app:layout_constraintStart_toEndOf="@+id/centro_massa_ch2"
+        app:layout_constraintTop_toTopOf="@id/centro_massa_ch2"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/vazao_mls_ch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:background="@color/whisper"
+        android:text="@string/vazao_mls_ch2"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline40"
+        app:layout_constraintTop_toBottomOf="@+id/centro_massa_ch2" />
+
+    <TextView
+        android:id="@+id/vazao_mls_ch2_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/whisper"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline68"
+        app:layout_constraintStart_toEndOf="@+id/vazao_mls_ch2"
+        app:layout_constraintTop_toTopOf="@id/vazao_mls_ch2"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/vazao_mlkst_ch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vazao_mlkst_ch2"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        app:layout_constraintStart_toStartOf="@id/guideline40"
+        app:layout_constraintTop_toBottomOf="@+id/vazao_mls_ch2" />
+
+    <TextView
+        android:id="@+id/vazao_mlkst_ch2_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline68"
+        app:layout_constraintStart_toEndOf="@+id/vazao_mlkst_ch2"
+        app:layout_constraintTop_toTopOf="@id/vazao_mlkst_ch2"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/coeficiente_r2_ch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:background="@color/whisper"
+        android:text="@string/coeficiente_r2"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline40"
+        app:layout_constraintTop_toBottomOf="@+id/vazao_mlkst_ch2" />
+
+    <TextView
+        android:id="@+id/coeficiente_r2_value_ch2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/whisper"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/coeficiente_r2_ch2"
+        app:layout_constraintTop_toTopOf="@+id/coeficiente_r2_ch2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline68"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/coeficiente_linear_ch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:text="@string/coeficiente_ch2"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline40"
+        app:layout_constraintTop_toBottomOf="@+id/coeficiente_r2_ch2" />
+
+    <TextView
+        android:id="@+id/coeficiente_linear_ch2_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline68"
+        app:layout_constraintStart_toEndOf="@+id/coeficiente_linear_ch2"
+        app:layout_constraintTop_toTopOf="@id/coeficiente_linear_ch2"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/opacidade_fluido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/opacidade_fluido"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:background="@color/whisper"
+        app:layout_constraintStart_toStartOf="@id/guideline40"
+        app:layout_constraintTop_toBottomOf="@+id/coeficiente_linear_ch2" />
+
+    <TextView
+        android:id="@+id/opacidade_fluido_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        android:background="@color/whisper"
+        app:layout_constraintEnd_toStartOf="@+id/guideline68"
+        app:layout_constraintStart_toEndOf="@+id/opacidade_fluido"
+        app:layout_constraintTop_toTopOf="@id/opacidade_fluido"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/fototransitor_ch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:text="@string/fototransitor_ch2"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline40"
+        app:layout_constraintTop_toBottomOf="@+id/opacidade_fluido" />
+
+    <TextView
+        android:id="@+id/fototransitor_ch2_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline68"
+        app:layout_constraintStart_toEndOf="@+id/fototransitor_ch2"
+        app:layout_constraintTop_toTopOf="@id/fototransitor_ch2"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/falhas_ch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/falhas_ch2"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:background="@color/whisper"
+        app:layout_constraintStart_toStartOf="@id/guideline40"
+        app:layout_constraintTop_toBottomOf="@+id/fototransitor_ch2" />
+
+    <TextView
+        android:id="@+id/falhas_ch2_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        android:background="@color/whisper"
+        app:layout_constraintEnd_toStartOf="@+id/guideline68"
+        app:layout_constraintStart_toEndOf="@+id/falhas_ch2"
+        app:layout_constraintTop_toTopOf="@id/falhas_ch2"
+        tools:text="0.0" />
+
+    <!--CANAL 3-->
+    <!--CANAL 3-->
+    <!--CANAL 3-->
+    <TextView
+        android:id="@+id/titleCH3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/canal_3"
+        android:textStyle="bold"
+        android:textSize="@dimen/font_leituras_medicao_titles"
+        android:textColor="@color/blue_tecnomotor"
+        app:layout_constraintStart_toStartOf="@id/guideline75"
+        app:layout_constraintTop_toTopOf="@id/guideline035horizontal" />
+
+    <TextView
+        android:id="@+id/tipo_teste_ch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao_primeira_linha"
+        android:background="@color/whisper"
+        android:text="@string/tipo_teste_ch3"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline75"
+        app:layout_constraintTop_toBottomOf="@+id/titleCH3"
+        app:layout_constraintBottom_toBottomOf="@id/tipo_teste_ch3_value"/>
+
+    <TextView
+        android:id="@+id/tipo_teste_ch3_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/whisper"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline95"
+        app:layout_constraintStart_toEndOf="@+id/tipo_teste_ch3"
+        app:layout_constraintTop_toTopOf="@id/tipo_teste_ch3"
+        tools:text="SET CALIBRATION" />
+
+    <TextView
+        android:id="@+id/status_ch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/status_ch3"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        app:layout_constraintStart_toStartOf="@id/guideline75"
+        app:layout_constraintTop_toBottomOf="@+id/tipo_teste_ch3" />
+
+    <TextView
+        android:id="@+id/status_ch3_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline95"
+        app:layout_constraintStart_toEndOf="@+id/status_ch3"
+        app:layout_constraintTop_toTopOf="@id/status_ch3"
+        tools:text="Aguardando evento" />
+
+    <TextView
+        android:id="@+id/erro_ch3"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:background="@color/whisper"
+        android:text="@string/erro_ch3"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline75"
+        app:layout_constraintTop_toBottomOf="@+id/status_ch3"
+        app:layout_constraintBottom_toBottomOf="@id/erro_ch3_value"/>
+
+    <TextView
+        android:id="@+id/erro_ch3_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/whisper"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values_erro"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline95"
+        app:layout_constraintStart_toEndOf="@+id/erro_ch3"
+        app:layout_constraintTop_toTopOf="@id/erro_ch3"
+        tools:text="ERRO FUNCIONAL! Falha no teste de estanqueidade de injeção direta" />
+
+    <TextView
+        android:id="@+id/vazio_51_ch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vazio_51_ch3"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        app:layout_constraintStart_toStartOf="@id/guideline75"
+        app:layout_constraintTop_toBottomOf="@+id/erro_ch3" />
+
+    <TextView
+        android:id="@+id/vazio_51_ch3_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline95"
+        app:layout_constraintStart_toEndOf="@+id/vazio_51_ch3"
+        app:layout_constraintTop_toTopOf="@id/vazio_51_ch3"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/vazio_52_ch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:background="@color/whisper"
+        android:text="@string/vazio_52_ch3"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline75"
+        app:layout_constraintTop_toBottomOf="@+id/vazio_51_ch3" />
+
+    <TextView
+        android:id="@+id/vazio_52_ch3_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/whisper"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline95"
+        app:layout_constraintStart_toEndOf="@+id/vazio_52_ch3"
+        app:layout_constraintTop_toTopOf="@id/vazio_52_ch3"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/vazao_lh_ch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vazao_lh_ch3"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        app:layout_constraintStart_toStartOf="@id/guideline75"
+        app:layout_constraintTop_toBottomOf="@+id/vazio_52_ch3" />
+
+    <TextView
+        android:id="@+id/vazao_lh_ch3_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline95"
+        app:layout_constraintStart_toEndOf="@+id/vazao_lh_ch3"
+        app:layout_constraintTop_toTopOf="@id/vazao_lh_ch3"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/volume_ch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_leituras_medicao"
+        android:background="@color/whisper"
+        android:text="@string/volume_ch3"
+        android:textSize="@dimen/font_leituras_medicao_legends"
+        app:layout_constraintStart_toStartOf="@id/guideline75"
+        app:layout_constraintTop_toBottomOf="@+id/vazao_lh_ch3" />
+
+    <TextView
+        android:id="@+id/volume_ch3_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/whisper"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/font_leituras_medicao_values"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline95"
+        app:layout_constraintStart_toEndOf="@+id/volume_ch3"
+        app:layout_constraintTop_toTopOf="@id/volume_ch3"
+        tools:text="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

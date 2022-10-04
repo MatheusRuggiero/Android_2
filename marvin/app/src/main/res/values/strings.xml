@@ -1,0 +1,605 @@
+<resources>
+    <string name="app_name">Disther</string>
+    <string name="carrega_dados_software">Carregando os dados do software. Aguarde!!!</string>
+    <string name="carrega_info_bd">Carregando informações do banco de dados</string>
+    <string name="todo">TODO</string>
+
+    <!-- GLOBAL -->
+    <string name="txt_instrucoes">Instruções</string>
+
+    <!-- DISPOSITIVOS -->
+    <string name="Bombas">Bombas</string>
+    <string name="Injetores">Injetores</string>
+    <string name="Valvulas">Válvulas</string>
+    <string name="Sensores">Sensores</string>
+
+    <!-- MARCAS -->
+    <string name="bosch">BOSCH</string>
+    <string name="denso">DENSO</string>
+    <string name="delphi">DELPHI</string>
+    <string name="siemens">SIEMENS</string>
+    <string name="cartepillar">CARTEPILLAR</string>
+
+    <!-- INFO. RELATÓRIOS -->
+    <string name="txt_cod_rel">Código</string>
+    <string name="txt_plano_rel">Plano</string>
+    <string name="txt_marca_rel">Marca</string>
+    <string name="txt_data_rel">Data</string>
+    <string name="txt_hora_rel">Hora</string>
+    <string name="txt_resultado_rel">Resultado</string>
+
+    <!-- PONTOS TESTE BOMBA EXEMPLO -->
+    <string name="txt_ponto_rel_01">1. ZME</string>
+    <string name="txt_ponto_rel_02">2. Check</string>
+    <string name="txt_ponto_rel_03">3. Temperature Conditioning</string>
+    <string name="txt_ponto_rel_04">4. Oil Tightness</string>
+    <string name="txt_ponto_rel_05">5. KL</string>
+    <string name="txt_ponto_rel_06">6. Suction Check</string>
+    <string name="txt_ponto_rel_07">7. Warm Up</string>
+
+    <!-- PONTOS TESTE -->
+    <string name="executar_testes_bomba">EXECUTAR TESTES BOMBA</string>
+    <string name="executar_testes_injetor">EXECUTAR TESTES INJETOR</string>
+    <string name="executar_testes">EXECUTAR TESTES</string>
+
+    <!-- RELATÓRIOS -->
+    <string name="gerar_relatorio">Gerar Relatório</string>
+    <string name="relatorios">Relatórios</string>
+
+    <!-- TESTES INJETOR -->
+    <string name="txt_injector_test">Teste de Injetores</string>
+    <string name="txt_electrical_injector_test">Teste Elétrico do Injetor</string>
+    <string name="txt_rotation">Rotação</string>
+    <string name="txt_exe_electrical_test_injector">Teste Elétrico</string>
+    <string name="por_favor_aguarde">Por favor, aguarde …</string>
+    <string name="txt_injector_test_condição">Condição</string>
+    <string name="txt_injector_test_condição_b">Condição B</string>
+    <string name="txt_injector_test_resistencia">Resistência</string>
+    <string name="txt_injector_test_resistencia_b">Resistência B</string>
+    <string name="txt_injector_test_status">Status</string>
+    <string name="txt_injector_tightness_test_status">Status</string>
+    <string name="txt_warning_rotation">* Para continuar com os testes, é preciso uma rotação de 500 rpm.</string>
+    <string name="rpm">rpm</string>
+    <string name="txt_ok">OK</string>
+    <string name="rotacao_desejada">Rotação desejada:</string>
+    <string name="_500">500</string>
+    <string name="rotacao">Rotação</string>
+    <string name="text_info_rotation">Mantenha a rotação em \n %d rpm</string>
+    <string name="_1000">1000</string>
+    <string name="temperatura">Temperatura</string>
+    <string name="celsius">°C</string>
+    <string name="txt_info_rotacao_pump_01">1. Ligue a alimentação de óleo na <b>entrada</b> da <b>bomba</b>.</string>
+    <string name="txt_info_rotacao_pump_02">2. Coloque a pressão de entrada da bomba em &lt;b>%s bar&lt;/b>.</string>
+    <string name="txt_info_rotacao_inj_01">1. Ligue a alimentação de óleo na <b>entrada</b> do <b>injetor</b>.</string>
+    <string name="txt_info_rotacao_inj_02">2. Coloque a pressão de entrada do injetor entre &lt;b>%s bar&lt;/b> e &lt;b>%s bar&lt;/b>.</string>
+    <string name="txt_info_rotacao_03">3. Ligue o motor no sentido de rotação &lt;b>%s&lt;/b> em &lt;b>%d&lt;/b> rotações por minuto (rpm).</string>
+    <string name="txt_info_rotacao_04">4. Certifique-se de que a temperatura do tanque esteja entre &lt;b>%d°C&lt;/b> e &lt;b>%d°C&lt;/b>.</string>
+    <string name="txt_info_rotacao_05">5. Certifique-se de que <b>não</b> há <b>vazamentos</b>.</string>
+
+    <!-- TESTES BOMBA -->
+    <string name="txt_pump_test">Teste de Bombas</string>
+    <string name="txt_electrical_pump_test">Teste Elétrico da Bomba</string>
+    <string name="txt_exe_electrical_test_pump">Teste Elétrico</string>
+    <string name="txt_pump_test_condição">Condição</string>
+    <string name="txt_pump_test_condição_b">Condição B</string>
+    <string name="txt_pump_test_resistencia">Resistência</string>
+    <string name="txt_pump_test_resistencia_b">Resistência B</string>
+    <string name="txt_pump_test_status">Status</string>
+    <string name="txt_pump_test_current_ext_1">Corrente EXT 1</string>
+    <string name="txt_pump_test_current_ext_2">Corrente EXT 2</string>
+    <string name="txt_pump_test_freq_ext_1">Freq. EXT 1</string>
+    <string name="txt_pump_test_freq_ext_2">Freq. EXT 2</string>
+    <string name="txt_pump_test_pressure_feed">Pressão alimentação</string>
+    <string name="txt_pump_test_rotation">Rotação</string>
+    <string name="txt_pump_test_temperature">Temperatura</string>
+    <string name="txt_instrucoes_conectores_bomba">Instruções</string>
+    <string name="txt_info_conexao_pump_01"> - Conecte os cabos &lt;b>%1$s&lt;/b>/&lt;b>%2$s&lt;/b> nas válvulas do rail de alta pressão;</string>
+    <string name="txt_info_conexao_pump_02"> - Utilize o conector &lt;b>%1$s&lt;/b> com o Adaptador &lt;b>%2$s&lt;/b> para o atuador &lt;b>%3$s&lt;/b> da bomba;</string>
+    <string name="txt_info_conexao_pump_03"> - Utilize o conector &lt;b>%1$s&lt;/b> com o Adaptador &lt;b>%2$s&lt;/b> para o atuador &lt;b>%3$s&lt;/b> da bomba.</string>
+
+    <!-- TESTES PRODUÇÃO -->
+    <string name="configuration">Configurações</string>
+    <string name="remote_configuration">Configuração Remota</string>
+    <string name="parameters">Parâmetros</string>
+    <string name="manutencao_fluido">Manutenção Fluído</string>
+    <string name="estanqueidade">Estanqueidade</string>
+    <string name="txt_pressure">Pressão</string>
+    <string name="txt_time">Tempo</string>
+    <string name="txt_advanced">Avançado</string>
+    <string name="txt_pattern">Padrão</string>
+    <string name="txt_placa_core">Placa Core</string>
+    <string name="txt_placa_sm">Placa SM</string>
+
+    <string name="txt_start">Iniciar</string>
+    <string name="txt_cancel">Cancelar</string>
+    <string name="txt_save">Salvar</string>
+    <string name="txt_repeat">Repetir</string>
+    <string name="txt_continue">Continuar</string>
+
+    <!-- MEDIÇÃO -->
+    <string name="txt_med_bar">bar</string>
+    <string name="txt_med_seconds">S</string>
+
+    <string name="title_point_test_pumps">Pontos Teste</string>
+    <string name="information_es_test_zme">Informações Test ZME</string>
+    <string name="unauthorized_server">O dispositivo deve se autenticar para obter a resposta solicitada.</string>
+    <string name="internal_server_error">O servidor encontrou uma situação com a qual não sabe lidar.</string>
+    <string name="title_activity_synchronization_database">synchronization_database</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="synchronization_database">Sincronização banco de dados</string>
+    <string name="time_consuming_task">Esta tarefa pode demorar um pouco dependendo do modelo de seu aparelho e conexão com a internet, mas é um processo obrigatório.</string>
+
+    <string name="error_sync_download">Houve um erro na sincronização, tente novamente mais tarde.</string>
+    <string name="register_new_license">Registrando licença aplicativo.</string>
+    <string name="error_sync_server_trying_other">Tentativa de se conectar com o servidor errada. Tentando se conectar com outro.</string>
+    <string name="error_sync_server">Não foi possível se conectar com o servidor.</string>
+    <string name="max_xid_brand">Max xid marca</string>
+    <string name="not_values_brand_max_xid">Nenhum valor encontrado para marcas.</string>
+    <string name="max_xid_version">Max xid versão</string>
+    <string name="not_values_version_max_xid">Nenhum valor encontrado max xid para versão</string>
+    <string name="max_xid_revision">Max xid revision</string>
+    <string name="max_xid_translate_type_point_test_injector">Max xid tradução do tipo de ponto do injetor</string>
+    <string name="max_xid_translate_type_plan_test_injector">Max xid tradução do tipo de plano de teste injetor</string>
+    <string name="max_xid_injector">Max xid Injector</string>
+    <string name="not_values_translate_type_plan_test_injector_max_xid">Nenhum valor encontrado max xid para tipo de testes de planos injetores.</string>
+    <string name="not_values_revision_max_xid">Nenhum valor max xid encontrado para revisão</string>
+    <string name="not_values_injector_max_xid">Nenhum valor max xid encontrado para injetor.</string>
+    <string name="not_values_translate_type_point_test_injector_max_xid">Nenhum valor max xid encontrado para tipo ponto teste de injetor.</string>
+    <string name="max_xid_revision_injector">Max xid Revisão Injetor</string>
+    <string name="not_values_revision_injector_max_xid">Nenhum valor max xid encontrado para revisão de injetor</string>
+    <string name="max_xid_platform">Max xid plataforma</string>
+    <string name="not_values_platform_max_xid">Nenhum valor max xid encontrado para plataforma.</string>
+    <string name="not_values_injector_platform_max_xid">Nenhum valor max xid encontrado para plataforma de injetor.</string>
+    <string name="max_xid_injector_platform">Max xid plataforma de injetor.</string>
+    <string name="max_xid_injector_plant_test">Max xid plano de teste de injetor.</string>
+    <string name="not_values_injector_plan_test_max_xid">Nenhum valor max xid encontrado.</string>
+    <string name="max_xid_injector_platform_plan_test">Max xid injetor plataforma plano teste.</string>
+    <string name="not_values_injector_platform_plan_test_max_xid">Nenhum valor max xid encontrado para injetor plataforma plano de teste.</string>
+    <string name="max_xid_point_test_injector">Max xid ponto de teste injetor.</string>
+    <string name="not_values_point_test_injector_max_xid">Nenhum valor max xid encontrado para ponto teste de injetor.</string>
+    <string name="max_xid_type_plan_test">Max xid tipo de plano test</string>
+    <string name="not_values_type_plan_test_max_xid">Nenhum valor max xid encontrado para plano teste de injetor.</string>
+    <string name="brand">Marca</string>
+    <string name="not_values_brand">Nenhum valor encontrado para marca.</string>
+    <string name="version">Versão</string>
+    <string name="not_values_version">Nenhum valor encontrado para versão.</string>
+    <string name="revision">Revisão</string>
+    <string name="not_values_revision">Não foi encontrado nenhum valor para revisão.</string>
+    <string name="not_values_translate_type_plan_test_injector">Nenhum valor encontrado para tradução do tipo de plano teste.</string>
+    <string name="translate_type_plan_test_injector">Tradução tipo plano teste injetor</string>
+    <string name="translate_type_point_test_injector">Tradução tipo ponto teste injetor.</string>
+    <string name="not_values_translate_type_point_test_injector">Nenhum valor encontrado para tradução do tipo de ponto de injetor.</string>
+    <string name="translate_type_plan_test">Tipo de plano teste.</string>
+    <string name="not_values_type_plan_test">Nenhum valor encontrado para tipo de plano teste.</string>
+    <string name="injector">Injetor</string>
+    <string name="not_values_injector">Nenhum valor encontrado para injetor.</string>
+    <string name="revision_injector">Revisão Injetor</string>
+    <string name="not_values_revision_injector">Nenhum valor encontrado para revisão de injetor.</string>
+    <string name="platform">Plataform</string>
+    <string name="not_values_platform">Nenhum valor encontrado para plataforma.</string>
+    <string name="injector_platform">Injetor plataforma.</string>
+    <string name="not_values_injector_platform">Nenhum valor encontrado para plataforma de injetor.</string>
+    <string name="injector_plan_test">Plano injetor teste</string>
+    <string name="not_values_injector_plan_test">Nenhum valor encontrado para plano de teste injetor.</string>
+    <string name="injector_platform_test_plan">Injetor plataforma plano teste</string>
+    <string name="not_values_injector_platform_plan_test">Nenhum valor encontrado para plataforma de injetores de plano teste.</string>
+    <string name="point_test_injector">Ponto de teste injetor</string>
+    <string name="synchronization">Sincronização</string>
+    <string name="synchronization_success">Sincronização realizada com sucesso.</string>
+    <string name="max_xid_type_point_test_injetor">Max xid Tipo ponto teste injetor.</string>
+    <string name="not_values_type_point_injector_test_max_xid">Nenhum valor encontrado para tipo ponto injetor teste.</string>
+    <string name="point_type_injector_test">Lot xid ponto tipo injetor teste</string>
+    <string name="not_values_type_point_test_injector">Nenhum valor encontrado para tipo ponto teste injetor.</string>
+    <string name="error_load_list">Erro ao tentar carregar lista.</string>
+    <string name="max_xid_pump">Max xid bomba</string>
+    <string name="not_values_pump_max_xid">Nenhum valor encontrado para max xid bomba.</string>
+    <string name="max_xid_pump_platform">Max xid bomba plataforma.</string>
+    <string name="max_xid_translate_type_plan_test_pump">Max xid tradução tipo plano teste bomba</string>
+    <string name="max_xid_revision_pump">Max xid revisão bomba.</string>
+    <string name="not_values_revision_pump_max_xid">Nenhum valor max xid encontrado para revisão bomba.</string>
+    <string name="not_values_pump_platform_max_xid">Nenhum valor max xid encontrado para plataforma bomba.</string>
+    <string name="not_values_translate_type_plan_test_pump_max_xid">Nenhum valor max xid encontrado para tradução do tipo de plano teste bomba.</string>
+    <string name="not_values_revision_pump_plan_max_xid">Nenhum valor max xid encontrado para revisão plano de bomba.</string>
+    <string name="max_xid_revision_pump_plan">Max xid revisão plano bomba</string>
+    <string name="max_xid_pump_platform_plan_test">Max xid bomba plataforma plano teste.</string>
+    <string name="not_values_pump_platform_plan_test_max_xid">Nenhum valor max xid encontrado para bomba plataforma plano teste.</string>
+    <string name="pump">Bomba</string>
+    <string name="not_values_pump">Nenhum valor encontrado para bombas</string>
+    <string name="not_values_revision_pump">Nenhum valor encontrado para revisão de bomba.</string>
+    <string name="revision_pump">Revisão bomba.</string>
+    <string name="pump_platform">Bomba plataforma.</string>
+    <string name="not_values_pump_platform">Nenhum valor encontrado para bomba plataforma.</string>
+    <string name="revision_pump_plan">Revisão plano bomba.</string>
+    <string name="not_values_revision_pump_plan">Nenhum valor encontrado para plano de bomba.</string>
+    <string name="pump_plan_test">Plano bomba teste.</string>
+    <string name="not_values_pump_plan_test">Nenhum valor encontrado para plano teste bomba.</string>
+    <string name="not_values_pump_platform_plan_test">Nenhum valor encontrado para bombas plataforma plano teste.</string>
+    <string name="pump_platform_test_plan">Bomba plataforma plano teste.</string>
+    <string name="not_values_translate_type_point_test_pump_max_xid">Nenhum valor encontrado para tradução de tipo de teste bomba.</string>
+    <string name="max_xid_translate_type_point_test_pump">Max xid Tradução tipo ponto de teste bomba.</string>
+    <string name="not_values_translate_type_plan_test_pump">Nenhum valor encontrado para tradução do tipo de plano teste bomba.</string>
+    <string name="translate_type_plan_test_pump">Tradução tipo plano teste bomba.</string>
+    <string name="not_values_translate_type_point_test_pump">Nenhum valor encontrado para tradução do tipo ponto teste bomba.</string>
+    <string name="translate_type_point_test_pump">Tradução do tipo ponto teste bomba.</string>
+    <string name="type_pump">Tipo bomba.</string>
+    <string name="not_values_type_pump">Nenhum valor encontrado para tipo bomba.</string>
+    <string name="not_values_type_pump_max_xid">Nenhum valor encontrado max xid para tipo bomba.</string>
+    <string name="max_xid_type_pump">Max xid tipo bomba.</string>
+    <string name="max_xid_type_point_test_pump">Max xid tipo ponto teste bomba.</string>
+    <string name="type_point_test_pump">Tipo ponto test bomba.</string>
+    <string name="not_values_type_point_test_pump">Nenhum valor encontrado para tipo de ponto teste bomba.</string>
+    <string name="max_xid_plan_test_pump">Max xid plano teste bomba.</string>
+    <string name="not_values_plan_test_pump_max_xid">Nenhum valor encontrado para max xid plano teste bomba.</string>
+    <string name="sensor">Sensor</string>
+    <string name="not_values_sensor">Nenhum valor encontrado para sensores</string>
+    <string name="revision_sensor">Revisão sensor</string>
+    <string name="not_values_revision_sensor">Nenhum valor encontrado para revisão sensor.</string>
+    <string name="revision_sensor_plan">Revisão plano sensor.</string>
+    <string name="not_values_revision_sensor_plan">Nenhum valor encotrado para revisão plano sensor.</string>
+    <string name="sensor_plan_test">Sensor plano teste.</string>
+    <string name="not_values_sensor_plan_test">Nenhum valor encontrado para sensor plano teste.</string>
+    <string name="sensor_platform">Sensor plataforma.</string>
+    <string name="not_values_sensor_platform">Nenhum valor encontrado para sensor plataforma.</string>
+    <string name="sensor_platform_test_plan">Sensor plataforma plano teste.</string>
+    <string name="not_values_sensor_platform_plan_test">Nenhum valor encontrado para sensor plataforma plano teste.</string>
+    <string name="translate_type_plan_test_sensor">Tradução tipo plano teste sensor.</string>
+    <string name="not_values_translate_type_plan_test_sensor">Nenhum valor encontrado para tradução tipo plano teste sensor.</string>
+    <string name="max_xid_sensor">Max xid sensor</string>
+    <string name="not_values_sensor_max_xid">Nenhum valor encontrado max xid para sensor.</string>
+    <string name="max_xid_plan_test_sensor">Max xid Plano teste sensor.</string>
+    <string name="not_values_plan_test_sensor_max_xid">Nenhum valor encontrado max xid para Plano Teste Sensor.</string>
+    <string name="max_xid_sensor_platform">Max xid sensor plataforma.</string>
+    <string name="not_values_sensor_platform_max_xid">Nenhum valor encotrado para sensor plataforma.</string>
+    <string name="max_xid_sensor_platform_plan_test">Max xid Sensor Plataforma Plano Teste.</string>
+    <string name="not_values_sensor_platform_plan_test_max_xid">Nenhum valor encontrado max xid para Sensor Plataforma Plano Teste.</string>
+    <string name="max_xid_revision_sensor">Max xid revisão sensor</string>
+    <string name="not_values_revision_sensor_max_xid">Nenhum valor max xid encontrado para revisão sensor.</string>
+    <string name="max_xid_revision_sensor_plan">Max xid Revisão Sensor Plano.</string>
+    <string name="not_values_revision_sensor_plan_max_xid">Nenhum valor max xid encontrador para Revisão Plano Sensor.</string>
+    <string name="max_xid_translate_type_plan_test_sensor">Max xid Tradução Tipo Plano Teste Sensor.</string>
+    <string name="not_values_translate_type_plan_test_sensor_max_xid">Nenhum valor max xid encontrado para Tradução Tipo Plano Teste Sensor.</string>
+    <string name="max_xid_revision_valve">Max xid Revisão Valvula.</string>
+    <string name="not_values_revision_valve_max_xid">Nenhum valor encontrado em Revisão Valvula.</string>
+    <string name="max_xid_revision_valve_plan">Max xid Revisão Plano Valvula.</string>
+    <string name="not_values_revision_valve_plan_max_xid">Nenhum valor encontrado max xid para Revisão Plano Valvula.</string>
+    <string name="max_xid_valve">Max xid Valvulas.</string>
+    <string name="not_values_valve_max_xid">Nenhum valor encontrado max xid para valvula.</string>
+    <string name="max_xid_plan_test_valve">Max xid Plano Teste Valvula.</string>
+    <string name="not_values_plan_test_valve_max_xid">Nenhum valor max xid encontrado para Plano Teste Valvula.</string>
+    <string name="max_xid_valve_platform">Max xid Valvula Plataforma.</string>
+    <string name="not_values_valve_platform_max_xid">Nenhum valor max xid encontrado para Valvula Plataforma.</string>
+    <string name="max_xid_valve_platform_plan">Max xid Valvula Plataforma Plano.</string>
+    <string name="not_values_valve_platform_plan_max_xid">Nenhum valor max xid encontrado para Valvula Plataforma Plano.</string>
+    <string name="not_values_translate_type_plan_test_valve_max_xid">Nenhum valor max xid encontrado para Tradução do tipo Plano Teste Valvula.</string>
+    <string name="max_xid_translate_type_plan_test_valve">Max xid Tradução do Tipo Plano Teste Valvula.</string>
+    <string name="revision_valve">Revisão valvula.</string>
+    <string name="not_values_revision_valve">Nenhum valor encontrado para Revisão Valvula.</string>
+    <string name="revision_valve_plan">Revisão Valvula Plano.</string>
+    <string name="not_values_revision_valve_plan">Nenhum valor encontrado para Revisão Valvula Plano.</string>
+    <string name="valve">Valvula</string>
+    <string name="not_values_valve">Nenhum valor encontrado para Valvula.</string>
+    <string name="valve_plan_test">Valvula Plano Teste.</string>
+    <string name="not_values_valve_plan_test">Nenhum valor encotrado para Valvula Plano Teste.</string>
+    <string name="valve_platform">Valvula plataforma.</string>
+    <string name="not_values_valve_platform">Nenhum valor encontrado para Valvula Plataforma.</string>
+    <string name="valve_platform_plan">Valvula Plataforma Plano.</string>
+    <string name="not_values_valve_platform_plan">Nenhum valor encontrado para Valvula Plataforma Plano.</string>
+    <string name="translate_type_plan_test_valve">Tradução Tipo Plano Teste Valvula.</string>
+    <string name="not_values_translate_type_plan_test_valve">Nenhum valor encontrado para Tradução do Tipo Plano Teste Valvula.</string>
+    <string name="not_values_point_test_pump_max_xid">Nenhum valor max xid encontrado para pontos teste bomba.</string>
+    <string name="max_xid_point_test_pump">Max xid ponto teste bomba.</string>
+    <string name="point_test_pump">Ponto teste bomba.</string>
+    <string name="not_values_point_pump_test">Nenhum valor encontrado para ponto bomba teste.</string>
+    <string name="not_values_point_injector_test">Nehum valor encontrado para ponto de teste injetor.</string>
+    <string name="max_xid_parameter_remote">Max xid parametro remoto.</string>
+    <string name="not_values_parameter_remote_max_xid">Nenhum valor max xid parametro remoto max xid.</string>
+    <string name="max_xid_permission_parameter_remote">Max xid permissão parametro remoto.</string>
+    <string name="not_values_permission_parameter_remote_max_xid">Não foi encontrado um valor max xid para permissão parametro remoto.</string>
+    <string name="max_xid_translate_parameter_remote">Max xid tradução parametro remoto.</string>
+    <string name="not_values_translate_parameter_remote_max_xid">Nenhum valor encontrado max xid tradução parametro remoto.</string>
+    <string name="parameter_remote">Parâmetro Remoto.</string>
+    <string name="not_values_parameter_remote">Não foi encontrado nenhum valor para parâmetro remoto.</string>
+    <string name="not_values_permission_parameter_remote">Nenhum valor encontrado para permissão parâmetro remoto.</string>
+    <string name="permission_parameter_remote">Permissão parâmetro remoto.</string>
+    <string name="translate_parameter_remote">Tradução parâmetro remoto.</string>
+    <string name="not_values_translate_parameter_remote">Não foi encontrado nenhum valor para Tradução Parâmetro Remoto.</string>
+    <string name="error_internal_server_sync">Houve um erro interno no servidor de sincronização.</string>
+    <string name="abbreviation_return_1">Ret.</string>
+    <string name="abbreviation_source_1">Orig.</string>
+    <string name="abbreviation_flow_rate_1">Vaz.</string>
+    <string name="abbreviation_injection_rate_1">Inj.</string>
+    <string name="abbreviation_return_2">Ret.</string>
+    <string name="abbreviation_flow_rate_2">Vaz.</string>
+    <string name="abbreviation_injection_rate_2">Inj.</string>
+    <string name="abbreviation_source_2">Orig.</string>
+    <string name="txt_view_label_code_injector">Código:</string>
+    <string name="txt_view_label_adapter_injector">Adaptador:</string>
+    <string name="txt_view_label_brand_injector">Marca:</string>
+    <string name="txt_view_label_revision_injector">Revisão:</string>
+    <string name="txt_view_label_application_injector">Aplicação:</string>
+    <string name="txt_view_label_type_injector">Tipo:</string>
+    <string name="txt_view_label_description_pump">Descrição:</string>
+    <string name="txt_view_label_brand_pump">Marca:</string>
+    <string name="txt_view_label_revision_pump">Revisão:</string>
+    <string name="txt_view_label_adapter_pump">Adaptador:</string>
+    <string name="error_load_revision">Erro ao tentar carregar revisão.</string>
+    <string name="label_connector">Conector:</string>
+    <string name="label_return">Retorno:</string>
+    <string name="type_to_search">Digite para pesquisar…</string>
+    <string name="txt_test_tightness_injector">Teste Estanqueidade</string>
+    <string name="txt_condition_tightness_injector">Condição</string>
+    <string name="txt_status_test_tightness_injector">Status teste</string>
+    <string name="txt_next">Próximo</string>
+    <string name="txt_pause">Pausar</string>
+    <string name="txt_skip">Pular</string>
+    <string name="txt_skip_rotation">Pular Rotação</string>
+    <string name="txt_skip_test_point">Pular Ponto</string>
+    <string name="txt_gravar">Gravar</string>
+    <string name="txt_exe_point_test_injector">Executando teste pontos injetores</string>
+    <string name="txt_point_test_injector">Ponto de teste injetor</string>
+    <string name="txt_point_test_pump">Ponto de teste bomba</string>
+    <string name="txt_rotation_test_pump">Rotação bomba</string>
+    <string name="txt_finish">Terminar</string>
+    <string name="txt_frequency">Frequência</string>
+    <string name="txt_time_injection">Tempo Injeção</string>
+    <string name="txt_flow">Vazão</string>
+    <string name="txt_return">Retorno</string>
+    <string name="txt_status">Status</string>
+    <string name="txt_pressure_rail">Pressão Rail</string>
+    <string name="test_not_started">Teste não iniciado.</string>
+    <string name="txt_condition_heat_injector">Condição</string>
+    <string name="txt_status_test_heat_injector">Status teste</string>
+    <string name="txt_injector_heat_test_status">Status</string>
+    <string name="txt_test_heat_injector">Executando Teste Aquecimento</string>
+    <string name="txt_heat_test_injector">Teste de aquecimento</string>
+    <string name="not_found_values_list_injector">Nenhum valor encontrado para injetores.</string>
+    <string name="not_found_values_list_injector_plan">Nenhum valor encontrado para lista de planos de injetor.</string>
+    <string name="label_code">Código</string>
+    <string name="label_brand">Marca</string>
+    <string name="label_application">Aplicação</string>
+    <string name="label_descritpion">Descrição</string>
+    <string name="not_found_values_list_inj">Nenhum valor encontrador para lista de injetor.</string>
+    <string name="not_found_values_list_inj_plan">Nenhum valor encontrado para lista de planos de injetor.</string>
+    <string name="not_found_values_list_pump">Nenhum valor encontrador para lista de bombas.</string>
+    <string name="not_found_values_list_pump_plan">Nenhum valor encontrado para lista de planos de bomba.</string>
+    <string name="abbreviation_flow_main">Vazão principal</string>
+    <string name="_00_s">00 s</string>
+    <string name="tempo_teste">Tempo Total</string>
+    <string name="time">00:00:00</string>
+    <string name="abbreviation_flow_main_return">Vazão retorno</string>
+    <string name="tracejado">---</string>
+    <string name="voltar">Voltar</string>
+    <string name="search">Search</string>
+    <string name="label_pressure">Pressão:</string>
+    <string name="label_adapt_mecanico">Mecânico:</string>
+    <string name="label_adapt_eletrico">Elétrico:</string>
+    <string name="label_adapt_pressao">Pressão:</string>
+    <string name="label_adapt_alimentacao">Alimentação:</string>
+    <string name="label_adapt_returno">Retorno:</string>
+    <string name="drv_1">DRV 1</string>
+    <string name="drv_2">DRV 2</string>
+    <string name="ext_1">EXT 1</string>
+    <string name="ext_2">EXT 2</string>
+    <string name="inj_1">INJ 1</string>
+    <string name="inj_2">INJ 2</string>
+
+    <!--    Relatórios-->
+    <string name="relatorio_informacoes_test_check">Informações Test Check</string>
+    <string name="relatorio_informacoes_test_temperature_conditioning">Informações Test Temperature Conditioning</string>
+    <string name="relatorio_informacoes_test_oil_tightness">Informações Test Oil Tightness</string>
+    <string name="relatorio_informacoes_test_kl">Informações Test KL</string>
+    <string name="relatorio_informacoes_test_suction_check">Informações Test Suction Check</string>
+    <string name="relatorio_informacoes_test_warm_up">Informações Test Warm Up</string>
+    <string name="relatorio_btn_inicio">Início</string>
+    <string name="relatorio_informacoes_test_zme">Informações Test ZME</string>
+    <string name="title_pump_test">Executando testes de bombas</string>
+    <!--    Organizar-->
+
+    <!-- TESTE DE HARDWARE -->
+    <string name="string_on">On</string>
+    <string name="string_off">Off</string>
+    <string name="medicao">Medição</string>
+    <string name="controle">Controle</string>
+    <string name="rx">RX:</string>
+    <string name="tx">TX:</string>
+    <string name="an_pressao_transf">AN_PRESSAO_TRANSF</string>
+    <string name="an_tens_dac">AN_TENS_DAC</string>
+    <string name="an_corr_mag2">AN_CORR_MAG2</string>
+    <string name="an_tens_pz">AN_TENS_PZ</string>
+    <string name="an_corr_mag1">AN_CORR_MAG1</string>
+    <string name="an_corr_pz">AN_CORR_PZ</string>
+    <string name="an_corr_drv1">AN_CORR_DRV1</string>
+    <string name="an_corr_drv2">AN_CORR_DRV2</string>
+    <string name="an_tens_fb_inj">AN_TENS_FB_INJ</string>
+    <string name="an_fb_booster">AN_FB_BOOSTER</string>
+    <string name="an_sens_temp2">AN_SENS_TEMP2</string>
+    <string name="an_sens_temp1">AN_SENS_TEMP1</string>
+    <string name="an_pressao_teste">AN_PRESSAO_TESTE</string>
+    <string name="an_pressao_rail">AN_PRESSAO_RAIL</string>
+    <string name="an_corr_ext2">AN_CORR_EXT2</string>
+    <string name="an_corr_ext1">AN_CORR_EXT1</string>
+    <string name="an_rotat">AN_ROTAT</string>
+    <string name="start_tests">Start Tests</string>
+    <string name="turn_off_all">Turn off all</string>
+    <string name="start_analog_tests">Start Analog Tests</string>
+    <string name="stop_communication">Stop Communication</string>
+    <string name="buzzer">Buzzer</string>
+    <string name="led_01">Led 01</string>
+    <string name="led_02">Led 02</string>
+    <string name="led_03">Led 03</string>
+    <string name="led_04">Led 04</string>
+    <string name="led_05">Led 05</string>
+    <string name="led_06">Led 06</string>
+
+    <!--    TESTES HARDWARE CONTROLE (ANALÓGICOS E UNITÁRIOS)    -->
+    <string name="title_activity_testes_funcionais">TestesFuncionaisActivity</string>
+    <string name="title_tab_0">HW | Ctrl</string>
+    <string name="title_tab_1">Elétrico</string>
+    <string name="title_tab_2">Rotação</string>
+    <string name="title_tab_3">Verificação Rotação</string>
+    <string name="title_tab_4">Teste Bomba</string>
+    <string name="title_tab_5">HW | Medição</string>
+    <string name="title_tab_6">"Param. Med."</string>
+    <string name="title_tab_7">Leituras Med.</string>
+    <string name="title_tab_8">Inj Piezo</string>
+    <string name="title_tab_9">Synchronized Pump</string>
+    <string name="funcionais_teste_eletrico_fragment">Teste Elétrico</string>
+    <string name="funcionais_teste_rotacao_fragment">Teste de Rotação</string>
+    <string name="funcionais_verificao_rotacao_fragment">Verificação da Rotação para o teste de bomba</string>
+    <string name="funcionais_teste_bombas_fragment">Teste de Bombas</string>
+    <string name="estado">Estado</string>
+    <string name="condicao">Condição</string>
+    <string name="param">Param</string>
+    <string name="sim">SIM</string>
+    <string name="nao">NÃO</string>
+    <string name="finalizado">Finalizado</string>
+    <string name="pausado">Pausado</string>
+    <string name="ret">RET</string>
+    <string name="error">Erro</string>
+    <string name="rotacao_desejada_2">Rotação Desejada</string>
+    <string name="tipo_controle">Tipo Controle</string>
+    <string name="timeout">Timeout</string>
+    <string name="pressao_desejada">Pressão Desejada</string>
+    <string name="ext1_corrente">EXT 1 Corrente</string>
+    <string name="ext2_corrente">EXT 2 Corrente</string>
+    <string name="ext_1_freq">EXT 1 Freq.</string>
+    <string name="ext_2_freq">EXT 2 Freq.</string>
+    <string name="testes_analogicos">Testes Analógicos</string>
+    <string name="testes_unitarios">Testes Unitários</string>
+    <string name="testes_unitarios_controle">Testes Placa Controle</string>
+    <string name="valor_ext1_desejado_corrente">0.4</string>
+    <string name="valor_ext2_desejado_corrente">0.0</string>
+    <string name="valor_01">1</string>
+    <string name="valor_00">0.0</string>
+    <string name="valor_0">0</string>
+    <string name="valor_60">60</string>
+    <string name="valor_ext1_desejado_frequencia">150</string>
+    <string name="valor_ext2_desejado_frequencia">0</string>
+    <string name="valor_pressao_desejada">250</string>
+    <string name="valor_rotacao_desejada">2000</string>
+    <string name="valor_timeout">30</string>
+    <string name="reset_control">Reset Control Param</string>
+    <string name="reset_measure">Reset Measure Param</string>
+    <string name="testes_unitarios_hardware">Testes Unitários de Hardware</string>
+    <string name="test">Teste</string>
+    <string name="duty">Duty (x10)</string>
+    <string name="frequency_hz">Frequência [Hz]</string>
+    <string name="channel">Channel</string>
+
+    <!--    TESTES HARDWARE MEDIÇÃO (ANALÓGICOS E UNITÁRIOS)    -->
+    <string name="ch1">CH1</string>
+    <string name="canal_1">Canal 1</string>
+    <string name="tipo_teste_ch1">Tipo teste CH1</string>
+    <string name="status_ch1">Status CH1</string>
+    <string name="erro_ch1">Erro CH1</string>
+    <string name="centro_massa_ch1">Centro Massa CH1</string>
+    <string name="vazao_mls_ch1">Vazão ml/s CH1</string>
+    <string name="vazao_mlkst_ch1">Vazão ml/kst CH1</string>
+    <string name="coeficiente_r2">Coeficiente R²</string>
+    <string name="coeficiente_linear_ch1">Coeficiente Linear CH1</string>
+    <string name="vazio_21_ch1">Vazio 21</string>
+    <string name="vazio_51_ch3">Vazio 51</string>
+    <string name="vazio_52_ch3">Vazio 52</string>
+    <string name="fototransitores_ch1">Fototransist. ativ. CH1</string>
+    <string name="falhas_ch1">Contador de falhas CH1</string>
+
+    <string name="ch2">CH2</string>
+    <string name="canal_2">Canal 2</string>
+    <string name="tipo_teste_ch2">Tipo teste CH2</string>
+    <string name="status_ch2">Status CH2</string>
+    <string name="erro_ch2">Erro CH2</string>
+    <string name="centro_massa_ch2">Centro Massa CH2</string>
+    <string name="vazao_mls_ch2">Vazão ml/s CH2</string>
+    <string name="vazao_mlkst_ch2">Vazão ml/kst CH2</string>
+    <string name="coeficiente_ch2">Coeficiente Linear CH2</string>
+    <string name="opacidade_fluido">Opacidade fluido</string>
+    <string name="fototransitor_ch2">Fototransist. ativ. CH2</string>
+    <string name="falhas_ch2">Contador de falhas CH2</string>
+
+    <string name="ch3">CH3</string>
+    <string name="canal_3">Canal 3</string>
+    <string name="tipo_teste_ch3">Tipo teste CH3</string>
+    <string name="status_ch3">Status CH3</string>
+    <string name="erro_ch3">Erro CH3</string>
+    <string name="vazao_lh_ch3">Vazão L/H CH3</string>
+    <string name="volume_ch3">Volume CH3</string>
+
+    <string name="flush_param">Flush</string>
+    <string name="condicionamento_param">Condic.</string>
+    <string name="Bombas_param">Bombas</string>
+    <string name="estanqueidade_param">Estanq.</string>
+    <string name="injetor_param">Injetor</string>
+    <string name="valvulas_param">Válvulas</string>
+    <string name="dispositivo">Dispositivo</string>
+    <string name="_40">40</string>
+    <string name="dgt">DGT</string>
+    <string name="flag_injecao">Flag Injeção</string>
+    <string name="desativado">Desativado</string>
+    <string name="ativado">Ativado</string>
+    <string name="flag_retorno">Flag Retorno</string>
+    <string name="_300">300</string>
+
+    <string-array name="dispositivos">
+        <item>REMOTE_PUMP_PROCESS</item>
+        <item>REMOTE_SECURITY_STATE</item>
+        <item>REMOTE_TYPE_NONE</item>
+        <item>REMOTE_FLUSH_PROCESS</item>
+        <item>REMOTE_HEATING_PROCESS</item>
+        <item>REMOTE_CONDITIONING_PROCESS</item>
+        <item>REMOTE_LEAK_PROCESS</item>
+        <item>REMOTE_INJECTOR_PROCESS</item>
+        <item>REMOTE_MPROP_PROCESS</item>
+        <item>REMOTE_EMPTY_PROCESS</item>
+        <item>REMOTE_READ_SENSORS</item>
+        <item>REMOTE_SET_ACTUATORS</item>
+        <item>REMOTE_SET_CALIBRATION</item>
+        <item>REMOTE_SET_PWM</item>
+        <item>REMOTE_READ_REGRETION</item>
+    </string-array>
+
+    <string name="valv_flush_ret">VALV_FLUSH_RET</string>
+    <string name="valv_cond">VALV_COND</string>
+    <string name="valv_comut1">VALV_COMUT_1</string>
+    <string name="valv_dreno_m1">VALV_DRENO_M1</string>
+    <string name="valv_comut3">VALV_COMUT_3</string>
+    <string name="valv_flush_inj">VALV_FLUSH_INJ</string>
+    <string name="valv_comut2">VALV_COMUT_2</string>
+    <string name="valv_dreno_m2">VALV_DRENO_M2</string>
+    <string name="extra01">EXTRA 01</string>
+    <string name="extra02">EXTRA 02</string>
+    <string name="set_read">Set Read Analógicos</string>
+    <string name="get_remote_values">Get Remote Values</string>
+    <string name="an_sens_temp">AN_SENS_TEMP</string>
+    <string name="an_dgt">AN_DGT</string>
+    <string name="ml_100rot">mL 100Rot</string>
+    <string name="verificar_rotaco">Verificar Rotação?</string>
+
+    <!-- HARDWARE TEST INJECTOR -->
+
+    <string name="txt_time_process">Tempo Processo</string>
+    <string name="txt_VBooster">VBooster</string>
+    <string name="txt_corrente_piezo">Corrente piezo</string>
+    <string name="txt_tensao_piezo">Tensão piezo</string>
+    <string name="txt_tempo_teste_bico_inj_piezo">Tempo Teste Bico Injetor</string>
+    <string name="txt_pressao_test">Pressão do teste</string>
+    <string name="txt_tempo_chopper_on">Tempo Chopper On</string>
+    <string name="txt_tempo_chopper_off">Tempo Chopper Off</string>
+    <string name="txt_tempo_injecao">Tempo de injeção</string>
+    <string name="txt_tempo_hold_off">Tempo Hold Off</string>
+    <string name="txt_tensao_alta">Tensão Alta</string>
+    <string name="txt_V_REF_PATAMAR">V_REF_PATAMAR</string>
+    <string name="txt_I_REF_CHARGE">I_REF_CHARGE</string>
+    <string name="txt_I_REF_DISCHARGE">I_REF_DISCHARGE</string>
+    <string name="txt_VAR_TEST">VAR_TEST</string>
+    <string name="leituras">Leituras</string>
+    <string name="parametriza_o">Parametrização</string>
+
+
+</resources>

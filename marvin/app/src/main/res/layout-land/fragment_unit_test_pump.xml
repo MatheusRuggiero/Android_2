@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.unit_test.pump.UnitTestPumpTestFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_HW_test_pump_param"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/param"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_HW_test_pump_start"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="15dp"
+            android:text="@string/txt_start"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/btn_HW_test_pump_param"
+            app:layout_constraintTop_toTopOf="@+id/btn_HW_test_pump_param" />
+
+        <Button
+            android:id="@+id/btn_HW_test_pump_finalizado"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:text="@string/finalizado"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_pump_param"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_pump_param" />
+
+        <Button
+            android:id="@+id/btn_HW_test_pump_pausado"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:text="@string/pausado"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_pump_start"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_pump_param" />
+
+        <Button
+            android:id="@+id/btn_HW_test_pump_ret"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:text="@string/ret"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_pump_finalizado"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_pump_finalizado" />
+
+        <Button
+            android:id="@+id/btn_HW_test_pump_skip"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:text="@string/txt_skip"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_pump_pausado"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_pump_pausado" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_pump_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/txt_status"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_pump_ret"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_pump_ret" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_pump_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_pump_status"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_pump_status"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_pump_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/vermelho_tecnomotor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_pump_status"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_pump_status"
+            tools:text="Error Test" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_unit_test_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_pump_controle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:text="@string/tipo_controle"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toEndOf="@+id/view2"
+            app:layout_constraintTop_toTopOf="@+id/txt_value_HW_test_pump_ext1" />
+
+        <EditText
+            android:id="@+id/edit_HW_Test_pump_controle"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/valor_01"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_pump_controle"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_pump_controle"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_pump_ext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="@string/ext1_corrente"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/guideline_unit_test_rotation"
+            app:layout_constraintTop_toTopOf="@+id/btn_HW_test_pump_param" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_pump_ext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/view2"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_pump_ext1"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_pump_ext1"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_pump_ext2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/ext2_corrente"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_pump_ext1"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_pump_ext1" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_pump_ext2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_value_HW_test_pump_ext1"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_pump_ext2"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_check_HW_test_pump_presure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/txt_pressure"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_pump_ext2"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_pump_ext2" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_pump_pressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_value_HW_test_pump_ext2"
+            app:layout_constraintTop_toTopOf="@+id/txt_check_HW_test_pump_presure"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_check_HW_test_pump_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/rotacao"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_check_HW_test_pump_presure"
+            app:layout_constraintTop_toBottomOf="@+id/txt_check_HW_test_pump_presure" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_pump_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_value_HW_test_pump_pressure"
+            app:layout_constraintTop_toTopOf="@+id/txt_check_HW_test_pump_rotation"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_check_HW_test_pump_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/temperatura"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_check_HW_test_pump_rotation"
+            app:layout_constraintTop_toBottomOf="@+id/txt_check_HW_test_pump_rotation" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_pump_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_value_HW_test_pump_rotation"
+            app:layout_constraintTop_toTopOf="@+id/txt_check_HW_test_pump_temp"
+            tools:text="Value Test" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="2dp"
+            android:layout_height="380dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/dark_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.57"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_pump_ext1_desired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/ext1_corrente"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_pump_controle"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_pump_controle" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_pump_ext1_desired"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/valor_ext1_desejado_corrente"
+            app:layout_constraintStart_toStartOf="@+id/edit_HW_Test_pump_controle"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_pump_ext1_desired"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_pump_ext2_desired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/ext2_corrente"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_pump_ext1_desired"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_pump_ext1_desired" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_pump_ext2_desired"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/valor_ext2_desejado_corrente"
+            app:layout_constraintStart_toStartOf="@+id/edit_HW_test_pump_ext1_desired"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_pump_ext2_desired"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_pump_freq_ext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/ext_1_freq"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_pump_ext2_desired"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_pump_ext2_desired" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_pump_freq_ext1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/valor_ext1_desejado_frequencia"
+            app:layout_constraintStart_toStartOf="@+id/edit_HW_test_pump_ext2_desired"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_pump_freq_ext1"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_pump_freq_ext2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/ext_2_freq"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_pump_freq_ext1"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_pump_freq_ext1" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_pump_freq_ext2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/valor_ext2_desejado_frequencia"
+            app:layout_constraintStart_toStartOf="@+id/edit_HW_test_pump_freq_ext1"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_pump_freq_ext2"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_check_HW_test_pump_presure_desired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/pressao_desejada"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_pump_freq_ext2"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_pump_freq_ext2" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_pump_pressure_desired"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/valor_pressao_desejada"
+            app:layout_constraintStart_toStartOf="@+id/edit_HW_test_pump_ext2_desired"
+            app:layout_constraintTop_toTopOf="@+id/txt_check_HW_test_pump_presure_desired"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_check_HW_test_pump_rotation_desired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/rotacao_desejada_2"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_check_HW_test_pump_presure_desired"
+            app:layout_constraintTop_toBottomOf="@+id/txt_check_HW_test_pump_presure_desired" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_pump_rotation_desired"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/valor_rotacao_desejada"
+            app:layout_constraintStart_toStartOf="@+id/edit_HW_test_pump_pressure_desired"
+            app:layout_constraintTop_toTopOf="@+id/txt_check_HW_test_pump_rotation_desired"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_check_HW_test_pump_timeout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/timeout"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_check_HW_test_pump_rotation_desired"
+            app:layout_constraintTop_toBottomOf="@+id/txt_check_HW_test_pump_rotation_desired" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_pump_timeout_desired"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/valor_timeout"
+            app:layout_constraintStart_toStartOf="@+id/edit_HW_test_pump_rotation_desired"
+            app:layout_constraintTop_toTopOf="@+id/txt_check_HW_test_pump_timeout"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

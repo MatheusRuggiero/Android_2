@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_test_injector"
+    app:startDestination="@id/electrical_test_Injector_fragment">
+
+    <fragment
+        android:id="@+id/electrical_test_Injector_fragment"
+        android:name="br.com.tecnomotor.marvin.view.injector.tests.ElectricalTestInjectorFragment"
+        android:label="@string/txt_electrical_injector_test"
+        tools:layout="@layout/fragment_electrical_test_injector" >
+
+        <action
+            android:id="@+id/action_electricalTestInjectorFragment_to_testRotationInjector"
+            app:destination="@id/rotation_test_Injector_fragment" />
+
+        <argument
+            android:name="deviceViewModel"
+            app:argType="br.com.tecnomotor.marvin.view.viewmodel.device.DeviceViewModel" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/rotation_test_Injector_fragment"
+        android:name="br.com.tecnomotor.marvin.view.injector.tests.RotationInjectorFragment"
+        android:label="@string/txt_rotation"
+        tools:layout="@layout/fragment_rotation_injector" >
+
+        <action
+            android:id="@+id/action_rotationInjectorFragment_to_testTightnessInjector"
+            app:destination="@id/test_tightness_injector_fragment" />
+
+        <argument
+            android:name="deviceViewModel"
+            app:argType="br.com.tecnomotor.marvin.view.viewmodel.device.DeviceViewModel" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/test_tightness_injector_fragment"
+        android:name="br.com.tecnomotor.marvin.view.injector.tests.TestTightnessInjectorFragment"
+        android:label="@string/txt_test_tightness_injector"
+        tools:layout="@layout/fragment_tightness_injector" >
+
+        <argument
+            android:name="deviceViewModel"
+            app:argType="br.com.tecnomotor.marvin.view.viewmodel.device.DeviceViewModel" />
+        <action
+            android:id="@+id/action_test_tightness_injector_fragment_to_point_test_injector_fragment"
+            app:destination="@id/point_test_injector_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/point_test_injector_fragment"
+        android:name="br.com.tecnomotor.marvin.view.injector.tests.PointTestInjectorFragment"
+        android:label="@string/txt_point_test_injector"
+        tools:layout="@layout/fragment_point_test_injector" >
+<!--        <action-->
+<!--            android:id="@+id/action_pointTestInjectorFragment_to_testInjectorFragment"-->
+<!--            app:destination="@id/test_injector_fragment" />-->
+
+        <argument
+            android:name="deviceViewModel"
+            app:argType="br.com.tecnomotor.marvin.view.viewmodel.device.DeviceViewModel" />
+    </fragment>
+
+<!--    <fragment-->
+<!--        android:id="@+id/point_test_injector_fragment"-->
+<!--        android:name="br.com.tecnomotor.marvin.view.injector.tests.PointTestInjectorFragment"-->
+<!--        android:label="@string/txt_point_test_injector"-->
+<!--        tools:layout="@layout/fragment_point_test_injector" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_pointTestInjectorFragment_to_testInjectorFragment"-->
+<!--            app:destination="@id/test_injector_fragment" />-->
+
+<!--        <argument-->
+<!--            android:name="deviceViewModel"-->
+<!--            app:argType="br.com.tecnomotor.marvin.view.viewmodel.device.DeviceViewModel" />-->
+<!--    </fragment>-->
+
+</navigation>

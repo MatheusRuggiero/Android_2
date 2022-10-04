@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/allButtonsGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="btnHwParamAnalog, btnStartAnalogTest, btnAllHwOff, buttonOnOffBuzzer, btnLed01, btnLed02, btnLed03, btnLed04, btnLed05, btnLed06" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/allTextViewGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="txtValueTestAnPressaoTransf, txtValueTestAnTensDac, txtValueTestAnCorrMag2, txtValueTestAnTensPz, txtValueTestAnCorrMag1, txtValueTestAnCorrPz, txtValueTestAnCorrDrv1, txtValueTestAnCorrDrv2, txtValueTestAnTensFbInj, txtValueTestAnFbBooster, txtValueTestAnSensTemp2, txtValueTestAnSensTemp1, txtValueTestAnPressaoTeste, txtValueTesteAnPressaoRail, txtValueTestAnCorrExt2, txtValueTestAnCorrExt1, txtValueTestAnRotat" />
+
+    <Button
+        android:id="@+id/btnAllHwOff"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/buttonOnOffBuzzer"
+        android:backgroundTint="@color/vermelho_tecnomotor"
+        android:text="@string/turn_off_all"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/btnLed06" />
+
+    <Button
+        android:id="@+id/btnHwParamAnalog"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/param"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/editHwChannel"
+        app:layout_constraintTop_toTopOf="@+id/btnAllHwOff" />
+
+    <!--    Linear Layout para um conjunto de label e botões de liga e desliga -->
+
+    <Button
+        android:id="@+id/btnStartAnalogTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/green"
+        android:text="@string/start_analog_tests"
+        app:layout_constraintStart_toEndOf="@+id/lineVerticalLayout01"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <LinearLayout
+        android:id="@+id/buttonOnOffBuzzer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/lineVerticalLayout02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buzzer"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwTestOffBuzzer"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/btnHwTestOnBuzzer"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+    </LinearLayout>
+
+    <!-- Botões para os testes de LEDs do Hardware -->
+
+    <LinearLayout
+        android:id="@+id/btnLed01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/buttonOnOffBuzzer"
+        app:layout_constraintStart_toStartOf="@+id/buttonOnOffBuzzer"
+        app:layout_constraintTop_toBottomOf="@+id/buttonOnOffBuzzer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/led_01"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwTestOffLed01"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnHwTestOnLed01"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnLed02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/btnLed01"
+        app:layout_constraintStart_toStartOf="@+id/btnLed01"
+        app:layout_constraintTop_toBottomOf="@+id/btnLed01">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/led_02"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwTestOffLed02"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnHwTestOnLed02"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnLed03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/btnLed02"
+        app:layout_constraintStart_toStartOf="@+id/btnLed02"
+        app:layout_constraintTop_toBottomOf="@+id/btnLed02">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/led_03"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwTestOffLed03"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnHwTestOnLed03"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnLed04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/btnLed03"
+        app:layout_constraintStart_toStartOf="@+id/btnLed03"
+        app:layout_constraintTop_toBottomOf="@+id/btnLed03">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/led_04"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwTestOffLed04"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnHwTestOnLed04"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnLed05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/btnLed04"
+        app:layout_constraintStart_toStartOf="@+id/btnLed04"
+        app:layout_constraintTop_toBottomOf="@+id/btnLed04">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/led_05"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwTestOffLed05"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnHwTestOnLed05"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnLed06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/btnLed05"
+        app:layout_constraintStart_toStartOf="@+id/btnLed05"
+        app:layout_constraintTop_toBottomOf="@+id/btnLed05">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/led_06"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwTestOffLed06"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnHwTestOnLed06"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lineVerticalLayout02"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp">
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="380dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtHwDuty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/duty"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/lineVerticalLayout01"
+        app:layout_constraintHorizontal_bias="0.20"
+        app:layout_constraintStart_toEndOf="@+id/lineVerticalLayout02"
+        app:layout_constraintTop_toTopOf="@+id/buttonOnOffBuzzer" />
+
+    <EditText
+        android:id="@+id/editHwDuty"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:text="@string/valor_01"
+        app:layout_constraintStart_toStartOf="@+id/txtHwDuty"
+        app:layout_constraintTop_toBottomOf="@+id/txtHwDuty"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/txtHwPwm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/frequency_hz"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="@+id/editHwDuty"
+        app:layout_constraintTop_toBottomOf="@+id/editHwDuty" />
+
+    <EditText
+        android:id="@+id/editHwPwm"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:text="@string/valor_01"
+        app:layout_constraintStart_toStartOf="@+id/txtHwPwm"
+        app:layout_constraintTop_toBottomOf="@+id/txtHwPwm"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/txtHwChannel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/channel"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="@+id/editHwPwm"
+        app:layout_constraintTop_toBottomOf="@+id/editHwPwm" />
+
+    <EditText
+        android:id="@+id/editHwChannel"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:text="@string/valor_01"
+        app:layout_constraintStart_toStartOf="@+id/txtHwChannel"
+        app:layout_constraintTop_toBottomOf="@+id/txtHwChannel"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:autofillHints="" />
+
+    <LinearLayout
+        android:id="@+id/lineVerticalLayout01"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp">
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="380dp"
+            android:layout_marginStart="500dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTestHW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <TextView
+        android:id="@+id/txtTestAnPressaoTransf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_pressao_transf"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/btnStartAnalogTest"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartAnalogTest" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnPressaoTransf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/txtTestAnPressaoTransf"
+        app:layout_constraintTop_toTopOf="@+id/txtTestAnPressaoTransf"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTesteAnTensDac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_tens_dac"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTestAnPressaoTransf"
+        app:layout_constraintTop_toBottomOf="@+id/txtTestAnPressaoTransf" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnTensDac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueTestAnPressaoTransf"
+        app:layout_constraintTop_toTopOf="@+id/txtTesteAnTensDac"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTesteAnCorrMag2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_corr_mag2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTesteAnTensDac"
+        app:layout_constraintTop_toBottomOf="@+id/txtTesteAnTensDac" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnCorrMag2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueTestAnTensDac"
+        app:layout_constraintTop_toTopOf="@+id/txtTesteAnCorrMag2"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTesteAnTensPz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_tens_pz"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTesteAnCorrMag2"
+        app:layout_constraintTop_toBottomOf="@+id/txtTesteAnCorrMag2" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnTensPz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueTestAnCorrMag2"
+        app:layout_constraintTop_toTopOf="@+id/txtTesteAnTensPz"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTesteAnCorrMag1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_corr_mag1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTesteAnTensPz"
+        app:layout_constraintTop_toBottomOf="@+id/txtTesteAnTensPz" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnCorrMag1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueTestAnTensPz"
+        app:layout_constraintTop_toTopOf="@+id/txtTesteAnCorrMag1"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTesteAnCorrPz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_corr_pz"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTesteAnCorrMag1"
+        app:layout_constraintTop_toBottomOf="@+id/txtTesteAnCorrMag1" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnCorrPz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueTestAnCorrMag1"
+        app:layout_constraintTop_toTopOf="@+id/txtTesteAnCorrPz"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTesteAnCorrDrv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_corr_drv1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTesteAnCorrPz"
+        app:layout_constraintTop_toBottomOf="@+id/txtTesteAnCorrPz" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnCorrDrv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueTestAnCorrPz"
+        app:layout_constraintTop_toTopOf="@+id/txtTesteAnCorrDrv1"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTextAnCorrDrv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_corr_drv2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTesteAnCorrDrv1"
+        app:layout_constraintTop_toBottomOf="@+id/txtTesteAnCorrDrv1" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnCorrDrv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueTestAnCorrDrv1"
+        app:layout_constraintTop_toTopOf="@+id/txtTextAnCorrDrv2"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTesteAnTensFbInj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_tens_fb_inj"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTextAnCorrDrv2"
+        app:layout_constraintTop_toBottomOf="@+id/txtTextAnCorrDrv2" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnTensFbInj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueTestAnCorrDrv2"
+        app:layout_constraintTop_toTopOf="@+id/txtTesteAnTensFbInj"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTesteAnFbBooster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/an_fb_booster"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guidelineTestHW"
+        app:layout_constraintTop_toTopOf="@+id/txtValueTestAnPressaoTransf" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnFbBooster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/txtTesteAnFbBooster"
+        app:layout_constraintTop_toTopOf="@+id/txtTesteAnFbBooster"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTestAnSensTemp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_sens_temp2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTesteAnFbBooster"
+        app:layout_constraintTop_toBottomOf="@+id/txtTesteAnFbBooster" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnSensTemp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueTestAnFbBooster"
+        app:layout_constraintTop_toTopOf="@+id/txtTestAnSensTemp2"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTesteAnSensTemp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_sens_temp1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTestAnSensTemp2"
+        app:layout_constraintTop_toBottomOf="@+id/txtTestAnSensTemp2" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnSensTemp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueTestAnSensTemp2"
+        app:layout_constraintTop_toTopOf="@+id/txtTesteAnSensTemp1"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTesteAnPressaoTeste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_pressao_teste"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTesteAnSensTemp1"
+        app:layout_constraintTop_toBottomOf="@+id/txtTesteAnSensTemp1" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnPressaoTeste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueTestAnSensTemp1"
+        app:layout_constraintTop_toTopOf="@+id/txtTesteAnPressaoTeste"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTesteAnPressaoRail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_pressao_rail"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTesteAnPressaoTeste"
+        app:layout_constraintTop_toBottomOf="@+id/txtTesteAnPressaoTeste" />
+
+    <TextView
+        android:id="@+id/txtValueTesteAnPressaoRail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueTestAnPressaoTeste"
+        app:layout_constraintTop_toTopOf="@+id/txtTesteAnPressaoRail"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTesteAnCorrExt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_corr_ext2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTesteAnPressaoRail"
+        app:layout_constraintTop_toBottomOf="@+id/txtTesteAnPressaoRail" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnCorrExt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueTesteAnPressaoRail"
+        app:layout_constraintTop_toTopOf="@+id/txtTesteAnCorrExt2"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTesteAnCorrExt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_corr_ext1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTesteAnCorrExt2"
+        app:layout_constraintTop_toBottomOf="@+id/txtTesteAnCorrExt2" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnCorrExt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueTestAnCorrExt2"
+        app:layout_constraintTop_toTopOf="@+id/txtTesteAnCorrExt1"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtTesteAnRotat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/an_rotat"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTesteAnCorrExt1"
+        app:layout_constraintTop_toBottomOf="@+id/txtTesteAnCorrExt1" />
+
+    <TextView
+        android:id="@+id/txtValueTestAnRotat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueTestAnCorrExt1"
+        app:layout_constraintTop_toTopOf="@+id/txtTesteAnRotat"
+        tools:text="Result Test" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

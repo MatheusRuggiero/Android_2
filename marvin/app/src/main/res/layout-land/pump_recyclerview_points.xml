@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="false"
+    app:cardPreventCornerOverlap="true">
+
+    <RelativeLayout
+        android:id="@+id/cardViewListPointTestPump"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@color/cinza_claro_tecnomotor">
+
+        <CheckBox
+            android:id="@+id/checkBox_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:checked="true"
+            app:buttonTint="@color/dark_gray"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/description_point_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/checkBox_pump"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/checkBox_pump"
+            android:textColor="@color/blue_tecnomotor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Main Text" />
+
+        <TextView
+            android:id="@+id/txtRpm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp"
+            android:text="@string/rpm"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtValueRotation"
+            android:layout_width="51dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txtRpm"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@+id/txtRpm"
+            android:gravity="right"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="2500" />
+
+        <TextView
+            android:id="@+id/txtValueMedRetorno"
+            android:layout_width="82dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txtRpm"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:gravity="right"
+            android:layout_toStartOf="@+id/txtValueRotation"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="retorno | " />
+
+        <TextView
+            android:id="@+id/txtValueMedPrincipal"
+            android:layout_width="92dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txtRpm"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:gravity="right"
+            android:layout_toStartOf="@+id/txtValueMedRetorno"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="principal | " />
+
+        <TextView
+            android:id="@+id/txtValuePressure"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txtRpm"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:gravity="right"
+            android:layout_toStartOf="@+id/txtValueMedPrincipal"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="3500 bar | " />
+
+        <TextView
+            android:id="@+id/txtValueAtuador"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txtRpm"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_toStartOf="@+id/txtValuePressure"
+            android:gravity="right"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Atuador: 5 | " />
+
+        <TextView
+            android:id="@+id/txtValueExt2"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txtRpm"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_toStartOf="@+id/txtValueAtuador"
+            android:gravity="right"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Ext2: 5.75 A: 2000 Hz | " />
+
+        <TextView
+            android:id="@+id/txtValueExt1"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/txtRpm"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:gravity="right"
+            android:layout_toStartOf="@+id/txtValueExt2"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Ext1: 5.75 A: 2000 Hz | " />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

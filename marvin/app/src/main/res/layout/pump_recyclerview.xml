@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="10dp"
+    tools:ignore="MissingConstraints">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_pump"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cinza_medio"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/codigo_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blue_tecnomotor"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_pump"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="0445110682" />
+
+        <TextView
+            android:id="@+id/txt_view_label_brand_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_view_label_brand_pump"
+            android:textColor="@color/dark_gray"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/guideline_pump"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/brand_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/txt_view_label_brand_pump"
+            app:layout_constraintTop_toTopOf="@+id/txt_view_label_brand_pump"
+            tools:text="BOSCH" />
+
+        <TextView
+            android:id="@+id/txt_view_label_adapter_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/txt_view_label_adapter_pump"
+            android:textColor="#BF360C"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/brand_pump"
+            app:layout_constraintTop_toTopOf="@+id/brand_pump" />
+
+        <TextView
+            android:id="@+id/adapter_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/application_pump"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/txt_view_label_adapter_pump"
+            app:layout_constraintTop_toTopOf="@+id/txt_view_label_adapter_pump"
+            tools:text="Sub Text" />
+
+        <TextView
+            android:id="@+id/txt_view_label_revision_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/txt_view_label_revision_pump"
+            android:textColor="@color/dark_gray"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/revision_pump"
+            app:layout_constraintTop_toTopOf="@+id/txt_view_label_brand_pump" />
+
+        <TextView
+            android:id="@+id/revision_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/application_pump"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_view_label_revision_pump"
+            tools:text="70" />
+
+        <TextView
+            android:id="@+id/application_pump"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline_pump"
+            app:layout_constraintTop_toBottomOf="@+id/txt_view_label_brand_pump"
+            tools:text="Fiat Toro Diesel AT9 Volcano / Jeep Renegade" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.15" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

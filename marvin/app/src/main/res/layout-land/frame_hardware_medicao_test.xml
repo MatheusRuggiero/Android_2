@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/allButtonsGroupMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="btnStartAnalogTestMed, btnAllHwOffMed, buzzerMed, valvFlushRetMed, valvCondMed, valvComut01Med, valvDrenoM1, valvComut02Med, valvComut03, valvDrenoM1, valvDrenoM2Med, extra01Med, extra02Med" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/allTextViewGroupMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="txtValueSensTemp, txtValueDGT" />
+
+    <Button
+        android:id="@+id/btnAllHwOffMed"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/vermelho_tecnomotor"
+        android:text="@string/turn_off_all"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/extra02Med"
+        app:layout_constraintStart_toStartOf="@+id/extra02Med"
+        app:layout_constraintTop_toBottomOf="@+id/extra02Med" />
+
+    <Button
+        android:id="@+id/btnStartAnalogTestMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/green"
+        android:text="@string/start_analog_tests"
+        app:layout_constraintStart_toEndOf="@+id/lineVerticalLayout02Med"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <LinearLayout
+        android:id="@+id/buzzerMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buzzer"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwTestOffBuzzerMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/btnHwTestOnBuzzerMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+    </LinearLayout>
+
+    <!-- Botões para os testes de LEDs do Hardware -->
+
+    <LinearLayout
+        android:id="@+id/valvFlushRetMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/buzzerMed"
+        app:layout_constraintTop_toBottomOf="@+id/buzzerMed">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/valv_flush_ret"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnValvFlushRetOFFMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnValvFlushRetONMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/valvFlushInjMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/valvFlushRetMed"
+        app:layout_constraintTop_toBottomOf="@+id/valvFlushRetMed">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/valv_flush_inj"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnValvFlushInjOFFMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnValvFlushInjONMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/valvCondMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/valvFlushInjMed"
+        app:layout_constraintTop_toBottomOf="@+id/valvFlushInjMed">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/valv_cond"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwValvCondOFFMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="61dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnHwValvCondONMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/valvComut01Med"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/valvCondMed"
+        app:layout_constraintTop_toBottomOf="@+id/valvCondMed">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/valv_comut1"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwValvComut01OFFMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnHwValvComut01ONMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/valvComut02Med"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/valvComut01Med"
+        app:layout_constraintTop_toBottomOf="@+id/valvComut01Med">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/valv_comut2"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwValvComut02OFFMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnHwValvComut02ONMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/valvComut03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/valvComut02Med"
+        app:layout_constraintTop_toBottomOf="@+id/valvComut02Med">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/valv_comut3"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwValvComut03OFFMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnHwValvComut03ONMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTestHWMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.305" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTestHWMed2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <LinearLayout
+        android:id="@+id/valvDrenoM1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/guidelineTestHWMed"
+        app:layout_constraintTop_toTopOf="@+id/buzzerMed">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/valv_dreno_m1"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwDrenoM1OFFMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/btnHwDrenoM1ONMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/valvDrenoM2Med"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/valvDrenoM1"
+        app:layout_constraintTop_toBottomOf="@+id/valvDrenoM1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/valv_dreno_m2"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwDrenoM2OFFMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/btnHwDrenoM2ONMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/extra01Med"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/valvDrenoM2Med"
+        app:layout_constraintTop_toBottomOf="@+id/valvDrenoM2Med">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/extra01"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwExtra01OFFMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="81dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/btnHwExtra01ONMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/extra02Med"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/extra01Med"
+        app:layout_constraintTop_toBottomOf="@+id/extra01Med">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/extra02"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnHwExtra02OFFMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="81dp"
+            android:backgroundTint="@color/vermelho_tecnomotor"
+            android:text="@string/string_off"
+            android:visibility="visible"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/btnHwExtra02ONMed"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/string_on"
+            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lineVerticalLayout02Med"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp">
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="380dp"
+            android:layout_marginStart="750dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray" />
+    </LinearLayout>
+
+    <!--
+    ANALOG TEST
+    -->
+
+    <TextView
+        android:id="@+id/txtSensTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/an_sens_temp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/btnStartAnalogTestMed"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartAnalogTestMed" />
+
+    <TextView
+        android:id="@+id/txtValueSensTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/txtSensTemp"
+        app:layout_constraintTop_toTopOf="@+id/txtSensTemp"
+        tools:text="Result Test" />
+
+    <TextView
+        android:id="@+id/txtDGT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/an_dgt"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtSensTemp"
+        app:layout_constraintTop_toBottomOf="@+id/txtSensTemp" />
+
+    <TextView
+        android:id="@+id/txtValueDGT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtValueSensTemp"
+        app:layout_constraintTop_toTopOf="@+id/txtDGT"
+        tools:text="Result Test" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.unit_test.injector.UnitTestInjectorTestFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_HW_test_inj_param"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/param"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_HW_test_inj_start"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="15dp"
+            android:text="@string/txt_start"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/btn_HW_test_inj_param"
+            app:layout_constraintTop_toTopOf="@+id/btn_HW_test_inj_param" />
+
+        <Button
+            android:id="@+id/btn_HW_test_inj_stop"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:text="@string/txt_finish"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_inj_param"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_inj_param"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/btn_HW_test_inj_skip"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:text="@string/txt_skip"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_inj_start"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_inj_param" />
+
+        <Button
+            android:id="@+id/btn_HW_test_inj_cancel"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:text="@string/txt_cancel"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_inj_stop"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_inj_stop" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/txt_status"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/btn_HW_test_inj_cancel"
+            app:layout_constraintTop_toBottomOf="@+id/btn_HW_test_inj_cancel" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_inj_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_inj_status"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_status"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_inj_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/vermelho_tecnomotor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_status"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_inj_status"
+            tools:text="Error Test" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_unit_test_inj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_leituras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/leituras"
+            android:textColor="@color/blue_tecnomotor"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/guideline_unit_test_inj"
+            app:layout_constraintTop_toTopOf="@+id/btn_HW_test_inj_param" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_time_process"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/txt_time_process"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            android:background="@color/whisper"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_leituras"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_inj_leituras" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_inj_time_process"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@color/whisper"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/view2"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_inj_time_process"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_time_process"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_pressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_pressure"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_time_process"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_inj_time_process" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_inj_pressure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="@+id/txt_value_HW_test_inj_time_process"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_inj_pressure"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_pressure"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_check_HW_test_inj_rotation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@color/whisper"
+            android:textAlignment="textEnd"
+            android:text="@string/txt_rotation"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_pressure"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_inj_pressure" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_inj_rotation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:background="@color/whisper"
+            app:layout_constraintEnd_toEndOf="@+id/txt_value_HW_test_inj_pressure"
+            app:layout_constraintStart_toEndOf="@+id/txt_check_HW_test_inj_rotation"
+            app:layout_constraintTop_toTopOf="@+id/txt_check_HW_test_inj_rotation"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_check_HW_test_inj_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/temperatura"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_check_HW_test_inj_rotation"
+            app:layout_constraintTop_toBottomOf="@+id/txt_check_HW_test_inj_rotation" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_inj_temp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="@+id/txt_value_HW_test_inj_rotation"
+            app:layout_constraintStart_toEndOf="@+id/txt_check_HW_test_inj_temp"
+            app:layout_constraintTop_toTopOf="@+id/txt_check_HW_test_inj_temp"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_check_HW_test_inj_vBooster"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@color/whisper"
+            android:textAlignment="textEnd"
+            android:text="@string/txt_VBooster"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_check_HW_test_inj_temp"
+            app:layout_constraintTop_toBottomOf="@+id/txt_check_HW_test_inj_temp" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_inj_vBooster"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textAlignment="textEnd"
+            android:background="@color/whisper"
+            app:layout_constraintEnd_toEndOf="@+id/txt_value_HW_test_inj_temp"
+            app:layout_constraintStart_toEndOf="@+id/txt_check_HW_test_inj_vBooster"
+            app:layout_constraintTop_toTopOf="@+id/txt_check_HW_test_inj_vBooster"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_check_HW_test_inj_corrente_piezo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_corrente_piezo"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_check_HW_test_inj_vBooster"
+            app:layout_constraintTop_toBottomOf="@+id/txt_check_HW_test_inj_vBooster" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_inj_corrente_piezo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="@+id/txt_value_HW_test_inj_vBooster"
+            app:layout_constraintStart_toEndOf="@+id/txt_check_HW_test_inj_corrente_piezo"
+            app:layout_constraintTop_toTopOf="@+id/txt_check_HW_test_inj_corrente_piezo"
+            tools:text="Value Test" />
+
+        <TextView
+            android:id="@+id/txt_check_HW_test_inj_tensao_piezo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_tensao_piezo"
+            android:background="@color/whisper"
+            android:textColor="@color/dark_gray"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_check_HW_test_inj_corrente_piezo"
+            app:layout_constraintTop_toBottomOf="@+id/txt_check_HW_test_inj_corrente_piezo" />
+
+        <TextView
+            android:id="@+id/txt_value_HW_test_inj_tensao_piezo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textAlignment="textEnd"
+            android:background="@color/whisper"
+            app:layout_constraintEnd_toEndOf="@+id/txt_value_HW_test_inj_corrente_piezo"
+            app:layout_constraintStart_toEndOf="@+id/txt_check_HW_test_inj_tensao_piezo"
+            app:layout_constraintTop_toTopOf="@+id/txt_check_HW_test_inj_tensao_piezo"
+            tools:text="Value Test" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="2dp"
+            android:layout_height="390dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/dark_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_unit_test_inj_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.90" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_param"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parametriza_o"
+            android:textColor="@color/blue_tecnomotor"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_tempo_teste_bico"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_leituras" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_tempo_teste_bico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:background="@color/whisper"
+            android:text="@string/txt_tempo_teste_bico_inj_piezo"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintStart_toEndOf="@+id/view2"
+            app:layout_constraintTop_toTopOf="@+id/txt_value_HW_test_inj_time_process" />
+
+        <EditText
+            android:id="@+id/edit_HW_Test_inj_tempo_teste_bico"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@color/whisper"
+            android:inputType="numberDecimal"
+            android:text="60"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_unit_test_inj_end"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_inj_tempo_teste_bico"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_tempo_teste_bico"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_pressao_teste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_pressao_test"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_tempo_teste_bico"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_inj_tempo_teste_bico" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_inj_pressao_test"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="2000"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintEnd_toEndOf="@+id/edit_HW_Test_inj_tempo_teste_bico"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_inj_pressao_teste"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_pressao_teste"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_frequencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/whisper"
+            android:text="@string/txt_frequency"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_pressao_teste"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_inj_pressao_teste" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_inj_frequencia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@color/whisper"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="600"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintEnd_toEndOf="@+id/edit_HW_test_inj_pressao_test"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_inj_frequencia"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_frequencia"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_chopper_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_tempo_chopper_on"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_frequencia"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_inj_frequencia" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_inj_chopper_on"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="100"
+            android:textSize="@dimen/txt_size_22sp"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="@+id/edit_HW_test_inj_frequencia"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_inj_chopper_on"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_chopper_on"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_chopper_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/whisper"
+            android:text="@string/txt_tempo_chopper_off"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_chopper_on"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_inj_chopper_on" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_inj_off"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@color/whisper"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="120"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintEnd_toEndOf="@+id/edit_HW_test_inj_chopper_on"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_inj_chopper_off"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_chopper_off"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_injecao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_tempo_injecao"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_chopper_off"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_inj_chopper_off" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_inj_injecao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="500"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintEnd_toEndOf="@+id/edit_HW_test_inj_off"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_inj_injecao"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_injecao"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_hold_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/whisper"
+            android:text="@string/txt_tempo_hold_off"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_injecao"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_inj_injecao" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_inj_hold_off"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@color/whisper"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="11"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_unit_test_inj_end"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_inj_hold_off"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_hold_off"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_tensao_alta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:text="@string/txt_tensao_alta"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_hold_off"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_inj_hold_off" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_inj_tensao_alta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="190"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_unit_test_inj_end"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_inj_tensao_alta"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_tensao_alta"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_ref_patamar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/whisper"
+            android:text="@string/txt_V_REF_PATAMAR"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_tensao_alta"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_inj_tensao_alta" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_inj_ref_patamar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@color/whisper"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/valor_00"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_unit_test_inj_end"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_inj_ref_patamar"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_ref_patamar"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_ref_charge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:text="@string/txt_I_REF_CHARGE"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_ref_patamar"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_inj_ref_patamar" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_inj_ref_charge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/valor_00"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_unit_test_inj_end"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_inj_ref_charge"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_ref_charge"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_ref_discharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/whisper"
+            android:text="@string/txt_I_REF_DISCHARGE"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_ref_charge"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_inj_ref_charge" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_inj_ref_discharge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@color/whisper"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/valor_00"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_unit_test_inj_end"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_inj_ref_discharge"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_ref_discharge"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/txt_HW_test_inj_var"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:text="@string/txt_VAR_TEST"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_HW_test_inj_ref_discharge"
+            app:layout_constraintTop_toBottomOf="@+id/txt_HW_test_inj_ref_discharge" />
+
+        <EditText
+            android:id="@+id/edit_HW_test_inj_var"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/valor_00"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/txt_size_22sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_unit_test_inj_end"
+            app:layout_constraintStart_toEndOf="@+id/txt_HW_test_inj_var"
+            app:layout_constraintTop_toTopOf="@+id/txt_HW_test_inj_var"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

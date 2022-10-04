@@ -1,0 +1,30 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.Marvin" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/blue_tecnomotor</item>
+        <item name="colorOnPrimary">@color/cinza_claro_tecnomotor</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue_tecnomotor</item>
+        <item name="colorSecondaryVariant">@color/blue_tecnomotor</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Status bar color.
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        Customize your theme here. -->
+
+        <item name="android:progressBackgroundTint">#000000</item>
+        <item name="android:progressTint">@color/blue_tecnomotor</item>
+    </style>
+
+    <style name="Theme.Marvin.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Marvin.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Marvin.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

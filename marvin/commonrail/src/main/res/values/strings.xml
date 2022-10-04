@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    ERROS PLACA CONTROLE-->
+
+    <string name="MSG_ERROR_01_PROBLEMA_BAIXAR_PRESSAO">ERRO FUNCIONAL!  Problema ao baixar a pressão.</string>
+    <string name="MSG_ERROR_02_BAIXA_PRESSAO_RAIL">BAIXA PRESSÃO NO RAIL! Bomba/Sensor/DRV danificado ou conexão aberta.</string>
+    <string name="MSG_ERROR_03_TANQUE_ABERTO_NIVEL">ERRO FUNCIONAL! Verifique o nível de fluido no tanque.</string>
+    <string name="MSG_ERROR_04_FALHA_VALVULA_DRV">ERRO FUNCIONAL! Problema crítico na válvula DRV do Rail.</string>
+    <string name="MSG_ERROR_05_FALHA_SENSOR_PRESSAO_RAIL">ERRO FUNCIONAL! Problema crítico no sensor de pressão do Rail.</string>
+    <string name="MSG_ERROR_06_FAIL_INIT_METER">ERRO FUNCIONAL! Impossível esvaziar os medidores.</string>
+    <string name="MSG_ERROR_07_TEMPERATURA_ALTA">ERRO CRÍTICO! Temperatura muito alta. Desligue!</string>
+    <string name="MSG_ERROR_08_TEMPERATURA_BAIXA">ERRO CRÍTICO! Temperatura muito baixa. Desligue!</string>
+
+    <string name="MSG_ERROR_16_VALV_EXT1_CORRENTE_MUITO_ALTA">ERRO FUNCIONAL! Corrente muito alta na válvula externa 1.</string>
+    <string name="MSG_ERROR_17_VALV_EXT1_CORRENTE_ABAIXO">ERRO FUNCIONAL! Corrente abaixo do especificado na válvula externa 1.</string>
+    <string name="MSG_ERROR_18_VALV_EXT1_CORRENTE_ACIMA">ERRO FUNCIONAL! Corrente acima do especificado na válvula externa 1.</string>
+    <string name="MSG_ERROR_19_VALV_EXT1_CORRENTE_DESLIGAR">ERRO FUNCIONAL! Desligar corrente da válvula externa 1.</string>
+
+    <string name="MSG_ERROR_32_VALV_EXT2_CORRENTE_MUITO_ALTA">ERRO FUNCIONAL! Corrente muito alta na válvula externa 2.</string>
+    <string name="MSG_ERROR_33_VALV_EXT2_CORRENTE_ABAIXO">ERRO FUNCIONAL! Corrente abaixo do especificado na válvula externa 2.</string>
+    <string name="MSG_ERROR_34_VALV_EXT2_CORRENTE_ACIMA">ERRO FUNCIONAL! Corrente acima do especificado na válvula externa 2.</string>
+    <string name="MSG_ERROR_35_VALV_EXT2_CORRENTE_DESLIGAR">ERRO FUNCIONAL! Desligar corrente da válvula externa 2.</string>
+
+    <string name="MSG_ERROR_48_VALV_DRV1_AUSENTE">ERRO FUNCIONAL! Válvula do rail 1 ausente.</string>
+    <string name="MSG_ERROR_49_VALV_DRV2_AUSENTE">ERRO FUNCIONAL! Válvula do rail 2 ausente.</string>
+    <string name="MSG_ERROR_50_VALV_EXT1_AUSENTE">ERRO FUNCIONAL! Válvula externa 1 ausente.</string>
+    <string name="MSG_ERROR_51_VALV_EXT2_AUSENTE">ERRO FUNCIONAL! Válvula externa 2 ausente.</string>
+
+    <string name="MSG_ERROR_64_ROTACAO_MUITO_ALTA">ERRO FUNCIONAL! Rotação muito alta.</string>
+    <string name="MSG_ERROR_65_ROTACAO_ZERADA">ERRO FUNCIONAL! Rotação zerada.</string>
+    <string name="MSG_ERROR_66_ROTACAO_ABAIXO">ERRO FUNCIONAL! Rotação abaixo do especificado.</string>
+    <string name="MSG_ERROR_67_ROTACAO_ACIMA">ERRO FUNCIONAL! Rotação acima do especificado.</string>
+
+    <string name="MSG_ERROR_92_PRESSAO_MUITO_ALTA">ERRO FUNCIONAL! Pressão muito alta.</string>
+    <string name="MSG_ERROR_93_PRESSAO_ABAIXO">ERRO FUNCIONAL! Pressão abaixo do especificado.</string>
+    <string name="MSG_ERROR_94_PRESSAO_ABAIXAR">ERRO FUNCIONAL! Abaixar pressão.</string>
+    <string name="MSG_ERROR_95_PRESSAO_ACIMA">ERRO FUNCIONAL! Pressão acima do especificado.</string>
+
+    <string name="MSG_ERROR_133_CRITICO">ERRO CRÍTICO!</string>
+
+    <string name="MSG_ERROR_134_TAMPA_ABERTA">"ERRO DE SEGURANÇA! Tampa de segurança foi aberta."</string>
+    <string name="MSG_ERROR_135_PARADA_EMERGENCIA">ERRO FUNCIONAL! Parada emergencial. Verifique problemas.</string>
+    <string name="MSG_ERROR_136_NAO_IDENTIFICADO">ERRO NÃO IDENTIFICADO! Se persistir, avise  o fabricante.</string>
+    <string name="MSG_ERROR_137_NAO_DISPONIVEL">FUNÇÃO INDISPONÍVEL. Por favor, entre contato com fábrica.</string>
+    <string name="MSG_ERROR_138_PARAMETRIZATION">ERRO FUNCIONAL! Erro de parametrização</string>
+    <string name="MSG_ERROR_144_FALHA_PROCESSO_AQUECIMENTO">ERRO FUNCIONAL! Impossível aquecer o fluido do tanque.</string>
+    <string name="MSG_ERROR_145_ERROR_PRESSAO">ERRO FUNCIONAL! Impossível alcançar pressão desejada.</string>
+    <string name="MSG_ERROR_146_ERROR_USO_INDEVIDO_ACESSORIO">"ERRO FUNCIONAL! Uso de acessório indevido."</string>
+
+    <string name="MSG_ERROR_220_ERROR_MESSAGEM_WARNING">ERRO FUNCIONAL!"</string>
+    <string name="MSG_ERROR_221_ERROR_TANQUE_NIVEL_INTERMITENTE">ERRO FUNCIONAL! Nível do tanque intermitente."</string>
+    <string name="MSG_ERROR_222_ERROR_LIMITE_CHECK_IN_FILTRO_LINHA">ERRO FUNCIONAL! Verifique o filtro sinterizado na linha de entrada."</string>
+    <string name="MSG_ERROR_223_ERROR_LIMITE_CHANGE_IN_FILTRO_LINHA">ERRO FUNCIONAL! Troque o filtro sinterizado na linha de entrada."</string>
+
+<!--    ERROS PLACA SOM-->
+
+    <string name="MSG_ERROR_163_SETUP_FREQUENCY">ERRO FUNCIONAL! Erro de parametrização - frequência</string>
+    <string name="MSG_ERROR_164_SETUP_TIMEOUT">ERRO FUNCIONAL! Erro de parametrização - timeout</string>
+    <string name="MSG_ERROR_165_SETUP_CM">ERRO FUNCIONAL! Erro de parametrização - centro de massa</string>
+    <string name="MSG_ERROR_166_SETUP_CM_CH1">ERRO FUNCIONAL! Erro de parametrização - centro de massa CH1</string>
+    <string name="MSG_ERROR_167_SETUP_CM_CH2">ERRO FUNCIONAL! Erro de parametrização - centro de massa CH2</string>
+    <string name="MSG_ERROR_168_SETUP_DOUBLE_CH">ERRO FUNCIONAL! Erro de parametrização - medição simultânea</string>
+
+    <string name="MSG_ERROR_171_LIMITE_HORIMETRO_FILTRO">ALERTA! Troque o filtro de fluido</string>
+    <string name="MSG_ERROR_172_LIMITE_HORIMETRO_FLUIDO">ALERTA! Troque o fluido de teste</string>
+    <string name="MSG_ERROR_173_INJETOR_NAO_PRESENTE">ERRO FUNCIONAL! Coloque um injetor para testar</string>
+    <string name="MSG_ERROR_174_GRAVA_FLASH">ERRO DE GRAVAÇÃO DA MEMÓRIA FLASH. Possibilidade de perda de dados.</string>
+    <string name="MSG_ERROR_175_PROCESSO_TIMEOUT">ERRO FUNCIONAL! Impossível terminar o processo atual.</string>
+    <string name="MSG_ERROR_176_FALHA_VALVULA_DRV_TESTE">ERRO FUNCIONAL! Impossível testar a válvula DRV.</string>
+
+    <string name="MSG_ERROR_177_CALIBRATION_CH1">ERRO FUNCIONAL! Impossível realizar calibração módulo ótico CH1</string>
+    <string name="MSG_ERROR_178_CALIBRATION_CH2">ERRO FUNCIONAL! Impossível realizar calibração módulo ótico CH2</string>
+    <string name="MSG_ERROR_179_UNCONNECTED_MODULE_CH1">ERRO FUNCIONAL! Módulo óptico CH1 desconectado</string>
+    <string name="MSG_ERROR_180_UNCONNECTED_MODULE_CH2">ERRO FUNCIONAL! Módulo óptico CH2 desconectado</string>
+    <string name="MSG_ERROR_181_UNCONNECTED_PWM_CH1">ERRO FUNCIONAL! Chicote PWM CH1 desconectado</string>
+    <string name="MSG_ERROR_182_UNCONNECTED_PWM_CH2">ERRO FUNCIONAL! Chicote PWM CH2 desconectado</string>
+
+    <string name="MSG_ERROR_192_LEAK_INJECTION_FAIL">ERRO FUNCIONAL! Falha no teste de estanqueidade de injeção direta</string>
+    <string name="MSG_ERROR_193_MEASURE_TIMEOUT_CH1">ERRO FUNCIONAL! Timeout de medição CH1</string>
+    <string name="MSG_ERROR_194_MEASURE_TIMEOUT_CH2">ERRO FUNCIONAL! Timeout de medição CH1</string>
+    <string name="MSG_ERROR_195_EMPTYING_TIMEOUT_CH1">ERRO FUNCIONAL! Impossível esvaziar o medidor CH1</string>
+    <string name="MSG_ERROR_196_EMPTYING_TIMEOUT_CH2">ERRO FUNCIONAL! Impossível esvaziar o medidor CH2</string>
+    <string name="MSG_ERROR_197_LEAK_FAIL">ERRO FUNCIONAL! Falha no teste de estanqueidade de retorno</string>
+    <string name="MSG_ERROR_198_LOW_COEF_DTRMTN_CH1">ERRO FUNCIONAL! Baixo coeficiente de determinação CH1</string>
+    <string name="MSG_ERROR_199_LOW_COEF_DTRMTN_CH2">ERRO FUNCIONAL! Baixo coeficiente de determinação CH2</string>
+    <string name="MSG_ERROR_200_DEAD_VOLUME_TIMEOUT_CH1">ERRO FUNCIONAL! Timeout do volume morto CH1</string>
+    <string name="MSG_ERROR_201_DEAD_VOLUME_TIMEOUT_CH2">ERRO FUNCIONAL! Timeout do volume morto CH2</string>
+
+    <string name="MSG_ERROR_208_EMPTY_FLASH">ERRO FUNCIONAL! Erro de gravação FLASH</string>
+    <string name="MSG_ERROR_209_LEAKAGE_CH1">ERRO FUNCIONAL! Vazamento na válvula de dreno CH1</string>
+    <string name="MSG_ERROR_210_LEAKAGE_CH2">ERRO FUNCIONAL! Vazamento na válvula de dreno CH2</string>
+    <string name="MSG_ERROR_211_EXTRAPOLATED_VECTORS_CH1">ERRO FUNCIONAL! Armazenamento de dados do CH1 excedido</string>
+    <string name="MSG_ERROR_212_EXTRAPOLATED_VECTORS_CH2">ERRO FUNCIONAL! Armazenamento de dados do CH2 excedido</string>
+    <string name="MSG_ERROR_213_CONTAMINATED_OIL">ERRO FUNCIONAL! Fluido contaminado. Verifique necessidade de troca</string>
+    <string name="MSG_ERROR_214_REMOTE_ERROR_TOP_LEAK">ERRO FUNCIONAL! Vazamento superior.</string>
+    <string name="MSG_ERROR_215_REMOTE_ERROR_OVER_TEMPERATURE">ERRO FUNCIONAL! Temepratura acima do especificado.</string>
+
+<!--    ERROS GERAIS-->
+    <string name="MSG_ERROR_2000_COMUNICACAO_EXCED_TENT">ERRO FUNCIONAL! Problemas de comunicação com o hardware.</string>
+    <string name="MSG_ERROR_2001_LIGARBOMBAS_EXCED_TENT">ERRO FUNCIONAL! Problemas ao ligar as bombas</string>
+    <string name="MSG_ERROR_5000_COMUNICACAO">Problemas de comunicação com a USB! Verifique cabo USB.</string>
+    <string name="MSG_ERROR_5001_CONTROLE_NC">Falha de comunicação com a placa de controle!</string>
+    <string name="MSG_ERROR_5002_MEDICAO_NC">Falha de comunicação com a placa do sistema ótico!</string>
+
+    <string name="MSG_TESTE_ELETRICO_NONE">Não especificado</string>
+    <string name="MSG_TESTE_ELETRICO_EM_CURTO">Em Curto</string>
+    <string name="MSG_TESTE_ELETRICO_OK">Ok</string>
+    <string name="MSG_TESTE_ELETRICO_ABERTO">Aberto</string>
+    <string name="MSG_TESTE_ELETRICO_NAO_INSTALADO">Não Instalado</string>
+    <string name="MSG_TESTE_ELETRICO_FORA_DE_ESPECIFICACAO">Erro</string>
+    <string name="MSG_ERROR_NOT_FOUND">Erro não encontrado.</string>
+    <string name="MSG_TESTE_ESTANQUEIDADE_OK">Ok</string>
+    <string name="MSG_TESTE_ESTANQUEIDADE_SKIPPED">Cancelado</string>
+    <string name="MSG_TESTE_ESTANQUEIDADE_LEAK">Falha</string>
+
+    <!-- STATUS DE TESTE -->
+    <string name="MSG_STATUSTESTE_NONE"></string>
+    <string name="MSG_STATUSTESTE_TESTE_PARADO">Parado</string>
+    <string name="MSG_STATUSTESTE_TESTE_EXECUTANDO">Executando</string>
+    <string name="MSG_STATUSTESTE_TESTE_INICIANDO">Iniciando</string>
+    <string name="MSG_STATUSTESTE_TESTE_FINALIZADO">Finalizado</string>
+    <string name="MSG_STATUSTESTE_TESTE_AQUECIMENTO">Aquecimento</string>
+    <string name="MSG_STATUSTESTE_TESTE_AGUARDANDO">Aguardando</string>
+    <string name="MSG_STATUSTESTE_TESTE_FINALIZANDO">Finalizando</string>
+    <string name="MSG_STATUSTESTE_TESTE_DADOS">Obtendo dados</string>
+    <string name="MSG_STATUSTESTE_TESTE_ATIVANDO">Ativando</string>
+    <string name="MSG_STATUSTESTE_TESTE_PAUSADO">Pausado</string>
+    <string name="MSG_STATUSTESTE_TODOS_TESTES_FINALIZADO">Finalizado</string>
+    <string name="MSG_STATUSTESTE_AGUARDANDO_TECLA">Aguardando evento</string>
+    <string name="MSG_STATUSTESTE_TESTE_CONDICIONAMENTO">Condicionamento</string>
+    <string name="MSG_STATUSTESTE_TESTE_ATENCAO">Atenção</string>
+    <string name="MSG_STATUSTESTE_TESTE_PULADO">Pulado</string>
+    <string name="MSG_STATUSTESTE_TESTE_PARAMETRIZANDO">Iniciando</string>
+    <string name="MSG_STATUSTESTE_TESTE_MEDINDO">Medindo</string>
+    <string name="MSG_STATUSTESTE_TESTE_CANCELADO">Cancelado</string>
+    <string name="MSG_STATUSTESTE_TESTE_ERROR">Erro</string>
+    <string name="MSG_STATUSTESTE_TESTE_RETESTE">Reinicializando</string>
+
+</resources>
